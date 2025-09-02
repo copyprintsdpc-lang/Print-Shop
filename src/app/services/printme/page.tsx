@@ -7,7 +7,7 @@ import FileUpload from '@/components/FileUpload'
 
 export default function PrintMePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       {/* Hero */}
       <section className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -42,7 +42,7 @@ export default function PrintMePage() {
               cta: 'Download Now'
             }].map((card, i) => (
               <div key={i} className="border rounded-xl overflow-hidden">
-                <div className="h-44 bg-gray-100">
+                <div className="h-44 bg-white/10 backdrop-blur-sm">
                   <CardArt theme={i === 0 ? 'rose' : i === 1 ? 'teal' : 'blue'} />
                 </div>
                 <div className="p-5">
@@ -61,10 +61,10 @@ export default function PrintMePage() {
       </section>
 
       {/* Upload area */}
-      <section id="upload" className="bg-gray-50">
+      <section id="upload" className="bg-transparent">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <h2 className="text-2xl font-semibold text-center text-gray-900 mb-8">Upload files or drag and drop onto this page</h2>
-          <div className="bg-white border rounded-xl p-6">
+          <div className="bg-transparent border rounded-xl p-6">
             <FileUpload
               onFilesChange={() => {}}
               maxFiles={10}

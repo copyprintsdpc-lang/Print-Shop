@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f6ec;
-  --foreground: #1a1a1a;
+  --background: transparent;
+  --foreground: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-background: transparent;
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -14,12 +14,43 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #f5f5f5;
+    --background: transparent;
+    --foreground: #ffffff;
   }
+}
+
+html, body { 
+  height: 100%; 
+  margin: 0;
+  padding: 0;
 }
 
 body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(1200px 700px at 50% 115%, #F16E02 0%, #F16518 22%, #DC6342 40%, rgba(255,255,255,0) 62%), linear-gradient(180deg, #181819 0%, #1E2735 25%, #37507B 45%, #9C80B1 65%, #181819 100%) !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+/* make all sections transparent so no second BG shows */
+header, section, footer, main, div,
+.hero, .cta, .footer, .container {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* remove decorative overlays that create a second BG band */
+.hero::before, .hero::after,
+.footer::before, .footer::after,
+.cta::before, .cta::after {
+  content: none !important;
+}
+
+/* Force override only problematic white backgrounds */
+div:not([class*="bg-"]):not([style*="background"]),
+section:not([class*="bg-"]):not([style*="background"]),
+main:not([class*="bg-"]):not([style*="background"]) {
+  background: transparent !important;
 }

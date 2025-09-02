@@ -190,7 +190,7 @@ export default function OrderPage() {
                   </label>
                   <div className="grid md:grid-cols-2 gap-4">
                     <label className={`p-4 border rounded-lg cursor-pointer ${
-                      orderData.deliveryInfo.method === 'pickup' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
+                      orderData.deliveryInfo.method === 'pickup' ? 'border-orange-400 bg-white/10 backdrop-blur-sm/20 backdrop-blur-sm' : 'border-gray-300'
                     }`}>
                       <input
                         type="radio"
@@ -209,7 +209,7 @@ export default function OrderPage() {
                       </div>
                     </label>
                     <label className={`p-4 border rounded-lg cursor-pointer ${
-                      orderData.deliveryInfo.method === 'courier' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
+                      orderData.deliveryInfo.method === 'courier' ? 'border-orange-400 bg-white/10 backdrop-blur-sm/20 backdrop-blur-sm' : 'border-gray-300'
                     }`}>
                       <input
                         type="radio"
@@ -338,7 +338,7 @@ export default function OrderPage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Payment Method</h3>
               <div className="space-y-4">
                 <label className={`p-4 border rounded-lg cursor-pointer ${
-                  orderData.paymentMethod === 'razorpay' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
+                  orderData.paymentMethod === 'razorpay' ? 'border-orange-400 bg-white/10 backdrop-blur-sm/20 backdrop-blur-sm' : 'border-gray-300'
                 }`}>
                   <input
                     type="radio"
@@ -359,7 +359,7 @@ export default function OrderPage() {
                   </div>
                 </label>
                 <label className={`p-4 border rounded-lg cursor-pointer ${
-                  orderData.paymentMethod === 'cod' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
+                  orderData.paymentMethod === 'cod' ? 'border-orange-400 bg-white/10 backdrop-blur-sm/20 backdrop-blur-sm' : 'border-gray-300'
                 }`}>
                   <input
                     type="radio"
@@ -383,7 +383,7 @@ export default function OrderPage() {
             </div>
 
             {/* Order Summary */}
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-white/10 backdrop-blur-sm/10 backdrop-blur-sm rounded-lg p-6">
               <h4 className="font-semibold text-gray-900 mb-4">Order Summary</h4>
               <div className="space-y-2">
                 <div className="flex justify-between">
@@ -415,9 +415,9 @@ export default function OrderPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20">
+      <section className="bg-transparent text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -431,7 +431,7 @@ export default function OrderPage() {
       </section>
 
       {/* Progress Steps */}
-      <section className="py-8 bg-white border-b border-gray-200">
+      <section className="py-8 bg-transparent border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {steps.map((step, index) => {
@@ -445,8 +445,8 @@ export default function OrderPage() {
                     isCompleted 
                       ? 'bg-green-500 border-green-500 text-white'
                       : isActive 
-                        ? 'bg-blue-600 border-blue-600 text-white'
-                        : 'bg-white border-gray-300 text-gray-400'
+                        ? 'bg-[#F16E02] border-blue-600 text-white'
+                        : 'bg-white/10 backdrop-blur-sm border-gray-300 text-gray-400'
                   }`}>
                     {isCompleted ? (
                       <CheckCircle className="w-5 h-5" />
@@ -476,7 +476,7 @@ export default function OrderPage() {
       {/* Order Form */}
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg shadow-lg p-8">
             {renderStepContent()}
             
             {/* Navigation Buttons */}
@@ -496,7 +496,7 @@ export default function OrderPage() {
               {currentStep < steps.length ? (
                 <button
                   onClick={handleNext}
-                  className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700"
+                  className="px-6 py-2 bg-[#F16E02] text-white rounded-lg font-medium hover:bg-[#F16518]"
                 >
                   Next
                 </button>

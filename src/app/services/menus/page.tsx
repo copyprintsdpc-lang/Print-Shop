@@ -6,10 +6,10 @@ import { formatINR } from '@/lib/currency'
 
 export default function MenusPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       <section className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid lg:grid-cols-2 gap-8 items-start">
-          <div className="border rounded-xl overflow-hidden h-64 bg-gray-100">
+          <div className="border rounded-xl overflow-hidden h-64 bg-white/10 backdrop-blur-sm">
             <CardArt theme='rose' />
           </div>
           <div>
@@ -28,23 +28,23 @@ export default function MenusPage() {
               <div>
                 <div className="font-semibold">Size</div>
                 <div className="flex gap-2 mt-1">
-                  <span className="inline-block border rounded px-3 py-1 bg-white">11” × 17”</span>
-                  <span className="inline-block border rounded px-3 py-1 bg-white">8.5” × 14”</span>
-                  <span className="inline-block border rounded px-3 py-1 bg-white">8.5” × 11”</span>
+                  <span className="inline-block border rounded px-3 py-1 bg-transparent">11” × 17”</span>
+                  <span className="inline-block border rounded px-3 py-1 bg-transparent">8.5” × 14”</span>
+                  <span className="inline-block border rounded px-3 py-1 bg-transparent">8.5” × 11”</span>
                 </div>
               </div>
               <div>
                 <div className="font-semibold">Orientation</div>
                 <div className="flex gap-2 mt-1">
-                  <span className="inline-block border rounded px-3 py-1 bg-white">Horizontal</span>
-                  <span className="inline-block border rounded px-3 py-1 bg-white">Vertical</span>
+                  <span className="inline-block border rounded px-3 py-1 bg-transparent">Horizontal</span>
+                  <span className="inline-block border rounded px-3 py-1 bg-transparent">Vertical</span>
                 </div>
               </div>
               <div>
                 <div className="font-semibold">Sides</div>
                 <div className="flex gap-2 mt-1">
-                  <span className="inline-block border rounded px-3 py-1 bg-white">1‑Sided</span>
-                  <span className="inline-block border rounded px-3 py-1 bg-white">2‑Sided</span>
+                  <span className="inline-block border rounded px-3 py-1 bg-transparent">1‑Sided</span>
+                  <span className="inline-block border rounded px-3 py-1 bg-transparent">2‑Sided</span>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function MenusPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Product Details</h2>
           <div className="grid md:grid-cols-2 gap-8 text-sm text-gray-700">

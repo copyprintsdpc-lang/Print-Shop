@@ -38,9 +38,9 @@ export default function QuotePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20">
+      <section className="text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center mb-6">
@@ -80,7 +80,7 @@ export default function QuotePage() {
               return (
                 <div 
                   key={category.id} 
-                  className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow cursor-pointer group"
+                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 hover:bg-white/15 transition-all duration-300 cursor-pointer group"
                   onClick={() => {
                     if (categoryProducts.length > 0) {
                       handleProductSelect(categoryProducts[0])
@@ -88,16 +88,16 @@ export default function QuotePage() {
                   }}
                 >
                   <div className="text-center">
-                    <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors">
-                      <IconComponent className="w-8 h-8 text-blue-600" />
+                    <div className="bg-white/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-white/30 transition-colors">
+                      <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{category.name}</h3>
-                    <p className="text-gray-800 mb-4">
+                    <h3 className="text-xl font-semibold text-white mb-2">{category.name}</h3>
+                    <p className="text-white/80 mb-4">
                       {categoryProducts.length} product{categoryProducts.length !== 1 ? 's' : ''} available
                     </p>
                     <div className="text-center">
-                      <p className="text-sm text-gray-700">Starting from</p>
-                      <p className="text-2xl font-bold text-blue-600">{formatINR(minPrice)}</p>
+                      <p className="text-sm text-white/70">Starting from</p>
+                      <p className="text-2xl font-bold text-orange-300">{formatINR(minPrice)}</p>
                     </div>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export default function QuotePage() {
 
       {/* Product Selection and Configuration */}
       {selectedProduct && (
-        <section className="py-20 bg-white">
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Product Details */}
@@ -129,8 +129,8 @@ export default function QuotePage() {
                           key={product.id}
                           className={`p-4 border rounded-lg cursor-pointer transition-colors ${
                             selectedProduct.id === product.id
-                              ? 'border-blue-500 bg-blue-50'
-                              : 'border-gray-200 hover:border-gray-300'
+                              ? 'border-orange-400 bg-white/20 backdrop-blur-sm'
+                              : 'border-white/30 hover:border-white/50 bg-white/5 backdrop-blur-sm'
                           }`}
                           onClick={() => handleProductSelect(product)}
                         >
@@ -178,10 +178,10 @@ export default function QuotePage() {
 
       {/* Order Summary and Checkout */}
       {selectedProduct && calculatedPrice > 0 && (
-        <section className="py-20 bg-gray-50">
+        <section className="py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Order Summary</h2>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8">
+              <h2 className="text-2xl font-bold text-white mb-6">Order Summary</h2>
               
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between items-center py-3 border-b border-gray-200">
@@ -238,7 +238,7 @@ export default function QuotePage() {
 
       {/* Features Showcase */}
       {!selectedProduct && (
-        <section className="py-20 bg-white">
+        <section className="py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">

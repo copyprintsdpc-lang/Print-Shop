@@ -179,9 +179,9 @@ export default function ServicesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-20">
+      <section className="text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -202,9 +202,9 @@ export default function ServicesPage() {
             {services.map((service) => {
               const IconComponent = service.icon
               return (
-                <div key={service.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                <div key={service.id} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all duration-300">
                   <div className="flex items-center mb-6">
-                    <div className="bg-blue-100 w-16 h-16 rounded-lg flex items-center justify-center mr-4">
+                    <div className="bg-white/20 backdrop-blur-sm w-16 h-16 rounded-lg flex items-center justify-center mr-4">
                       <IconComponent className="w-8 h-8 text-blue-600" />
                     </div>
                     <div>
@@ -239,7 +239,7 @@ export default function ServicesPage() {
                       )}
                       <Link
                         href={service.id === 'documents' ? '/services/document-printing' : service.id === 'printme' ? '/services/printme' : service.id === 'photo-prints' ? '/services/photo-prints' : service.id === 'banners' ? '/services/banners-posters' : service.id === 'business-cards' ? '/services/business-cards' : service.id === 'brochures' ? '/services/brochures' : service.id === 'flyers' ? '/services/flyers' : service.id === 'stickers' ? '/services/labels' : service.id === 'menus' ? '/services/menus' : service.id === 'newsletters' ? '/services/newsletters' : service.id === 'postcards' ? '/services/postcards' : `/quote?service=${service.id}`}
-                        className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                        className="inline-flex items-center bg-[#F16E02] border border-orange-300/30 text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#F16518] transition-all duration-300 transition-colors"
                       >
                         {service.id === 'documents' || service.id === 'printme' || service.id === 'photo-prints' || service.id === 'banners' || service.id === 'business-cards' || service.id === 'brochures' || service.id === 'flyers' || service.id === 'stickers' || service.id === 'menus' || service.id === 'newsletters' || service.id === 'postcards' ? 'View' : 'Get Quote'}
                         <ArrowRight className="w-4 h-4 ml-2" />
@@ -254,7 +254,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -267,7 +267,7 @@ export default function ServicesPage() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-white/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Printer className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Premium Quality</h3>
@@ -302,7 +302,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600 text-white">
+      <section className="py-20 bg-[#F16E02] border border-orange-300/30 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Get Started?
@@ -313,14 +313,14 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/quote" 
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors inline-flex items-center justify-center gap-2"
+              className="bg-white/95 backdrop-blur-sm text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
             >
               Get Instant Quote
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link 
               href="/contact" 
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
+              className="border-2 border-white/80 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 hover:border-white hover:scale-105 transition-all duration-300"
             >
               Contact Us
             </Link>

@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function BannersPostersPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       {/* Hero */}
       <section className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -26,7 +26,7 @@ export default function BannersPostersPage() {
       </section>
 
       {/* Banner types */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-4 gap-6">
           {[
             { name: 'Outdoor Banners', desc: 'Ideal for storefronts, festivals and sports events. Stand not included. Sizes up to 48” × 120”. Finished with hem and grommets.', price: 'Starting at ₹84.99', cta: 'Create Outdoor Banner' },
@@ -40,7 +40,7 @@ export default function BannersPostersPage() {
                 <h3 className="font-semibold text-gray-900">{p.name}</h3>
                 <p className="text-sm text-gray-800 mt-2">{p.desc}</p>
                 <p className="text-sm text-gray-800 mt-2">{p.price}*</p>
-                <Link href="/quote" className="mt-3 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">{p.cta}</Link>
+                <Link href="/quote" className="mt-3 inline-block bg-orange-500/80 backdrop-blur-sm border border-orange-400/30 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-orange-400/80 transition-all duration-300">{p.cta}</Link>
               </div>
             </div>
           ))}
@@ -48,7 +48,7 @@ export default function BannersPostersPage() {
       </section>
 
       {/* Posters highlight */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-2 gap-6">
           <div className="border rounded-xl overflow-hidden">
             <div className="h-44 bg-gray-100"><CardArt theme='rose' /></div>
@@ -62,7 +62,7 @@ export default function BannersPostersPage() {
       </section>
 
       {/* Signs grid */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Your (signs) to stand out</h2>
           <p className="text-sm text-gray-800 mb-6">Whether it’s for events, everyday use, or special signage like magnetic or thick plastic, we’ve got the perfect solution to make your business shine.</p>
@@ -78,7 +78,7 @@ export default function BannersPostersPage() {
                 <div className="p-5">
                   <h3 className="font-semibold text-gray-900">{p.name}</h3>
                   <p className="text-sm text-gray-800 mt-2">{p.price}*</p>
-                  <Link href="/quote" className="mt-3 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">{p.cta}</Link>
+                  <Link href="/quote" className="mt-3 inline-block bg-orange-500/80 backdrop-blur-sm border border-orange-400/30 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-orange-400/80 transition-all duration-300">{p.cta}</Link>
                 </div>
               </div>
             ))}
@@ -87,7 +87,7 @@ export default function BannersPostersPage() {
       </section>
 
       {/* More signs */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-4 gap-6">
           {[
             { name: 'Thick Plastic Signs', price: 'Starting at ₹26.99', cta: 'Create Thick Sign' },
@@ -100,7 +100,7 @@ export default function BannersPostersPage() {
               <div className="p-5">
                 <h3 className="font-semibold text-gray-900">{p.name}</h3>
                 <p className="text-sm text-gray-800 mt-2">{p.price}*</p>
-                <Link href="/quote" className="mt-3 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">{p.cta}</Link>
+                <Link href="/quote" className="mt-3 inline-block bg-orange-500/80 backdrop-blur-sm border border-orange-400/30 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-orange-400/80 transition-all duration-300">{p.cta}</Link>
               </div>
             </div>
           ))}
@@ -108,7 +108,7 @@ export default function BannersPostersPage() {
       </section>
 
       {/* Poster finishes */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Pick your perfect finish for your posters</h2>
           <p className="text-sm text-gray-800 mb-6">Choose matte or gloss for texture, or go with poly or vinyl for extra durability. Add lamination or foamcore mounting to finish your look.</p>

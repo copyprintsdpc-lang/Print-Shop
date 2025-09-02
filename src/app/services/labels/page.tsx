@@ -6,7 +6,7 @@ import { formatINR } from '@/lib/currency'
 
 export default function LabelsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       <section className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Mailing and Organization Labels</h1>
@@ -20,7 +20,7 @@ export default function LabelsPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {/* Mailing Labels */}
             <div className="border rounded-xl overflow-hidden">
-              <div className="h-40 bg-gray-100"><CardArt theme='rose' /></div>
+              <div className="h-40 bg-white/10 backdrop-blur-sm"><CardArt theme='rose' /></div>
               <div className="p-5">
                 <p className="text-xs text-green-700 font-semibold mb-2">Same‑day available</p>
                 <h3 className="text-lg font-semibold text-gray-900">Mailing Labels</h3>
@@ -37,7 +37,7 @@ export default function LabelsPage() {
 
             {/* Index Labels */}
             <div className="border rounded-xl overflow-hidden">
-              <div className="h-40 bg-gray-100"><CardArt theme='teal' /></div>
+              <div className="h-40 bg-white/10 backdrop-blur-sm"><CardArt theme='teal' /></div>
               <div className="p-5">
                 <p className="text-xs text-green-700 font-semibold mb-2">Same‑day available</p>
                 <h3 className="text-lg font-semibold text-gray-900">Index Labels</h3>
@@ -54,7 +54,7 @@ export default function LabelsPage() {
 
             {/* Return Address Labels */}
             <div className="border rounded-xl overflow-hidden">
-              <div className="h-40 bg-gray-100"><CardArt theme='blue' /></div>
+              <div className="h-40 bg-white/10 backdrop-blur-sm"><CardArt theme='blue' /></div>
               <div className="p-5">
                 <p className="text-xs text-green-700 font-semibold mb-2">Same‑day available</p>
                 <h3 className="text-lg font-semibold text-gray-900">Return Address Labels</h3>

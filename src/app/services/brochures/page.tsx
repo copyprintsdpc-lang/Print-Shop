@@ -5,7 +5,7 @@ import CardArt from '@/components/illustrations/CardArt'
 
 export default function BrochuresPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       <section className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid lg:grid-cols-2 gap-8 items-start">
           <div className="border rounded-xl overflow-hidden h-64 bg-gray-100">
@@ -50,7 +50,7 @@ export default function BrochuresPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Product Details</h2>
           <div className="grid md:grid-cols-2 gap-8 text-sm text-gray-700">

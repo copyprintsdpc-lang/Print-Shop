@@ -8,7 +8,7 @@ import { formatINR } from '@/lib/currency'
 
 export default function DocumentPrintingPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       {/* Hero */}
       <section className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -27,7 +27,7 @@ export default function DocumentPrintingPage() {
       </section>
 
       {/* 3 easy ways */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-6">3 easy ways to print</h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -64,7 +64,7 @@ export default function DocumentPrintingPage() {
       </section>
 
       {/* Paper. Price. Perfection. */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-2xl font-semibold text-gray-900 mb-2">Paper. Price. Perfection.</h2>
           <p className="text-gray-800 mb-6">Explore top‑tier papers and pricing plans designed to make your prints—and wallet—happy.</p>
@@ -132,7 +132,7 @@ export default function DocumentPrintingPage() {
       </section>
 
       {/* Paper types */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-2xl font-semibold text-gray-900 mb-2">Paper so good, you'll feel fancy</h2>
           <p className="text-gray-800 mb-6">From everyday prints to big‑deal projects, choose from standard, premium, or specialty paper that makes your documents pop (and impress).</p>
@@ -152,7 +152,7 @@ export default function DocumentPrintingPage() {
       </section>
 
       {/* Binding */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-2xl font-semibold text-gray-900 mb-2">Bound to impress</h2>
           <p className="text-gray-800 mb-6">From cerlox to coil, wireless to saddle stitch, bind your documents with the perfect finish to match your style—and keep things together.</p>
@@ -171,7 +171,7 @@ export default function DocumentPrintingPage() {
       </section>
 
       {/* Cutting */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-2xl font-semibold text-gray-900 mb-2">Cut to perfection, your way</h2>
           <p className="text-gray-800 mb-6">From bulk cuts to intricate designs, we offer precise finishing options tailored to your project’s exact requirements.</p>
@@ -190,7 +190,7 @@ export default function DocumentPrintingPage() {
       </section>
 
       {/* Folding */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-2xl font-semibold text-gray-900 mb-2">Sharp folds, smooth finish</h2>
           <p className="text-gray-800 mb-6">Get brochures, flyers, and letters pre‑folded and ready for action—skip the hassle and let us do the folding for you.</p>
@@ -210,7 +210,7 @@ export default function DocumentPrintingPage() {
       </section>
 
       {/* More finishing */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-2xl font-semibold text-gray-900 mb-2">More finishing options to choose</h2>
           <p className="text-gray-800 mb-6">Choose from a range of high‑quality finishes for your prints—all in one go.</p>
@@ -229,7 +229,7 @@ export default function DocumentPrintingPage() {
       </section>
 
       {/* You can count on us */}
-      <section className="bg-white border-t">
+      <section className="bg-transparent border-t">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid md:grid-cols-3 gap-6 text-center">
             {[

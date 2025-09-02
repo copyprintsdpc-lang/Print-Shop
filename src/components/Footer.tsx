@@ -16,22 +16,8 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative text-white overflow-hidden">
-      {/* Dreamy Gradient Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(1200px_800px_at_50%_120%,#ff4500_0%,#ff6347_20%,#ff7f50_35%,#ff69b4_50%,rgba(255,105,180,0)_70%),linear-gradient(180deg,#1a1a2e_0%,#16213e_30%,#0f3460_60%,#533483_80%,#16213e_100%)]"></div>
-      
-      {/* Subtle Noise/Grain Overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.03] mix-blend-multiply"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-      ></div>
-      
-      {/* Subtle Vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(26,26,46,0.3)_100%)]"></div>
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-transparent text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>

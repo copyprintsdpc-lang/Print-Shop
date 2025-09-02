@@ -77,10 +77,10 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
-          <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+          <div className="w-12 h-12 bg-[#F16E02] border border-orange-300/30 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-xl">CP</span>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function LoginPage() {
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+        <div className="bg-white/10 backdrop-blur-sm border border-white/20 py-8 px-4 rounded-lg sm:px-10">
           {step === 'mobile' ? (
             <form className="space-y-6" onSubmit={handleRequestOTP}>
               <div>
@@ -124,7 +124,7 @@ export default function LoginPage() {
               </div>
 
               {error && (
-                <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md text-sm">
+                <div className="bg-red-500/20 border border-red-400/30 text-red-200 px-4 py-3 rounded-md text-sm">
                   {error}
                 </div>
               )}
@@ -210,7 +210,7 @@ export default function LoginPage() {
               </div>
 
               {error && (
-                <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md text-sm">
+                <div className="bg-red-500/20 border border-red-400/30 text-red-200 px-4 py-3 rounded-md text-sm">
                   {error}
                 </div>
               )}

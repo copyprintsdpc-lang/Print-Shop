@@ -18,9 +18,9 @@ export default function Home() {
         <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto">
             <div className="mb-8">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-orange-100 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white leading-tight">
                 Build something
-                <span className="block bg-gradient-to-r from-orange-300 via-pink-300 to-white bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-orange-300 via-pink-300 to-white bg-clip-text text-transparent font-bold">
                   Beautiful
                 </span>
               </h1>
@@ -39,7 +39,8 @@ export default function Home() {
               </Link>
               <Link 
                 href="/quote" 
-                className="bg-orange-500/80 backdrop-blur-sm border border-orange-400/30 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-orange-400/80 transition-all duration-300 shadow-lg shadow-orange-500/25"
+                className="text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg shadow-orange-500/50 border border-orange-300/30 hover:bg-[#F16518]"
+                style={{ backgroundColor: '#F16E02' }}
               >
                 Get Instant Quote
               </Link>
@@ -200,7 +201,8 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/order" 
-              className="bg-white/95 backdrop-blur-sm text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="text-white px-8 py-4 rounded-xl font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-orange-500/50 border border-orange-300/30 hover:bg-[#F16518]"
+              style={{ backgroundColor: '#F16E02' }}
             >
               Start Your Order
             </Link>

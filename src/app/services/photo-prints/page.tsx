@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function PhotoPrintsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       {/* Hero */}
       <section className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -23,7 +23,7 @@ export default function PhotoPrintsPage() {
       </section>
 
       {/* Specialty prints */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Specialty prints for extra‑special moments</h2>
           <p className="text-sm text-gray-800 mb-6">Go beyond the standard. Choose panoramic, retro, or square prints, or turn your moments into a stunning photobook—because your memories deserve more than a screen.</p>
@@ -35,11 +35,11 @@ export default function PhotoPrintsPage() {
               { name: 'Square Photo Prints', price: 'Starting at ₹0.89', cta: 'Create Square Photo Print' }
             ].map((p, i) => (
               <div key={i} className="border rounded-xl overflow-hidden">
-                <div className="h-40 bg-gray-100"><CardArt theme={i === 0 ? 'blue' : i === 1 ? 'rose' : i === 2 ? 'teal' : 'blue'} /></div>
+                <div className="h-40 bg-white/10 backdrop-blur-sm"><CardArt theme={i === 0 ? 'blue' : i === 1 ? 'rose' : i === 2 ? 'teal' : 'blue'} /></div>
                 <div className="p-5">
                   <h3 className="font-semibold text-gray-900">{p.name}</h3>
                   <p className="text-sm text-gray-800 mt-2">{p.price}</p>
-                  <Link href="/quote" className="mt-4 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                  <Link href="/quote" className="mt-4 inline-block bg-[#F16E02] border border-orange-300/30 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-[#F16518] transition-all duration-300">
                     {p.cta}
                   </Link>
                 </div>
@@ -50,7 +50,7 @@ export default function PhotoPrintsPage() {
       </section>
 
       {/* Frames/Photobooks callouts */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="border rounded-xl p-6 flex items-center gap-6">
@@ -74,7 +74,7 @@ export default function PhotoPrintsPage() {
       </section>
 
       {/* Wall decor */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Wall decor worth talking about</h2>
           <p className="text-sm text-gray-800 mb-6">Fill your space with memories. Choose from canvas prints, framed photos and more to create the perfect backdrop for your life’s moments.</p>
@@ -86,11 +86,11 @@ export default function PhotoPrintsPage() {
               { name: 'Metal Photo Panel', cta: 'Create Metal Photo Panel' }
             ].map((p, i) => (
               <div key={i} className="border rounded-xl overflow-hidden">
-                <div className="h-40 bg-gray-100"><CardArt theme={i === 0 ? 'rose' : i === 1 ? 'blue' : i === 2 ? 'teal' : 'rose'} /></div>
+                <div className="h-40 bg-white/10 backdrop-blur-sm"><CardArt theme={i === 0 ? 'rose' : i === 1 ? 'blue' : i === 2 ? 'teal' : 'rose'} /></div>
                 <div className="p-5">
                   <h3 className="font-semibold text-gray-900">{p.name}</h3>
                   <p className="text-sm text-gray-800 mt-2">Designs that make your walls deserve more—crafted to stand out.</p>
-                  <Link href="/quote" className="mt-4 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                  <Link href="/quote" className="mt-4 inline-block bg-[#F16E02] border border-orange-300/30 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-[#F16518] transition-all duration-300">
                     {p.cta}
                   </Link>
                 </div>
@@ -109,7 +109,7 @@ export default function PhotoPrintsPage() {
               { title: 'Same‑Day Printing', text: 'Order online by noon; pick up in‑store by closing—same day.' },
               { title: 'Instant Print', text: 'Print 4x6 photos instantly at any store with our self‑serve kiosks.' }
             ].map((s, i) => (
-              <div key={i} className="bg-white border rounded-xl p-5">
+              <div key={i} className="bg-transparent border rounded-xl p-5">
                 <div className="h-24 mb-3"><CardArt theme={i === 0 ? 'teal' : i === 1 ? 'rose' : 'blue'} /></div>
                 <h3 className="font-semibold text-gray-900">{s.title}</h3>
                 <p className="text-sm text-gray-800 mt-1">{s.text}</p>
@@ -120,7 +120,7 @@ export default function PhotoPrintsPage() {
       </section>
 
       {/* Product cards */}
-      <section className="bg-white">
+      <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-6">Picture‑perfect photo prints</h2>
           <div className="grid md:grid-cols-4 gap-6">
@@ -131,11 +131,11 @@ export default function PhotoPrintsPage() {
               { name: 'Value Enlargement', price: 'Starting at ₹574.9', cta: 'Shop Value Enlargements' }
             ].map((p, i) => (
               <div key={i} className="border rounded-xl overflow-hidden">
-                <div className="h-40 bg-gray-100"><CardArt theme={i % 2 === 0 ? 'teal' : 'rose'} /></div>
+                <div className="h-40 bg-white/10 backdrop-blur-sm"><CardArt theme={i % 2 === 0 ? 'teal' : 'rose'} /></div>
                 <div className="p-5">
                   <h3 className="font-semibold text-gray-900">{p.name}</h3>
                   <p className="text-sm text-gray-800 mt-2">{p.price}</p>
-                  <Link href="/quote" className="mt-4 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">
+                  <Link href="/quote" className="mt-4 inline-block bg-[#F16E02] border border-orange-300/30 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-[#F16518] transition-all duration-300">
                     {p.cta}
                   </Link>
                 </div>

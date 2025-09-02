@@ -158,8 +158,8 @@ export default function Navigation() {
                       href={item.href}
                       className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                         pathname === item.href
-                          ? 'text-blue-600 bg-blue-50'
-                          : 'text-gray-900 hover:text-blue-600 hover:bg-blue-50'
+                          ? 'text-orange-300 bg-white/20'
+                          : 'text-white hover:text-orange-300 hover:bg-white/10'
                       }`}
                     >
                       {item.name}
@@ -173,13 +173,13 @@ export default function Navigation() {
             <div className="hidden md:flex items-center space-x-4">
               <Link
                 href="/login"
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 <User className="w-5 h-5" />
               </Link>
               <Link
                 href="/cart"
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors relative"
+                className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors relative"
               >
                 <ShoppingCart className="w-5 h-5" />
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
@@ -188,7 +188,8 @@ export default function Navigation() {
               </Link>
               <Link
                 href="/quote"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+                className="border border-orange-300/30 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#F16518] transition-colors shadow-lg shadow-orange-500/25"
+                style={{ backgroundColor: '#F16E02' }}
               >
                 Get Quote
               </Link>
@@ -232,21 +233,22 @@ export default function Navigation() {
               <div className="pt-4 space-y-2">
                 <Link
                   href="/login"
-                  className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600"
+                  className="block px-3 py-2 text-base font-medium text-white hover:text-orange-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Login
                 </Link>
                 <Link
                   href="/cart"
-                  className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600"
+                  className="block px-3 py-2 text-base font-medium text-white hover:text-orange-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Cart (0)
                 </Link>
                 <Link
                   href="/quote"
-                  className="block px-3 py-2 text-base font-medium bg-blue-600 text-white rounded-lg text-center"
+                  className="block px-3 py-2 text-base font-medium text-white rounded-lg text-center hover:bg-[#F16518] transition-colors"
+                  style={{ backgroundColor: '#F16E02' }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Get Quote
