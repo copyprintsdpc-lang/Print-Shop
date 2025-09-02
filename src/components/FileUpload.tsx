@@ -155,17 +155,17 @@ export default function FileUpload({
         
         <div className="space-y-4">
           <div className="mx-auto w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-            <Upload className="w-6 h-6 text-gray-600" />
+            <Upload className="w-6 h-6 text-gray-800" />
           </div>
           
           <div>
             <p className="text-lg font-medium text-gray-900">
               Drop files here or click to upload
             </p>
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-sm text-gray-700 mt-1">
               Supports: {acceptedTypes.map(type => type.split('/')[1].toUpperCase()).join(', ')}
             </p>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-700">
               Max file size: {maxSize}MB • Max files: {maxFiles}
             </p>
           </div>
@@ -199,7 +199,7 @@ export default function FileUpload({
                     <p className="text-sm font-medium text-gray-900 truncate">
                       {file.file.name}
                     </p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-gray-700">
                       {formatFileSize(file.file.size)}
                     </p>
                     {file.error && (
@@ -218,7 +218,7 @@ export default function FileUpload({
                   
                   <button
                     onClick={() => removeFile(file.id)}
-                    className="text-gray-400 hover:text-red-500 transition-colors"
+                    className="text-gray-600 hover:text-red-500 transition-colors"
                   >
                     <X className="w-4 h-4" />
                   </button>

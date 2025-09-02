@@ -20,8 +20,8 @@ export default function BusinessCardsPage() {
                 <div className="h-40 bg-gray-100"><CardArt theme={i % 2 === 0 ? 'teal' : 'rose'} /></div>
                 <div className="p-5">
                   <h3 className="font-semibold text-gray-900">{p.name}</h3>
-                  <p className="text-sm text-gray-600 mt-2">{p.details}</p>
-                  <p className="text-sm text-gray-600 mt-2">{p.price}*</p>
+                  <p className="text-sm text-gray-800 mt-2">{p.details}</p>
+                  <p className="text-sm text-gray-800 mt-2">{p.price}*</p>
                   <Link href="/quote" className="mt-3 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">{p.cta}</Link>
                 </div>
               </div>

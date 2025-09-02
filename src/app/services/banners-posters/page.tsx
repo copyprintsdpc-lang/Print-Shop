@@ -11,14 +11,14 @@ export default function BannersPostersPage() {
       <section className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Make a BIG statement with banners</h1>
-          <p className="mt-2 text-gray-600 max-w-3xl">Get noticed near and far. Our banners stand out indoors or out, with sizes up to 48” × 144”.</p>
+          <p className="mt-2 text-gray-800 max-w-3xl">Get noticed near and far. Our banners stand out indoors or out, with sizes up to 48” × 144”.</p>
           <div className="mt-6 grid md:grid-cols-2 gap-6">
             <div className="border rounded-xl overflow-hidden">
               <div className="h-44 bg-gray-100"><CardArt theme='teal' /></div>
             </div>
             <div className="border rounded-xl p-6">
               <h3 className="text-xl font-semibold text-gray-900">Standard Banners</h3>
-              <p className="text-sm text-gray-600 mt-2">Make a lasting impact with high‑quality banners. Ideal for grand openings, trade shows, or sales events—designed to grab attention and drive real results.</p>
+              <p className="text-sm text-gray-800 mt-2">Make a lasting impact with high‑quality banners. Ideal for grand openings, trade shows, or sales events—designed to grab attention and drive real results.</p>
               <Link href="/quote" className="mt-4 inline-block text-sm text-blue-600">Create Standard Banner</Link>
             </div>
           </div>
@@ -38,8 +38,8 @@ export default function BannersPostersPage() {
               <div className="h-40 bg-gray-100"><CardArt theme={i % 2 === 0 ? 'blue' : 'rose'} /></div>
               <div className="p-5">
                 <h3 className="font-semibold text-gray-900">{p.name}</h3>
-                <p className="text-sm text-gray-600 mt-2">{p.desc}</p>
-                <p className="text-sm text-gray-600 mt-2">{p.price}*</p>
+                <p className="text-sm text-gray-800 mt-2">{p.desc}</p>
+                <p className="text-sm text-gray-800 mt-2">{p.price}*</p>
                 <Link href="/quote" className="mt-3 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">{p.cta}</Link>
               </div>
             </div>
@@ -55,7 +55,7 @@ export default function BannersPostersPage() {
           </div>
           <div className="border rounded-xl p-6">
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Posters that speak volumes</h2>
-            <p className="text-sm text-gray-600">Grab attention, spread the word, or make an announcement loud and clear. Posters up to 40” × 60” with finishes and mounts to match your message.</p>
+            <p className="text-sm text-gray-800">Grab attention, spread the word, or make an announcement loud and clear. Posters up to 40” × 60” with finishes and mounts to match your message.</p>
             <Link href="/quote" className="mt-3 inline-block text-sm text-blue-600">Create Poster</Link>
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function BannersPostersPage() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Your (signs) to stand out</h2>
-          <p className="text-sm text-gray-600 mb-6">Whether it’s for events, everyday use, or special signage like magnetic or thick plastic, we’ve got the perfect solution to make your business shine.</p>
+          <p className="text-sm text-gray-800 mb-6">Whether it’s for events, everyday use, or special signage like magnetic or thick plastic, we’ve got the perfect solution to make your business shine.</p>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { name: 'Banners with Retractable Stand', price: 'Starting at ₹119.99', cta: 'Create Retractable Stand' },
@@ -77,7 +77,7 @@ export default function BannersPostersPage() {
                 <div className="h-40 bg-gray-100"><CardArt theme={i === 1 ? 'teal' : 'blue'} /></div>
                 <div className="p-5">
                   <h3 className="font-semibold text-gray-900">{p.name}</h3>
-                  <p className="text-sm text-gray-600 mt-2">{p.price}*</p>
+                  <p className="text-sm text-gray-800 mt-2">{p.price}*</p>
                   <Link href="/quote" className="mt-3 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">{p.cta}</Link>
                 </div>
               </div>
@@ -99,7 +99,7 @@ export default function BannersPostersPage() {
               <div className="h-40 bg-gray-100"><CardArt theme={i % 2 === 0 ? 'rose' : 'teal'} /></div>
               <div className="p-5">
                 <h3 className="font-semibold text-gray-900">{p.name}</h3>
-                <p className="text-sm text-gray-600 mt-2">{p.price}*</p>
+                <p className="text-sm text-gray-800 mt-2">{p.price}*</p>
                 <Link href="/quote" className="mt-3 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">{p.cta}</Link>
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function BannersPostersPage() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Pick your perfect finish for your posters</h2>
-          <p className="text-sm text-gray-600 mb-6">Choose matte or gloss for texture, or go with poly or vinyl for extra durability. Add lamination or foamcore mounting to finish your look.</p>
+          <p className="text-sm text-gray-800 mb-6">Choose matte or gloss for texture, or go with poly or vinyl for extra durability. Add lamination or foamcore mounting to finish your look.</p>
           <div className="grid md:grid-cols-4 gap-6">
             {['Gloss Paper','Matte Paper','Poly','Vinyl'].map((name, i) => (
               <div key={name} className="border rounded-xl overflow-hidden">

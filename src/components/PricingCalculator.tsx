@@ -119,7 +119,7 @@ export default function PricingCalculator({
 
       {/* Quantity Input */}
       <div className="mb-6">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-gray-900 mb-2">
           Quantity
         </label>
         <div className="flex items-center space-x-3">
@@ -149,7 +149,7 @@ export default function PricingCalculator({
       <div className="space-y-4 mb-6">
         {product.options.map((option) => (
           <div key={option.name}>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-900 mb-2">
               {option.name.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
               {option.required && <span className="text-red-500 ml-1">*</span>}
             </label>
@@ -178,11 +178,11 @@ export default function PricingCalculator({
 
       {/* Price Breakdown */}
       <div className="border-t border-gray-200 pt-4">
-        <h4 className="text-sm font-medium text-gray-700 mb-3">Price Breakdown</h4>
+        <h4 className="text-sm font-medium text-gray-900 mb-3">Price Breakdown</h4>
         <div className="space-y-2">
           {getPriceBreakdown().map((item, index) => (
             <div key={index} className="flex justify-between text-sm">
-              <span className="text-gray-600">{item.label}</span>
+              <span className="text-gray-800">{item.label}</span>
               <span className="font-medium">{formatINR(item.amount)}</span>
             </div>
           ))}
@@ -201,7 +201,7 @@ export default function PricingCalculator({
         <div className="flex items-center space-x-3">
           <div className="flex items-center space-x-2">
             <Clock className="w-4 h-4 text-green-600" />
-            <span className="text-sm font-medium text-gray-700">Delivery Time:</span>
+            <span className="text-sm font-medium text-gray-900">Delivery Time:</span>
             <span className="text-sm text-green-600 font-medium">{deliveryTime}</span>
           </div>
         </div>
@@ -209,7 +209,7 @@ export default function PricingCalculator({
         {product.sameDayEligible && (
           <div className="mt-2 flex items-center space-x-2">
             <CheckCircle className="w-4 h-4 text-green-500" />
-            <span className="text-xs text-gray-600">
+            <span className="text-xs text-gray-700">
               Same-day delivery available if ordered before {product.sameDayCutoff}
             </span>
           </div>

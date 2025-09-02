@@ -13,7 +13,7 @@ export default function PhotoPrintsPage() {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Photo Prints</h1>
-              <p className="mt-3 text-gray-600">From wallet-sized wonders to wall‑worthy masterpieces, print your pics your way—fast, easy, and fuss‑free.</p>
+              <p className="mt-3 text-gray-800">From wallet-sized wonders to wall‑worthy masterpieces, print your pics your way—fast, easy, and fuss‑free.</p>
             </div>
             <div className="h-44 md:h-48 lg:h-56 rounded-xl overflow-hidden">
               <HeroArt />
@@ -26,7 +26,7 @@ export default function PhotoPrintsPage() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Specialty prints for extra‑special moments</h2>
-          <p className="text-sm text-gray-600 mb-6">Go beyond the standard. Choose panoramic, retro, or square prints, or turn your moments into a stunning photobook—because your memories deserve more than a screen.</p>
+          <p className="text-sm text-gray-800 mb-6">Go beyond the standard. Choose panoramic, retro, or square prints, or turn your moments into a stunning photobook—because your memories deserve more than a screen.</p>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { name: 'Enlargements and Posters', price: 'Starting at ₹13.99', cta: 'Create Poster and Enlargement' },
@@ -38,7 +38,7 @@ export default function PhotoPrintsPage() {
                 <div className="h-40 bg-gray-100"><CardArt theme={i === 0 ? 'blue' : i === 1 ? 'rose' : i === 2 ? 'teal' : 'blue'} /></div>
                 <div className="p-5">
                   <h3 className="font-semibold text-gray-900">{p.name}</h3>
-                  <p className="text-sm text-gray-600 mt-2">{p.price}</p>
+                  <p className="text-sm text-gray-800 mt-2">{p.price}</p>
                   <Link href="/quote" className="mt-4 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">
                     {p.cta}
                   </Link>
@@ -57,7 +57,7 @@ export default function PhotoPrintsPage() {
               <div className="w-32 h-24 flex-shrink-0"><CardArt theme='rose'/></div>
               <div>
                 <h3 className="text-xl font-semibold text-gray-900">Don’t just print it—frame it!</h3>
-                <p className="text-sm text-gray-600 mt-1">Elevate your prints with our frames. Find the perfect frame to showcase your best moments in style.</p>
+                <p className="text-sm text-gray-800 mt-1">Elevate your prints with our frames. Find the perfect frame to showcase your best moments in style.</p>
                 <Link href="/quote" className="text-sm text-blue-600 mt-2 inline-block">Shop Frames</Link>
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function PhotoPrintsPage() {
               <div className="w-32 h-24 flex-shrink-0"><CardArt theme='teal'/></div>
               <div>
                 <h3 className="text-xl font-semibold text-gray-900">Your story, printed.</h3>
-                <p className="text-sm text-gray-600 mt-1">Capture your favourite moments in a photobook. Choose from soft, hard, or leather covers.</p>
+                <p className="text-sm text-gray-800 mt-1">Capture your favourite moments in a photobook. Choose from soft, hard, or leather covers.</p>
                 <Link href="/quote" className="text-sm text-blue-600 mt-2 inline-block">Shop Photobooks</Link>
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function PhotoPrintsPage() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Wall decor worth talking about</h2>
-          <p className="text-sm text-gray-600 mb-6">Fill your space with memories. Choose from canvas prints, framed photos and more to create the perfect backdrop for your life’s moments.</p>
+          <p className="text-sm text-gray-800 mb-6">Fill your space with memories. Choose from canvas prints, framed photos and more to create the perfect backdrop for your life’s moments.</p>
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { name: 'Canvas Prints', cta: 'Create Canvas Print' },
@@ -89,7 +89,7 @@ export default function PhotoPrintsPage() {
                 <div className="h-40 bg-gray-100"><CardArt theme={i === 0 ? 'rose' : i === 1 ? 'blue' : i === 2 ? 'teal' : 'rose'} /></div>
                 <div className="p-5">
                   <h3 className="font-semibold text-gray-900">{p.name}</h3>
-                  <p className="text-sm text-gray-600 mt-2">Designs that make your walls deserve more—crafted to stand out.</p>
+                  <p className="text-sm text-gray-800 mt-2">Designs that make your walls deserve more—crafted to stand out.</p>
                   <Link href="/quote" className="mt-4 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">
                     {p.cta}
                   </Link>
@@ -112,7 +112,7 @@ export default function PhotoPrintsPage() {
               <div key={i} className="bg-white border rounded-xl p-5">
                 <div className="h-24 mb-3"><CardArt theme={i === 0 ? 'teal' : i === 1 ? 'rose' : 'blue'} /></div>
                 <h3 className="font-semibold text-gray-900">{s.title}</h3>
-                <p className="text-sm text-gray-600 mt-1">{s.text}</p>
+                <p className="text-sm text-gray-800 mt-1">{s.text}</p>
               </div>
             ))}
           </div>
@@ -134,7 +134,7 @@ export default function PhotoPrintsPage() {
                 <div className="h-40 bg-gray-100"><CardArt theme={i % 2 === 0 ? 'teal' : 'rose'} /></div>
                 <div className="p-5">
                   <h3 className="font-semibold text-gray-900">{p.name}</h3>
-                  <p className="text-sm text-gray-600 mt-2">{p.price}</p>
+                  <p className="text-sm text-gray-800 mt-2">{p.price}</p>
                   <Link href="/quote" className="mt-4 inline-block bg-blue-600 text-white rounded-md px-4 py-2 text-sm font-medium hover:bg-blue-700">
                     {p.cta}
                   </Link>

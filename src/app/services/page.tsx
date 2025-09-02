@@ -209,7 +209,7 @@ export default function ServicesPage() {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900">{service.name}</h3>
-                      <p className="text-gray-600">{service.description}</p>
+                      <p className="text-gray-800">{service.description}</p>
                     </div>
                   </div>
 
@@ -217,7 +217,7 @@ export default function ServicesPage() {
                     <h4 className="text-lg font-semibold text-gray-900 mb-3">Features:</h4>
                     <ul className="space-y-2">
                       {service.features.map((feature, index) => (
-                        <li key={index} className="flex items-center text-gray-600">
+                        <li key={index} className="flex items-center text-gray-800">
                           <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                           {feature}
                         </li>
@@ -227,7 +227,7 @@ export default function ServicesPage() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-500">Starting from</p>
+                      <p className="text-sm text-gray-700">Starting from</p>
                       <p className="text-2xl font-bold text-blue-600">{service.startingPrice}</p>
                     </div>
                     <div className="text-right">
@@ -260,7 +260,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Why Choose CopyPrint Shop?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-800 max-w-2xl mx-auto">
               We combine cutting-edge technology with traditional craftsmanship
             </p>
           </div>
@@ -271,7 +271,7 @@ export default function ServicesPage() {
                 <Printer className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Premium Quality</h3>
-              <p className="text-gray-600">State-of-the-art printing technology for crisp, vibrant results</p>
+              <p className="text-gray-800">State-of-the-art printing technology for crisp, vibrant results</p>
             </div>
             
             <div className="text-center">
@@ -279,7 +279,7 @@ export default function ServicesPage() {
                 <Clock className="w-8 h-8 text-green-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Fast Turnaround</h3>
-              <p className="text-gray-600">Same-day service available for most products</p>
+              <p className="text-gray-800">Same-day service available for most products</p>
             </div>
             
             <div className="text-center">
@@ -287,7 +287,7 @@ export default function ServicesPage() {
                 <Shield className="w-8 h-8 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">GST Compliant</h3>
-              <p className="text-gray-600">Professional invoicing with proper tax documentation</p>
+              <p className="text-gray-800">Professional invoicing with proper tax documentation</p>
             </div>
             
             <div className="text-center">
@@ -295,7 +295,7 @@ export default function ServicesPage() {
                 <Truck className="w-8 h-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Reliable Delivery</h3>
-              <p className="text-gray-600">Fast and secure delivery or convenient pickup options</p>
+              <p className="text-gray-800">Fast and secure delivery or convenient pickup options</p>
             </div>
           </div>
         </div>

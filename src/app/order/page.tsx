@@ -205,7 +205,7 @@ export default function OrderPage() {
                       <div className="text-center">
                         <MapPin className="w-8 h-8 mx-auto mb-2 text-blue-600" />
                         <p className="font-medium">Store Pickup</p>
-                        <p className="text-sm text-gray-600">Free</p>
+                        <p className="text-sm text-gray-800">Free</p>
                       </div>
                     </label>
                     <label className={`p-4 border rounded-lg cursor-pointer ${
@@ -224,7 +224,7 @@ export default function OrderPage() {
                       <div className="text-center">
                         <Truck className="w-8 h-8 mx-auto mb-2 text-blue-600" />
                         <p className="font-medium">Courier Delivery</p>
-                        <p className="text-sm text-gray-600">₹50 - ₹100</p>
+                        <p className="text-sm text-gray-800">₹50 - ₹100</p>
                       </div>
                     </label>
                   </div>
@@ -354,7 +354,7 @@ export default function OrderPage() {
                     <CreditCard className="w-6 h-6 text-blue-600" />
                     <div>
                       <p className="font-medium">Online Payment</p>
-                      <p className="text-sm text-gray-600">Credit/Debit Card, UPI, Net Banking</p>
+                      <p className="text-sm text-gray-800">Credit/Debit Card, UPI, Net Banking</p>
                     </div>
                   </div>
                 </label>
@@ -375,7 +375,7 @@ export default function OrderPage() {
                     <Truck className="w-6 h-6 text-blue-600" />
                     <div>
                       <p className="font-medium">Cash on Delivery</p>
-                      <p className="text-sm text-gray-600">Pay when you receive your order</p>
+                      <p className="text-sm text-gray-800">Pay when you receive your order</p>
                     </div>
                   </div>
                 </label>
@@ -387,15 +387,15 @@ export default function OrderPage() {
               <h4 className="font-semibold text-gray-900 mb-4">Order Summary</h4>
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Subtotal</span>
+                  <span className="text-gray-800">Subtotal</span>
                   <span className="font-medium">₹500.00</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Delivery</span>
+                  <span className="text-gray-800">Delivery</span>
                   <span className="font-medium">₹50.00</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">GST (18%)</span>
+                  <span className="text-gray-800">GST (18%)</span>
                   <span className="font-medium">₹99.00</span>
                 </div>
                 <div className="border-t border-gray-200 pt-2">
@@ -456,7 +456,7 @@ export default function OrderPage() {
                   </div>
                   <div className="ml-3 hidden sm:block">
                     <p className={`text-sm font-medium ${
-                      isActive ? 'text-blue-600' : isCompleted ? 'text-green-600' : 'text-gray-500'
+                      isActive ? 'text-blue-600' : isCompleted ? 'text-green-600' : 'text-gray-700'
                     }`}>
                       {step.name}
                     </p>

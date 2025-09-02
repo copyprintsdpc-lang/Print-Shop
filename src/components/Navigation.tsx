@@ -47,7 +47,7 @@ export default function Navigation() {
   return (
     <>
       {/* Top bar with contact info */}
-      <div className="bg-gray-900 text-white">
+      <div className="bg-transparent text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-2 text-sm">
             <div className="flex items-center space-x-6">
@@ -69,16 +69,16 @@ export default function Navigation() {
       </div>
 
       {/* Main navigation */}
-      <nav className="bg-white shadow-lg sticky top-0 z-50">
+      <nav className="bg-white/10 backdrop-blur-sm border-b border-white/20 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-xl">CP</span>
                 </div>
-                <span className="text-xl font-bold text-gray-900">CopyPrint Shop</span>
+                <span className="text-xl font-bold bg-gradient-to-r from-orange-300 to-pink-300 bg-clip-text text-transparent">CopyPrint Shop</span>
               </Link>
             </div>
 
@@ -97,15 +97,15 @@ export default function Navigation() {
                         href={item.href}
                         className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                           pathname === item.href
-                            ? 'text-blue-600 bg-blue-50'
-                            : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                            ? 'text-orange-300 bg-white/20'
+                            : 'text-white hover:text-orange-300 hover:bg-white/10'
                         }`}
                       >
                         {item.name}
                       </Link>
 
                       {openMenu === 'services' && (
-                        <div className="absolute left-0 mt-2 w-[920px] bg-white border shadow-xl rounded-xl p-6 z-50">
+                        <div className="absolute left-0 mt-2 w-[920px] bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl rounded-xl p-6 z-50">
                           <div className="grid grid-cols-12 gap-6">
                             {/* Left column: list */}
                             <div className="col-span-6">
@@ -114,37 +114,37 @@ export default function Navigation() {
                                   <li key={q.name}>
                                     <Link
                                       href={q.href}
-                                      className="block text-gray-700 hover:text-blue-600"
+                                      className="block text-white hover:text-orange-300"
                                     >
                                       {q.name}
                                     </Link>
                                   </li>
                                 ))}
                                 <li>
-                                  <Link href="/services" className="block text-blue-600 font-medium">View All</Link>
+                                  <Link href="/services" className="block text-orange-300 font-medium">View All</Link>
                                 </li>
                               </ul>
                             </div>
                             {/* Right column: feature cards */}
                             <div className="col-span-6 grid grid-cols-2 gap-4">
-                              <Link href="/quote" className="group border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-                                <div className="h-32 bg-gray-100 flex items-center justify-center">
-                                  <img src="/images/quick-print.svg" alt="Quick and easy printing" className="h-24" />
+                              <Link href="/quote" className="group border border-white/30 rounded-lg overflow-hidden hover:bg-white/5 transition-all bg-white/5">
+                                <div className="h-32 bg-white/10 flex items-center justify-center">
+                                  <span className="text-white/70 text-sm">Quick Print</span>
                                 </div>
                                 <div className="p-4">
-                                  <p className="font-semibold text-gray-900 group-hover:text-blue-600">Quick and easy printing</p>
-                                  <p className="text-sm text-gray-600 mt-1">Order by noon for same-day pickup by store closing.</p>
-                                  <span className="text-sm text-blue-600 font-medium">Print a document</span>
+                                  <p className="font-semibold text-white group-hover:text-orange-300">Quick and easy printing</p>
+                                  <p className="text-sm text-white/70 mt-1">Order by noon for same-day pickup by store closing.</p>
+                                  <span className="text-sm text-orange-300 font-medium">Print a document</span>
                                 </div>
                               </Link>
-                              <Link href="/quote" className="group border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-                                <div className="h-32 bg-gray-100 flex items-center justify-center">
-                                  <img src="/images/printme.svg" alt="PrintMe" className="h-24" />
+                              <Link href="/quote" className="group border border-white/30 rounded-lg overflow-hidden hover:bg-white/5 transition-all bg-white/5">
+                                <div className="h-32 bg-white/10 flex items-center justify-center">
+                                  <span className="text-white/70 text-sm">PrintMe</span>
                                 </div>
                                 <div className="p-4">
-                                  <p className="font-semibold text-gray-900 group-hover:text-blue-600">PrintMe</p>
-                                  <p className="text-sm text-gray-600 mt-1">Simplified print options to print what you need when you need it.</p>
-                                  <span className="text-sm text-blue-600 font-medium">Learn More</span>
+                                  <p className="font-semibold text-white group-hover:text-orange-300">PrintMe</p>
+                                  <p className="text-sm text-white/70 mt-1">Simplified print options to print what you need when you need it.</p>
+                                  <span className="text-sm text-orange-300 font-medium">Learn More</span>
                                 </div>
                               </Link>
                             </div>
@@ -159,7 +159,7 @@ export default function Navigation() {
                       className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                         pathname === item.href
                           ? 'text-blue-600 bg-blue-50'
-                          : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                          : 'text-gray-900 hover:text-blue-600 hover:bg-blue-50'
                       }`}
                     >
                       {item.name}
@@ -173,13 +173,13 @@ export default function Navigation() {
             <div className="hidden md:flex items-center space-x-4">
               <Link
                 href="/login"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 <User className="w-5 h-5" />
               </Link>
               <Link
                 href="/cart"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors relative"
+                className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors relative"
               >
                 <ShoppingCart className="w-5 h-5" />
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
@@ -198,7 +198,7 @@ export default function Navigation() {
             <div className="md:hidden">
               <button
                 type="button"
-                className="text-gray-700 hover:text-blue-600 p-2 rounded-md"
+                className="text-white hover:text-orange-300 p-2 rounded-md"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 {mobileMenuOpen ? (
@@ -214,15 +214,15 @@ export default function Navigation() {
         {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/10 backdrop-blur-sm border-t border-white/20">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                     pathname === item.href
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                      ? 'text-orange-300 bg-white/20'
+                      : 'text-white hover:text-orange-300 hover:bg-white/10'
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -232,14 +232,14 @@ export default function Navigation() {
               <div className="pt-4 space-y-2">
                 <Link
                   href="/login"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600"
+                  className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Login
                 </Link>
                 <Link
                   href="/cart"
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600"
+                  className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Cart (0)

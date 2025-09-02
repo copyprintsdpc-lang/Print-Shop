@@ -10,7 +10,7 @@ export default function LabelsPage() {
       <section className="border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Mailing and Organization Labels</h1>
-          <p className="text-gray-600">From return address labels to extra‑large labels, find a size that works for you.</p>
+          <p className="text-gray-800">From return address labels to extra‑large labels, find a size that works for you.</p>
         </div>
       </section>
 
@@ -24,7 +24,7 @@ export default function LabelsPage() {
               <div className="p-5">
                 <p className="text-xs text-green-700 font-semibold mb-2">Same‑day available</p>
                 <h3 className="text-lg font-semibold text-gray-900">Mailing Labels</h3>
-                <p className="text-sm text-gray-600 mt-2">Whether you’re shipping, sorting, or just trying to look tidy, these durable, easy‑to‑apply mailing labels get it done.</p>
+                <p className="text-sm text-gray-800 mt-2">Whether you’re shipping, sorting, or just trying to look tidy, these durable, easy‑to‑apply mailing labels get it done.</p>
                 <ul className="mt-3 text-sm text-gray-700 space-y-1 list-disc list-inside">
                   <li>Available in 3 sizes: Small (1" × 2‑5/8"), Medium (2" × 4"), Large (3‑1/3" × 4")</li>
                   <li>Matte or Gloss finish</li>
@@ -41,7 +41,7 @@ export default function LabelsPage() {
               <div className="p-5">
                 <p className="text-xs text-green-700 font-semibold mb-2">Same‑day available</p>
                 <h3 className="text-lg font-semibold text-gray-900">Index Labels</h3>
-                <p className="text-sm text-gray-600 mt-2">Tidy binders, big organization energy. Durable, easy‑write labels for tabs, files, and more.</p>
+                <p className="text-sm text-gray-800 mt-2">Tidy binders, big organization energy. Durable, easy‑write labels for tabs, files, and more.</p>
                 <ul className="mt-3 text-sm text-gray-700 space-y-1 list-disc list-inside">
                   <li>Multiple sizes to fit most office systems</li>
                   <li>Matte finish for easy writing</li>
@@ -58,7 +58,7 @@ export default function LabelsPage() {
               <div className="p-5">
                 <p className="text-xs text-green-700 font-semibold mb-2">Same‑day available</p>
                 <h3 className="text-lg font-semibold text-gray-900">Return Address Labels</h3>
-                <p className="text-sm text-gray-600 mt-2">Small but mighty. These labels save you from hand‑writing addresses and tough return mail days. Professional and smudge‑resistant.</p>
+                <p className="text-sm text-gray-800 mt-2">Small but mighty. These labels save you from hand‑writing addresses and tough return mail days. Professional and smudge‑resistant.</p>
                 <ul className="mt-3 text-sm text-gray-700 space-y-1 list-disc list-inside">
                   <li>Popular size: 1" × 2‑5/8"</li>
                   <li>Permanent adhesive, inkjet/laser compatible</li>

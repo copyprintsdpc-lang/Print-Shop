@@ -87,7 +87,7 @@ export default function LoginPage() {
         <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
           {step === 'mobile' ? 'Sign in to your account' : 'Verify OTP'}
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">
+        <p className="mt-2 text-center text-sm text-gray-800">
           {step === 'mobile' 
             ? 'Enter your mobile number to receive OTP' 
             : `OTP sent to ${mobile}`

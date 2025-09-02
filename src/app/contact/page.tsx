@@ -35,7 +35,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+91 98765 43210</p>
+                    <p className="text-gray-800">+91 98765 43210</p>
                     <p className="text-sm text-gray-500">Available Mon-Sat, 9AM-7PM</p>
                   </div>
                 </div>
@@ -46,7 +46,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">info@copyprintshop.com</p>
+                    <p className="text-gray-800">info@copyprintshop.com</p>
                     <p className="text-sm text-gray-500">We'll respond within 2 hours</p>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Address</h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-800">
                       123 Printing Street<br />
                       Bangalore, Karnataka 560001<br />
                       India
@@ -71,7 +71,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Business Hours</h3>
-                    <div className="text-gray-600">
+                    <div className="text-gray-800">
                       <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
                       <p>Saturday: 9:00 AM - 5:00 PM</p>
                       <p>Sunday: Closed</p>
@@ -114,14 +114,14 @@ export default function ContactPage() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
                     Contact Form Coming Soon
                   </h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-800 mb-6">
                     We're building a contact form that will allow you to send us messages directly. 
                     For now, please use the phone or email above.
                   </p>
                   
                   <div className="bg-gray-50 rounded-lg p-4 text-left">
                     <h4 className="font-semibold text-gray-900 mb-2">What you'll be able to do:</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
+                    <ul className="text-sm text-gray-800 space-y-1">
                       <li>• Send messages directly from the website</li>
                       <li>• Upload files for quote requests</li>
                       <li>• Select inquiry type (quote, support, etc.)</li>
@@ -143,7 +143,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Find Us
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-800">
               Visit our store for in-person assistance
             </p>
           </div>
@@ -151,7 +151,7 @@ export default function ContactPage() {
           <div className="bg-gray-200 rounded-xl h-96 flex items-center justify-center">
             <div className="text-center">
               <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-600 mb-2">
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 Interactive Map Coming Soon
               </h3>
               <p className="text-gray-500">
@@ -169,7 +169,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-800">
               Quick answers to common questions
             </p>
           </div>
@@ -179,7 +179,7 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 What file formats do you accept?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-800">
                 We accept PDF, JPG, PNG, and other common print formats. For best results, 
                 we recommend PDF files with high resolution (300 DPI or higher).
               </p>
@@ -189,7 +189,7 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 Do you offer same-day printing?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-800">
                 Yes! We offer same-day printing for most services if you place your order 
                 before 12:00 PM. Contact us to confirm availability for your specific project.
               </p>
@@ -199,7 +199,7 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 What are your payment options?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-800">
                 We accept all major credit/debit cards, UPI, net banking, and cash on delivery. 
                 We also provide GST-compliant invoices for business customers.
               </p>
@@ -209,7 +209,7 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 Do you deliver outside Bangalore?
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-800">
                 Yes, we provide courier delivery across India. Delivery charges and timeframes 
                 vary by location. Contact us for specific delivery quotes.
               </p>

@@ -51,7 +51,7 @@ export default function PostcardsPage() {
 
             <Link href="/quote" className="mt-5 inline-block bg-red-600 text-white rounded-md px-6 py-2 font-semibold hover:bg-red-700">Create Now</Link>
 
-            <div className="mt-6 text-sm text-gray-600">
+            <div className="mt-6 text-sm text-gray-800">
               <div className="font-semibold">How to get your order</div>
               <ul className="mt-2 space-y-1 list-disc list-inside">
                 <li>Delivery in 5–7 business days</li>

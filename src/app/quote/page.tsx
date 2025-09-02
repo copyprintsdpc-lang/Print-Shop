@@ -66,7 +66,7 @@ export default function QuotePage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Choose Your Service
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-800 max-w-2xl mx-auto">
               Select the type of printing service you need
             </p>
           </div>
@@ -92,11 +92,11 @@ export default function QuotePage() {
                       <IconComponent className="w-8 h-8 text-blue-600" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{category.name}</h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-gray-800 mb-4">
                       {categoryProducts.length} product{categoryProducts.length !== 1 ? 's' : ''} available
                     </p>
                     <div className="text-center">
-                      <p className="text-sm text-gray-500">Starting from</p>
+                      <p className="text-sm text-gray-700">Starting from</p>
                       <p className="text-2xl font-bold text-blue-600">{formatINR(minPrice)}</p>
                     </div>
                   </div>
@@ -118,7 +118,7 @@ export default function QuotePage() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">
                     {selectedProduct.name}
                   </h2>
-                  <p className="text-gray-600 mb-4">{selectedProduct.description}</p>
+                  <p className="text-gray-800 mb-4">{selectedProduct.description}</p>
                   
                   {/* Product Options */}
                   <div className="space-y-4">
@@ -137,7 +137,7 @@ export default function QuotePage() {
                           <div className="flex justify-between items-center">
                             <div>
                               <h4 className="font-medium text-gray-900">{product.name}</h4>
-                              <p className="text-sm text-gray-600">Starting from {formatINR(product.basePrice)}</p>
+                              <p className="text-sm text-gray-800">Starting from {formatINR(product.basePrice)}</p>
                             </div>
                             <div className="text-right">
                               <p className="font-semibold text-blue-600">{formatINR(product.basePrice)}</p>
@@ -187,7 +187,7 @@ export default function QuotePage() {
                 <div className="flex justify-between items-center py-3 border-b border-gray-200">
                   <div>
                     <h3 className="font-medium text-gray-900">{selectedProduct.name}</h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-800">
                       {Object.entries(selectedOptions).map(([key, value]) => (
                         <span key={key} className="mr-2">
                           {key.replace('_', ' ')}: {value}
@@ -203,7 +203,7 @@ export default function QuotePage() {
                     <h4 className="font-medium text-gray-900 mb-2">Uploaded Files ({uploadedFiles.length})</h4>
                     <div className="space-y-1">
                       {uploadedFiles.map((file, index) => (
-                        <p key={index} className="text-sm text-gray-600">
+                        <p key={index} className="text-sm text-gray-800">
                           • {file.file.name}
                         </p>
                       ))}
@@ -244,7 +244,7 @@ export default function QuotePage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Professional Printing Made Simple
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-gray-800 mb-8">
                 Get instant quotes, upload files, and place orders in minutes
               </p>
               <div className="grid md:grid-cols-3 gap-6">
@@ -253,21 +253,21 @@ export default function QuotePage() {
                     <Calculator className="w-8 h-8 text-blue-600" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Instant Pricing</h3>
-                  <p className="text-gray-600">Real-time quotes based on your specifications</p>
+                  <p className="text-gray-800">Real-time quotes based on your specifications</p>
                 </div>
                 <div className="text-center">
                   <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Upload className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Easy Upload</h3>
-                  <p className="text-gray-600">Drag & drop files with instant preview</p>
+                  <p className="text-gray-800">Drag & drop files with instant preview</p>
                 </div>
                 <div className="text-center">
                   <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                     <ArrowRight className="w-8 h-8 text-purple-600" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Quick Order</h3>
-                  <p className="text-gray-600">Seamless checkout and order tracking</p>
+                  <p className="text-gray-800">Seamless checkout and order tracking</p>
                 </div>
               </div>
             </div>
@@ -281,7 +281,7 @@ export default function QuotePage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Need a Custom Quote?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-gray-800 mb-8">
             Contact us directly for complex projects or bulk orders
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
