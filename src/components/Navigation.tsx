@@ -69,16 +69,19 @@ export default function Navigation() {
       </div>
 
       {/* Main navigation */}
-      <nav className="bg-white/10 backdrop-blur-sm border-b border-white/20 sticky top-0 z-50">
+      <nav className="sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-xl">CP</span>
-                </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-orange-300 to-pink-300 bg-clip-text text-transparent">CopyPrint Shop</span>
+              <Link href="/" className="flex items-center">
+                <img 
+                  src="/logo-dark.svg?v=2" 
+                  alt="Sri Datta Print Centre" 
+                  className="header-logo"
+                  width="240" 
+                  height="36"
+                />
               </Link>
             </div>
 
@@ -104,7 +107,7 @@ export default function Navigation() {
                         {item.name}
                       </Link>
 
-                      {openMenu === 'services' && (
+                      {false && openMenu === 'services' && (
                         <div className="absolute left-0 mt-2 w-[920px] bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl rounded-xl p-6 z-50">
                           <div className="grid grid-cols-12 gap-6">
                             {/* Left column: list */}

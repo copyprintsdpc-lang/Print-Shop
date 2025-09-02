@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
     await otpChallenge.save()
 
     // Send OTP via SMS or WhatsApp
-    const message = `Your CopyPrint Shop OTP is ${otp}. Valid for 10 minutes. Do not share with anyone.`
+    const message = `Your Sri Datta Print Center OTP is ${otp}. Valid for 10 minutes. Do not share with anyone.`
     
     let sent = false
     if (channel === 'sms') {

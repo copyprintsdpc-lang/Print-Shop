@@ -111,21 +111,21 @@ export default function PricingCalculator({
   }
 
   return (
-    <div className={`bg-white rounded-lg border border-gray-200 p-6 ${className}`}>
+    <div className={`bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 ${className}`}>
       <div className="flex items-center space-x-2 mb-6">
-        <Calculator className="w-5 h-5 text-blue-600" />
-        <h3 className="text-lg font-semibold text-gray-900">Pricing Calculator</h3>
+        <Calculator className="w-5 h-5 text-blue-400" />
+        <h3 className="text-lg font-semibold text-white">Pricing Calculator</h3>
       </div>
 
       {/* Quantity Input */}
       <div className="mb-6">
-        <label className="block text-sm font-medium text-gray-900 mb-2">
+        <label className="block text-sm font-medium text-white mb-2">
           Quantity
         </label>
         <div className="flex items-center space-x-3">
           <button
             onClick={() => setQuantity(Math.max(1, quantity - 1))}
-            className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
+            className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/20 text-white"
           >
             -
           </button>
@@ -133,12 +133,12 @@ export default function PricingCalculator({
             type="number"
             value={quantity}
             onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-            className="w-20 text-center border border-gray-300 rounded-md px-3 py-2"
+            className="w-20 text-center border border-white/30 rounded-md px-3 py-2 bg-white/10 text-white placeholder-gray-300"
             min="1"
           />
           <button
             onClick={() => setQuantity(quantity + 1)}
-            className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50"
+            className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/20 text-white"
           >
             +
           </button>
@@ -149,21 +149,21 @@ export default function PricingCalculator({
       <div className="space-y-4 mb-6">
         {product.options.map((option) => (
           <div key={option.name}>
-            <label className="block text-sm font-medium text-gray-900 mb-2">
+            <label className="block text-sm font-medium text-white mb-2">
               {option.name.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase())}
-              {option.required && <span className="text-red-500 ml-1">*</span>}
+              {option.required && <span className="text-red-400 ml-1">*</span>}
             </label>
             
             {option.type === 'select' && (
               <select
                 value={options[option.name] || ''}
                 onChange={(e) => handleOptionChange(option.name, e.target.value)}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-white/30 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/10 text-white"
                 required={option.required}
               >
-                <option value="">Select an option</option>
+                <option value="" className="bg-gray-800 text-white">Select an option</option>
                                  {option.values.map((value) => (
-                   <option key={value.value} value={value.value}>
+                   <option key={value.value} value={value.value} className="bg-gray-800 text-white">
                      {value.label}
                      {value.priceDelta !== 0 && (
                        value.priceDelta > 0 ? ` (+₹${Math.abs(value.priceDelta)})` : ` (-₹${Math.abs(value.priceDelta)})`
@@ -177,39 +177,39 @@ export default function PricingCalculator({
       </div>
 
       {/* Price Breakdown */}
-      <div className="border-t border-gray-200 pt-4">
-        <h4 className="text-sm font-medium text-gray-900 mb-3">Price Breakdown</h4>
+      <div className="border-t border-white/20 pt-4">
+        <h4 className="text-sm font-medium text-white mb-3">Price Breakdown</h4>
         <div className="space-y-2">
           {getPriceBreakdown().map((item, index) => (
             <div key={index} className="flex justify-between text-sm">
-              <span className="text-gray-800">{item.label}</span>
-              <span className="font-medium">{formatINR(item.amount)}</span>
+              <span className="text-gray-200">{item.label}</span>
+              <span className="font-medium text-white">{formatINR(item.amount)}</span>
             </div>
           ))}
         </div>
         
-        <div className="border-t border-gray-200 mt-3 pt-3">
+        <div className="border-t border-white/20 mt-3 pt-3">
           <div className="flex justify-between items-center">
-            <span className="text-lg font-semibold text-gray-900">Total</span>
-            <span className="text-2xl font-bold text-blue-600">{formatINR(calculatedPrice)}</span>
+            <span className="text-lg font-semibold text-white">Total</span>
+            <span className="text-2xl font-bold text-blue-400">{formatINR(calculatedPrice)}</span>
           </div>
         </div>
       </div>
 
       {/* Delivery Information */}
-      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+      <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
         <div className="flex items-center space-x-3">
           <div className="flex items-center space-x-2">
-            <Clock className="w-4 h-4 text-green-600" />
-            <span className="text-sm font-medium text-gray-900">Delivery Time:</span>
-            <span className="text-sm text-green-600 font-medium">{deliveryTime}</span>
+            <Clock className="w-4 h-4 text-green-400" />
+            <span className="text-sm font-medium text-white">Delivery Time:</span>
+            <span className="text-sm text-green-400 font-medium">{deliveryTime}</span>
           </div>
         </div>
         
         {product.sameDayEligible && (
           <div className="mt-2 flex items-center space-x-2">
-            <CheckCircle className="w-4 h-4 text-green-500" />
-            <span className="text-xs text-gray-700">
+            <CheckCircle className="w-4 h-4 text-green-400" />
+            <span className="text-xs text-gray-300">
               Same-day delivery available if ordered before {product.sameDayCutoff}
             </span>
           </div>

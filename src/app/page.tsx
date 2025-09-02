@@ -20,7 +20,7 @@ export default function Home() {
             <div className="mb-8">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-white leading-tight">
                 Build something
-                <span className="block bg-gradient-to-r from-orange-300 via-pink-300 to-white bg-clip-text text-transparent font-bold">
+                <span className="block text-white font-bold">
                   Beautiful
                 </span>
               </h1>
@@ -54,7 +54,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Choose CopyPrint Shop?
+              Why Choose Sri Datta Print Center?
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
               We combine cutting-edge technology with traditional craftsmanship to deliver exceptional results

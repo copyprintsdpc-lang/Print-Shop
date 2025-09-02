@@ -21,11 +21,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-sm">CP</span>
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-orange-300 to-pink-300 bg-clip-text text-transparent">CopyPrint Shop</span>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/logo-dark.svg?v=2" 
+                alt="Sri Datta Print Centre" 
+                className="header-logo"
+                width="200" 
+                height="30"
+              />
             </div>
             <p className="text-gray-300 mb-4">
               Professional digital printing services with same-day delivery options. 
@@ -133,7 +136,7 @@ export default function Footer() {
         <div className="border-t border-gradient-to-r from-orange-500/20 via-pink-500/20 to-transparent mt-8 pt-8" style={{borderImageSource: 'linear-gradient(to right, rgba(255, 69, 0, 0.2), rgba(255, 105, 180, 0.2), transparent)', borderImageSlice: 1}}>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-600 text-sm">
-              © 2024 CopyPrint Shop. All rights reserved.
+              © 2024 Sri Datta Print Center. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/privacy" className="text-gray-600 hover:text-white text-sm transition-colors">

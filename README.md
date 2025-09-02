@@ -1,4 +1,4 @@
-# CopyPrint Shop
+# Sri Datta Print Center
 
 High‑value B2B/B2C digital printing web app built with Next.js 15, TypeScript, Tailwind, and MongoDB.
 
