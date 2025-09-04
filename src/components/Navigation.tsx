@@ -69,19 +69,19 @@ export default function Navigation() {
       </div>
 
       {/* Main navigation */}
-      <nav className="sticky top-0 z-50">
+      <nav className="relative z-10 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                <img 
-                  src="/logo-dark.svg?v=2" 
-                  alt="Sri Datta Print Centre" 
-                  className="header-logo"
-                  width="240" 
-                  height="36"
-                />
+                                 <img 
+                   src="/logo-dark.svg?v=5" 
+                   alt="Sri Datta Print Centre" 
+                   className="header-logo"
+                   width="350" 
+                   height="52"
+                 />
               </Link>
             </div>
 

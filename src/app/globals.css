@@ -68,7 +68,7 @@ footer::before, footer::after {
 
 /* Header logo sits cleanly on the dark gradient */
 .header-logo {
-  height: 32px;                /* adjust to taste */
+  height: 52px;                /* increased for larger logo */
   display: inline-block;
   background: transparent;
 }
@@ -76,4 +76,32 @@ footer::before, footer::after {
 /* Optional: if your header has varying shades, this helps it "melt" in */
 .header-logo.blend { 
   mix-blend-mode: screen; 
+}
+
+/* header should scroll away like normal content */
+header, .site-header, .navbar {
+  position: relative !important;  /* not sticky/fixed */
+  top: auto !important;
+  inset: auto !important;
+  z-index: 10;                    /* enough for menus, not pinned */
+  background: transparent;        /* keep the blend */
+  box-shadow: none;
+}
+
+/* if a fixed offset was added earlier, reset it */
+body { padding-top: 0 !important; }
+
+/* kill any helper classes that force stickiness */
+.sticky, .is-sticky, .fixed, .sticky-header { position: relative !important; }
+
+/* Force light gray text in service cards */
+.services-page .text-black,
+.services-page .text-gray-900,
+.services-page .text-blue-600,
+.services-page h3,
+.services-page h4,
+.services-page p,
+.services-page li {
+  color: #e5e7eb !important;
+  font-weight: 600 !important;
 }

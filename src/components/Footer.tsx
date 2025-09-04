@@ -23,11 +23,11 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-4">
               <img 
-                src="/logo-dark.svg?v=2" 
+                src="/logo-dark.svg?v=5" 
                 alt="Sri Datta Print Centre" 
                 className="header-logo"
-                width="200" 
-                height="30"
+                width="300" 
+                height="45"
               />
             </div>
             <p className="text-gray-300 mb-4">

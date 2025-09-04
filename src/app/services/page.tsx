@@ -179,7 +179,7 @@ export default function ServicesPage() {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen services-page">
       {/* Hero Section */}
       <section className="text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -205,19 +205,19 @@ export default function ServicesPage() {
                 <div key={service.id} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all duration-300">
                   <div className="flex items-center mb-6">
                     <div className="bg-white/20 backdrop-blur-sm w-16 h-16 rounded-lg flex items-center justify-center mr-4">
-                      <IconComponent className="w-8 h-8 text-blue-600" />
+                      <IconComponent className="w-8 h-8" style={{ color: '#e5e7eb' }} />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">{service.name}</h3>
-                      <p className="text-gray-800">{service.description}</p>
+                      <h3 className="text-2xl font-bold" style={{ color: '#e5e7eb' }}>{service.name}</h3>
+                      <p style={{ color: '#e5e7eb' }}>{service.description}</p>
                     </div>
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Features:</h4>
+                    <h4 className="text-lg font-semibold mb-3" style={{ color: '#e5e7eb' }}>Features:</h4>
                     <ul className="space-y-2">
                       {service.features.map((feature, index) => (
-                        <li key={index} className="flex items-center text-gray-800">
+                        <li key={index} className="flex items-center" style={{ color: '#e5e7eb' }}>
                           <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                           {feature}
                         </li>
@@ -227,8 +227,8 @@ export default function ServicesPage() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-700">Starting from</p>
-                      <p className="text-2xl font-bold text-blue-600">{service.startingPrice}</p>
+                      <p className="text-sm" style={{ color: '#e5e7eb' }}>Starting from</p>
+                      <p className="text-2xl font-bold" style={{ color: '#e5e7eb' }}>{service.startingPrice}</p>
                     </div>
                     <div className="text-right">
                       {service.sameDay && (
@@ -257,10 +257,10 @@ export default function ServicesPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Why Choose Sri Datta Print Center?
             </h2>
-            <p className="text-xl text-gray-800 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
               We combine cutting-edge technology with traditional craftsmanship
             </p>
           </div>
@@ -268,34 +268,34 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="bg-white/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Printer className="w-8 h-8 text-blue-600" />
+                <Printer className="w-8 h-8" style={{ color: '#e5e7eb' }} />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Premium Quality</h3>
-              <p className="text-gray-800">State-of-the-art printing technology for crisp, vibrant results</p>
+              <h3 className="text-xl font-semibold text-white mb-2">Premium Quality</h3>
+              <p className="text-white/90">State-of-the-art printing technology for crisp, vibrant results</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-green-600" />
+              <div className="bg-white/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-green-400" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Fast Turnaround</h3>
-              <p className="text-gray-800">Same-day service available for most products</p>
+              <h3 className="text-xl font-semibold text-white mb-2">Fast Turnaround</h3>
+              <p className="text-white/90">Same-day service available for most products</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-purple-600" />
+              <div className="bg-white/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-purple-400" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">GST Compliant</h3>
-              <p className="text-gray-800">Professional invoicing with proper tax documentation</p>
+              <h3 className="text-xl font-semibold text-white mb-2">GST Compliant</h3>
+              <p className="text-white/90">Professional invoicing with proper tax documentation</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Truck className="w-8 h-8 text-orange-600" />
+              <div className="bg-white/20 backdrop-blur-sm w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Truck className="w-8 h-8 text-orange-400" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Reliable Delivery</h3>
-              <p className="text-gray-800">Fast and secure delivery or convenient pickup options</p>
+              <h3 className="text-xl font-semibold text-white mb-2">Reliable Delivery</h3>
+              <p className="text-white/90">Fast and secure delivery or convenient pickup options</p>
             </div>
           </div>
         </div>
