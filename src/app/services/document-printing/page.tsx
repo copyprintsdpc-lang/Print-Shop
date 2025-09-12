@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import PlaceholderImage from '@/components/PlaceholderImage'
 import HeroArt from '@/components/illustrations/HeroArt'
 import CardArt from '@/components/illustrations/CardArt'
@@ -10,17 +11,17 @@ export default function DocumentPrintingPage() {
   return (
     <div className="min-h-screen bg-transparent">
       {/* Hero */}
-      <section className="border-b">
+      <section className="border-b bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Document Printing</h1>
-              <p className="mt-3 text-gray-800">
+              <h1 className="text-3xl md:text-4xl font-bold" style={{ color: '#e5e7eb' }}>Document Printing</h1>
+              <p className="mt-3" style={{ color: '#e5e7eb' }}>
                 Big or small, we print documents with expert care, premium stock, and finishing touches your office printer can’t match.
               </p>
             </div>
             <div className="h-44 md:h-48 lg:h-56 rounded-xl overflow-hidden">
-              <HeroArt />
+              <Image src="/images/document-printing/doc-set-1.svg" alt="Document printing overview" width={1024} height={240} className="w-full h-full object-cover" priority />
             </div>
           </div>
         </div>
@@ -29,7 +30,7 @@ export default function DocumentPrintingPage() {
       {/* 3 easy ways */}
       <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">3 easy ways to print</h2>
+          <h2 className="text-xl font-semibold mb-6" style={{ color: '#e5e7eb' }}>3 easy ways to print</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[{
               title: 'Same‑Day Printing*',
@@ -44,15 +45,15 @@ export default function DocumentPrintingPage() {
               desc: 'Walk in. Print out. Get fast, easy prints while you shop. Our print pros and self‑serve stations are ready when you are—no appointment needed.',
               cta: 'Find a Store'
             }].map((card, i) => (
-              <div key={i} className="border rounded-xl overflow-hidden">
-                <div className="h-44 bg-gray-100">
-                  <CardArt theme={i === 0 ? 'blue' : i === 1 ? 'teal' : 'rose'} />
+              <div key={i} className="border border-white/20 rounded-xl overflow-hidden bg-white/5 backdrop-blur-sm">
+                <div className="h-44">
+                  <Image src={i === 0 ? '/images/document-printing/doc-set-2.svg' : i === 1 ? '/images/document-printing/doc-set-3.svg' : '/images/document-printing/doc-set-1.svg'} alt={card.title} width={512} height={176} className="w-full h-full object-cover" />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-semibold text-gray-900">{card.title}</h3>
-                  <p className="text-sm text-gray-800 mt-2">{card.desc}</p>
+                  <h3 className="font-semibold" style={{ color: '#e5e7eb' }}>{card.title}</h3>
+                  <p className="text-sm mt-2" style={{ color: '#e5e7eb' }}>{card.desc}</p>
                   <div className="mt-4">
-                    <Link href="/quote?category=documents" className="inline-block border rounded-md px-4 py-2 text-sm font-medium hover:bg-gray-50">
+                    <Link href="/quote?category=documents" className="inline-block rounded-md px-4 py-2 text-sm font-medium" style={{ backgroundColor: '#F16E02', color: '#fff' }}>
                       {card.cta}
                     </Link>
                   </div>
@@ -66,23 +67,23 @@ export default function DocumentPrintingPage() {
       {/* Paper. Price. Perfection. */}
       <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Paper. Price. Perfection.</h2>
-          <p className="text-gray-800 mb-6">Explore top‑tier papers and pricing plans designed to make your prints—and wallet—happy.</p>
+          <h2 className="text-2xl font-semibold mb-2" style={{ color: '#e5e7eb' }}>Paper. Price. Perfection.</h2>
+          <p className="mb-6" style={{ color: '#e5e7eb' }}>Explore top‑tier papers and pricing plans designed to make your prints—and wallet—happy.</p>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { name: 'Letter', size: '8.5” × 11”' },
               { name: 'Legal', size: '8.5” × 14”' },
               { name: 'Ledger', size: '11” × 17”' },
             ].map((col, idx) => (
-              <div key={idx} className="border rounded-xl p-4">
+              <div key={idx} className="border border-white/20 rounded-xl p-4 bg-white/5 backdrop-blur-sm">
                 <div className="text-center mb-4">
-                  <div className="text-sm text-gray-700">{col.name}</div>
-                  <div className="text-xs text-gray-400">{col.size}</div>
-                  <Link href="/quote?category=documents" className="mt-3 inline-block border rounded-md px-4 py-1 text-sm font-medium hover:bg-gray-50">Print Now</Link>
+                  <div className="text-sm" style={{ color: '#e5e7eb' }}>{col.name}</div>
+                  <div className="text-xs" style={{ color: '#e5e7eb' }}>{col.size}</div>
+                  <Link href="/quote?category=documents" className="mt-3 inline-block rounded-md px-4 py-1 text-sm font-medium" style={{ backgroundColor: '#F16E02', color: '#fff' }}>Print Now</Link>
                 </div>
                 <div className="space-y-5 text-sm">
                   <div>
-                    <div className="font-medium text-gray-800">Black and White Pricing</div>
+                    <div className="font-medium" style={{ color: '#e5e7eb' }}>Black and White Pricing</div>
                     <ul className="mt-2 divide-y">
                       {[
                         ['1‑499', 0.19],
@@ -91,12 +92,12 @@ export default function DocumentPrintingPage() {
                         ['10,000‑10,999', 0.08],
                         ['20,000+', 0.06],
                       ].map(([label, price]) => (
-                        <li key={label as string} className="flex justify-between py-1 text-gray-800"><span>{label as string}</span><span>{formatINR(price as number)}</span></li>
+                        <li key={label as string} className="flex justify-between py-1" style={{ color: '#e5e7eb' }}><span>{label as string}</span><span>{formatINR(price as number)}</span></li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <div className="font-medium text-gray-800">Rich Black</div>
+                    <div className="font-medium" style={{ color: '#e5e7eb' }}>Rich Black</div>
                     <ul className="mt-2 divide-y">
                       {[
                         ['1‑499', 0.39],
@@ -104,12 +105,12 @@ export default function DocumentPrintingPage() {
                         ['1,000‑2,999', 0.32],
                         ['3,000+', 0.21],
                       ].map(([label, price]) => (
-                        <li key={label as string} className="flex justify-between py-1 text-gray-800"><span>{label as string}</span><span>{formatINR(price as number)}</span></li>
+                        <li key={label as string} className="flex justify-between py-1" style={{ color: '#e5e7eb' }}><span>{label as string}</span><span>{formatINR(price as number)}</span></li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <div className="font-medium text-gray-800">Colour Pricing</div>
+                    <div className="font-medium" style={{ color: '#e5e7eb' }}>Colour Pricing</div>
                     <ul className="mt-2 divide-y">
                       {[
                         ['1‑499', 0.59],
@@ -119,7 +120,7 @@ export default function DocumentPrintingPage() {
                         ['5,000‑7,999', 0.30],
                         ['8,000+', 0.22],
                       ].map(([label, price]) => (
-                        <li key={label as string} className="flex justify-between py-1 text-gray-800"><span>{label as string}</span><span>{formatINR(price as number)}</span></li>
+                        <li key={label as string} className="flex justify-between py-1" style={{ color: '#e5e7eb' }}><span>{label as string}</span><span>{formatINR(price as number)}</span></li>
                       ))}
                     </ul>
                   </div>
@@ -127,23 +128,25 @@ export default function DocumentPrintingPage() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-700 mt-3">Note: Prices shown apply to standard service levels only. Same‑day and 1‑hour services are available at an additional cost. Final pricing may vary based on job specifications.</p>
+          <p className="text-xs mt-3" style={{ color: '#e5e7eb' }}>Note: Prices shown apply to standard service levels only. Same‑day and 1‑hour services are available at an additional cost. Final pricing may vary based on job specifications.</p>
         </div>
       </section>
 
       {/* Paper types */}
       <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Paper so good, you'll feel fancy</h2>
-          <p className="text-gray-800 mb-6">From everyday prints to big‑deal projects, choose from standard, premium, or specialty paper that makes your documents pop (and impress).</p>
+          <h2 className="text-2xl font-semibold mb-2" style={{ color: '#e5e7eb' }}>Paper so good, you'll feel fancy</h2>
+          <p className="mb-6" style={{ color: '#e5e7eb' }}>From everyday prints to big‑deal projects, choose from standard, premium, or specialty paper that makes your documents pop (and impress).</p>
           <div className="grid md:grid-cols-3 gap-6">
             {['Standard Paper','Business Paper','Premium Paper'].map((title, i) => (
-              <div key={i} className="border rounded-xl overflow-hidden">
-                <div className="h-40"><CardArt theme={i === 0 ? 'blue' : i === 1 ? 'teal' : 'rose'} /></div>
+              <div key={i} className="border border-white/20 rounded-xl overflow-hidden bg-white/5 backdrop-blur-sm">
+                <div className="h-40">
+                  <Image src={i === 0 ? '/images/document-printing/doc-set-1.svg' : i === 1 ? '/images/document-printing/doc-set-2.svg' : '/images/document-printing/doc-set-3.svg'} alt={title} width={512} height={176} className="w-full h-full object-cover" />
+                </div>
                 <div className="p-5">
-                  <h3 className="font-semibold text-gray-900">{title}</h3>
-                  <p className="text-sm text-gray-800 mt-2">Sample descriptive copy for {title.toLowerCase()}.</p>
-                  <Link href="/quote?category=documents" className="mt-4 inline-block text-sm text-blue-600">View All</Link>
+                  <h3 className="font-semibold" style={{ color: '#e5e7eb' }}>{title}</h3>
+                  <p className="text-sm mt-2" style={{ color: '#e5e7eb' }}>Sample descriptive copy for {title.toLowerCase()}.</p>
+                  <Link href="/quote?category=documents" className="mt-4 inline-block text-sm" style={{ color: '#e5e7eb' }}>View All</Link>
                 </div>
               </div>
             ))}
@@ -154,15 +157,17 @@ export default function DocumentPrintingPage() {
       {/* Binding */}
       <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Bound to impress</h2>
-          <p className="text-gray-800 mb-6">From cerlox to coil, wireless to saddle stitch, bind your documents with the perfect finish to match your style—and keep things together.</p>
+          <h2 className="text-2xl font-semibold mb-2" style={{ color: '#e5e7eb' }}>Bound to impress</h2>
+          <p className="mb-6" style={{ color: '#e5e7eb' }}>From cerlox to coil, wireless to saddle stitch, bind your documents with the perfect finish to match your style—and keep things together.</p>
           <div className="grid md:grid-cols-4 gap-6">
             {['Coil Binding','Cerlox Binding','Wireless Binding','Saddle Stitching'].map((title, i) => (
-              <div key={i} className="border rounded-xl overflow-hidden">
-                <div className="h-36"><CardArt theme={i % 2 === 0 ? 'blue' : 'teal'} /></div>
+              <div key={i} className="border border-white/20 rounded-xl overflow-hidden bg-white/5 backdrop-blur-sm">
+                <div className="h-36">
+                  <Image src={i % 2 === 0 ? '/images/document-printing/doc-set-1.svg' : '/images/document-printing/doc-set-2.svg'} alt={title} width={512} height={176} className="w-full h-full object-cover" />
+                </div>
                 <div className="p-5">
-                  <h3 className="font-semibold text-gray-900">{title}</h3>
-                  <p className="text-sm text-gray-800 mt-2">Short description for {title.toLowerCase()}.</p>
+                  <h3 className="font-semibold" style={{ color: '#e5e7eb' }}>{title}</h3>
+                  <p className="text-sm mt-2" style={{ color: '#e5e7eb' }}>Short description for {title.toLowerCase()}.</p>
                 </div>
               </div>
             ))}
@@ -173,15 +178,17 @@ export default function DocumentPrintingPage() {
       {/* Cutting */}
       <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Cut to perfection, your way</h2>
-          <p className="text-gray-800 mb-6">From bulk cuts to intricate designs, we offer precise finishing options tailored to your project’s exact requirements.</p>
+          <h2 className="text-2xl font-semibold mb-2" style={{ color: '#e5e7eb' }}>Cut to perfection, your way</h2>
+          <p className="mb-6" style={{ color: '#e5e7eb' }}>From bulk cuts to intricate designs, we offer precise finishing options tailored to your project’s exact requirements.</p>
           <div className="grid md:grid-cols-2 gap-6">
             {['Bulk Cuts','Complex Cutting'].map((title, i) => (
-              <div key={i} className="border rounded-xl overflow-hidden">
-                <div className="h-40"><CardArt theme={i % 2 === 0 ? 'rose' : 'teal'} /></div>
+              <div key={i} className="border border-white/20 rounded-xl overflow-hidden bg-white/5 backdrop-blur-sm">
+                <div className="h-40">
+                  <Image src={i % 2 === 0 ? '/images/document-printing/doc-set-3.svg' : '/images/document-printing/doc-set-2.svg'} alt={title} width={512} height={176} className="w-full h-full object-cover" />
+                </div>
                 <div className="p-5">
-                  <h3 className="font-semibold text-gray-900">{title}</h3>
-                  <p className="text-sm text-gray-800 mt-2">Short description for {title.toLowerCase()}.</p>
+                  <h3 className="font-semibold" style={{ color: '#e5e7eb' }}>{title}</h3>
+                  <p className="text-sm mt-2" style={{ color: '#e5e7eb' }}>Short description for {title.toLowerCase()}.</p>
                 </div>
               </div>
             ))}
@@ -192,16 +199,18 @@ export default function DocumentPrintingPage() {
       {/* Folding */}
       <section className="bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Sharp folds, smooth finish</h2>
-          <p className="text-gray-800 mb-6">Get brochures, flyers, and letters pre‑folded and ready for action—skip the hassle and let us do the folding for you.</p>
+          <h2 className="text-2xl font-semibold mb-2" style={{ color: '#e5e7eb' }}>Sharp folds, smooth finish</h2>
+          <p className="mb-6" style={{ color: '#e5e7eb' }}>Get brochures, flyers, and letters pre‑folded and ready for action—skip the hassle and let us do the folding for you.</p>
         
           <div className="grid md:grid-cols-4 gap-6">
             {['Half‑fold','Tri‑fold','Z‑fold','Custom fold'].map((title, i) => (
-              <div key={i} className="border rounded-xl overflow-hidden">
-                <div className="h-36"><CardArt theme={i} /></div>
+              <div key={i} className="border border-white/20 rounded-xl overflow-hidden bg-white/5 backdrop-blur-sm">
+                <div className="h-36">
+                  <Image src={i === 0 ? '/images/document-printing/doc-set-1.svg' : i === 1 ? '/images/document-printing/doc-set-2.svg' : i === 2 ? '/images/document-printing/doc-set-3.svg' : '/images/document-printing/doc-set-2.svg'} alt={title} width={512} height={176} className="w-full h-full object-cover" />
+                </div>
                 <div className="p-5">
-                  <h3 className="font-semibold text-gray-900">{title}</h3>
-                  <p className="text-sm text-gray-800 mt-2">Short description for {title.toLowerCase()}.</p>
+                  <h3 className="font-semibold" style={{ color: '#e5e7eb' }}>{title}</h3>
+                  <p className="text-sm mt-2" style={{ color: '#e5e7eb' }}>Short description for {title.toLowerCase()}.</p>
                 </div>
               </div>
             ))}
@@ -229,7 +238,7 @@ export default function DocumentPrintingPage() {
       </section>
 
       {/* You can count on us */}
-      <section className="bg-transparent border-t">
+      <section className="bg-transparent border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid md:grid-cols-3 gap-6 text-center">
             {[
@@ -238,9 +247,9 @@ export default function DocumentPrintingPage() {
               { title: 'Convenience', text: 'Order online 24/7 and pick up in store.' },
             ].map((b, i) => (
               <div key={i} className="p-6">
-                <div className="text-2xl text-red-600 mb-2">●</div>
-                <div className="font-semibold text-gray-900">{b.title}</div>
-                <div className="text-sm text-gray-800 mt-1">{b.text}</div>
+                <div className="text-2xl mb-2" style={{ color: '#e5e7eb' }}>●</div>
+                <div className="font-semibold" style={{ color: '#e5e7eb' }}>{b.title}</div>
+                <div className="text-sm mt-1" style={{ color: '#e5e7eb' }}>{b.text}</div>
               </div>
             ))}
           </div>
