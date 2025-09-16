@@ -175,6 +175,12 @@ export default function Navigation() {
             {/* Desktop actions */}
             <div className="hidden md:flex items-center space-x-4">
               <Link
+                href="/signup"
+                className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                Sign up
+              </Link>
+              <Link
                 href="/login"
                 className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
@@ -234,6 +240,13 @@ export default function Navigation() {
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
+                <Link
+                  href="/signup"
+                  className="block px-3 py-2 text-base font-medium text-white hover:text-orange-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Sign up
+                </Link>
                 <Link
                   href="/login"
                   className="block px-3 py-2 text-base font-medium text-white hover:text-orange-300"

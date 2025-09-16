@@ -2,6 +2,30 @@
 
 High‑value B2B/B2C digital printing web app built with Next.js 15, TypeScript, Tailwind, and MongoDB.
 
+## Auth (Email link verification)
+
+This project includes a production-ready email signup/login flow using Next.js Route Handlers.
+
+- Signup at `/signup` creates an unverified user and emails a verification link via Brevo SMTP
+- Clicking the link hits `/api/auth/verify` and sets a JWT cookie, then redirects to `/dashboard`
+- Login at `/login` is allowed only for verified users; resend link available and rate-limited
+- `/dashboard` is protected by `middleware.ts`
+
+Environment variables in `.env.local`:
+
+```
+MONGODB_URI=
+JWT_SECRET=
+BREVO_SMTP_HOST=smtp-relay.brevo.com
+BREVO_SMTP_PORT=587
+BREVO_SMTP_USER=
+BREVO_SMTP_PASS=
+EMAIL_FROM=no-reply@sridattaprintcenter.com
+APP_URL=http://localhost:3000
+```
+
+Notes: The existing OTP route remains intact; prefer email link verification for account creation. OTP can be used for secondary flows (e.g., phone verification).
+
 ## Tech
 - Next.js (App Router, API routes)
 - TypeScript

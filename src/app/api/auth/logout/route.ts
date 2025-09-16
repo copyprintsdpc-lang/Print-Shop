@@ -1,4 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { clearAuthCookie } from '@/lib/auth'
+
+export async function POST(_req: NextRequest) {
+  clearAuthCookie()
+  return NextResponse.json({ ok: true })
+}
+
+import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
   try {

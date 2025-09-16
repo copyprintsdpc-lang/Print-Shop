@@ -1,66 +1,15 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import { Schema, model, models } from 'mongoose'
 
-export interface IUser extends Document {
-  name: string;
-  email: string;
-  mobile: string;
-  password?: string;
-  role: 'customer' | 'admin' | 'staff';
-  businessProfile?: {
-    companyName: string;
-    gstin?: string;
-    pan?: string;
-    address: {
-      line1: string;
-      line2?: string;
-      city: string;
-      state: string;
-      pincode: string;
-      country: string;
-    };
-  };
-  addresses: Array<{
-    type: 'billing' | 'shipping';
-    line1: string;
-    line2?: string;
-    city: string;
-    state: string;
-    pincode: string;
-    country: string;
-    isDefault: boolean;
-  }>;
-  createdAt: Date;
-  updatedAt: Date;
-}
+// Unified user schema to support both email/password and optional OTP/mobile flows
+const UserSchema = new Schema({
+  email: { type: String, unique: true, required: true, index: true, trim: true, lowercase: true },
+  passwordHash: { type: String, required: false },
+  verified: { type: Boolean, default: false },
 
-const UserSchema: Schema = new Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    lowercase: true,
-  },
-  mobile: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-  },
-  password: {
-    type: String,
-    required: false, // Not required for OTP-based auth
-  },
-  role: {
-    type: String,
-    enum: ['customer', 'admin', 'staff'],
-    default: 'customer',
-  },
+  // Optional fields used by legacy OTP flow and profile data
+  name: { type: String, required: false, trim: true },
+  mobile: { type: String, required: false, unique: true, sparse: true, trim: true },
+  role: { type: String, enum: ['customer', 'admin', 'staff'], default: 'customer' },
   businessProfile: {
     companyName: String,
     gstin: String,
@@ -75,26 +24,19 @@ const UserSchema: Schema = new Schema({
     },
   },
   addresses: [{
-    type: {
-      type: String,
-      enum: ['billing', 'shipping'],
-      required: true,
-    },
-    line1: { type: String, required: true },
+    type: { type: String, enum: ['billing', 'shipping'] },
+    line1: String,
     line2: String,
-    city: { type: String, required: true },
-    state: { type: String, required: true },
-    pincode: { type: String, required: true },
+    city: String,
+    state: String,
+    pincode: String,
     country: { type: String, default: 'IN' },
     isDefault: { type: Boolean, default: false },
   }],
-}, {
-  timestamps: true,
-});
+}, { timestamps: true })
 
-// Index for faster queries
-UserSchema.index({ email: 1 });
-UserSchema.index({ mobile: 1 });
-UserSchema.index({ role: 1 });
+// Indexes are already defined via field-level 'index' and 'unique' where applicable.
+// Keeping only essential compound or TTL indexes in other models.
 
-export default mongoose.models.User || mongoose.model<IUser>('User', UserSchema);
+const User = models.User || model('User', UserSchema)
+export default User
