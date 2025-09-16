@@ -53,8 +53,8 @@ export function verifyJwt(token: string): JwtPayload | null {
   }
 }
 
-export function setAuthCookie(token: string) {
-  const store = cookies()
+export async function setAuthCookie(token: string) {
+  const store = await cookies()
   const isProd = process.env.NODE_ENV === 'production'
   store.set('sdp_session', token, {
     httpOnly: true,
@@ -65,8 +65,8 @@ export function setAuthCookie(token: string) {
   })
 }
 
-export function clearAuthCookie() {
-  const store = cookies()
+export async function clearAuthCookie() {
+  const store = await cookies()
   const isProd = process.env.NODE_ENV === 'production'
   store.set('sdp_session', '', {
     httpOnly: true,

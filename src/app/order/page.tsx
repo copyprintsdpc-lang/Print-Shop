@@ -76,30 +76,30 @@ export default function OrderPage() {
         return (
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Product Details</h3>
+              <h3 className="text-lg font-semibold text-gray-600 mb-4">Product Details</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     Product Type
                   </label>
-                  <select className="w-full border border-gray-300 rounded-md px-3 py-2">
-                    <option>Select Product</option>
-                    <option>Black & White Documents</option>
-                    <option>Color Documents</option>
-                    <option>Business Cards</option>
-                    <option>Banners & Posters</option>
-                    <option>Stickers & Labels</option>
+                  <select className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white/90 text-black">
+                    <option className="text-black">Select Product</option>
+                    <option className="text-black">Black & White Documents</option>
+                    <option className="text-black">Color Documents</option>
+                    <option className="text-black">Business Cards</option>
+                    <option className="text-black">Banners & Posters</option>
+                    <option className="text-black">Stickers & Labels</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
                     Quantity
                   </label>
                   <input
                     type="number"
                     value={orderData.quantity}
                     onChange={(e) => setOrderData(prev => ({ ...prev, quantity: parseInt(e.target.value) || 1 }))}
-                    className="w-full border border-gray-300 rounded-md px-3 py-2"
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 bg-white/90 text-black"
                     min="1"
                   />
                 </div>
@@ -335,10 +335,12 @@ export default function OrderPage() {
         return (
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Payment Method</h3>
+              <h3 className="text-lg font-semibold text-black mb-4" style={{ color: '#000000' }}>Payment Method</h3>
               <div className="space-y-4">
-                <label className={`p-4 border rounded-lg cursor-pointer ${
-                  orderData.paymentMethod === 'razorpay' ? 'border-orange-400 bg-white/10 backdrop-blur-sm/20 backdrop-blur-sm' : 'border-gray-300'
+                <label className={`p-4 border rounded-lg cursor-pointer relative ${
+                  orderData.paymentMethod === 'razorpay' 
+                    ? 'border-blue-500 bg-white/30 backdrop-blur-sm' 
+                    : 'border-gray-300 bg-white/20 backdrop-blur-sm'
                 }`}>
                   <input
                     type="radio"
@@ -351,15 +353,21 @@ export default function OrderPage() {
                     className="sr-only"
                   />
                   <div className="flex items-center space-x-3">
+                    {/* Selection indicator */}
+                    {orderData.paymentMethod === 'razorpay' && (
+                      <div className="w-4 h-4 bg-blue-500 rounded-sm flex-shrink-0"></div>
+                    )}
                     <CreditCard className="w-6 h-6 text-blue-600" />
                     <div>
-                      <p className="font-medium">Online Payment</p>
-                      <p className="text-sm text-gray-800">Credit/Debit Card, UPI, Net Banking</p>
+                      <p className="font-medium text-black" style={{ color: '#000000' }}>Online Payment</p>
+                      <p className="text-sm text-gray-700" style={{ color: '#374151' }}>Credit/Debit Card, UPI, Net Banking</p>
                     </div>
                   </div>
                 </label>
-                <label className={`p-4 border rounded-lg cursor-pointer ${
-                  orderData.paymentMethod === 'cod' ? 'border-orange-400 bg-white/10 backdrop-blur-sm/20 backdrop-blur-sm' : 'border-gray-300'
+                <label className={`p-4 border rounded-lg cursor-pointer relative ${
+                  orderData.paymentMethod === 'cod' 
+                    ? 'border-blue-500 bg-white/30 backdrop-blur-sm' 
+                    : 'border-gray-300 bg-white/20 backdrop-blur-sm'
                 }`}>
                   <input
                     type="radio"
@@ -372,10 +380,14 @@ export default function OrderPage() {
                     className="sr-only"
                   />
                   <div className="flex items-center space-x-3">
+                    {/* Selection indicator */}
+                    {orderData.paymentMethod === 'cod' && (
+                      <div className="w-4 h-4 bg-blue-500 rounded-sm flex-shrink-0"></div>
+                    )}
                     <Truck className="w-6 h-6 text-blue-600" />
                     <div>
-                      <p className="font-medium">Cash on Delivery</p>
-                      <p className="text-sm text-gray-800">Pay when you receive your order</p>
+                      <p className="font-medium text-black" style={{ color: '#000000' }}>Cash on Delivery</p>
+                      <p className="text-sm text-gray-700" style={{ color: '#374151' }}>Pay when you receive your order</p>
                     </div>
                   </div>
                 </label>
@@ -383,25 +395,25 @@ export default function OrderPage() {
             </div>
 
             {/* Order Summary */}
-            <div className="bg-white/10 backdrop-blur-sm/10 backdrop-blur-sm rounded-lg p-6">
-              <h4 className="font-semibold text-gray-900 mb-4">Order Summary</h4>
+            <div className="bg-white/30 backdrop-blur-sm rounded-lg p-6">
+              <h4 className="font-semibold text-black mb-4" style={{ color: '#000000' }}>Order Summary</h4>
               <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-gray-800">Subtotal</span>
-                  <span className="font-medium">₹500.00</span>
+                <div className="flex justify-between py-2 border-b border-gray-400">
+                  <span className="text-black" style={{ color: '#000000' }}>Subtotal</span>
+                  <span className="font-medium text-black" style={{ color: '#000000' }}>₹500.00</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-800">Delivery</span>
-                  <span className="font-medium">₹50.00</span>
+                <div className="flex justify-between py-2 border-b border-gray-400">
+                  <span className="text-black" style={{ color: '#000000' }}>Delivery</span>
+                  <span className="font-medium text-black" style={{ color: '#000000' }}>₹50.00</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-800">GST (18%)</span>
-                  <span className="font-medium">₹99.00</span>
+                <div className="flex justify-between py-2 border-b border-gray-400">
+                  <span className="text-black" style={{ color: '#000000' }}>GST (18%)</span>
+                  <span className="font-medium text-black" style={{ color: '#000000' }}>₹99.00</span>
                 </div>
-                <div className="border-t border-gray-200 pt-2">
+                <div className="pt-2">
                   <div className="flex justify-between">
-                    <span className="font-semibold text-gray-900">Total</span>
-                    <span className="font-bold text-lg">₹649.00</span>
+                    <span className="font-semibold text-black text-lg" style={{ color: '#000000' }}>Total</span>
+                    <span className="font-bold text-black text-lg" style={{ color: '#000000' }}>₹649.00</span>
                   </div>
                 </div>
               </div>
@@ -415,7 +427,7 @@ export default function OrderPage() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen order-page">
       {/* Hero Section */}
       <section className="bg-transparent text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -480,14 +492,14 @@ export default function OrderPage() {
             {renderStepContent()}
             
             {/* Navigation Buttons */}
-            <div className="flex justify-between mt-8 pt-6 border-t border-gray-200">
+            <div className="flex justify-between mt-8 pt-6 border-t border-gray-300">
               <button
                 onClick={handlePrevious}
                 disabled={currentStep === 1}
                 className={`px-6 py-2 rounded-lg font-medium ${
                   currentStep === 1
                     ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
                 }`}
               >
                 Previous
@@ -503,7 +515,7 @@ export default function OrderPage() {
               ) : (
                 <button
                   onClick={handleSubmit}
-                  className="px-8 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700"
+                  className="px-8 py-2 bg-green-500 text-white rounded-lg font-medium hover:bg-green-600"
                 >
                   Place Order
                 </button>

@@ -22,7 +22,7 @@ function mockJobs(): { current: JobItem[]; past: JobItem[] } {
 }
 
 export default async function DashboardPage() {
-  const token = cookies().get('sdp_session')?.value
+  const token = (await cookies()).get('sdp_session')?.value
   const payload = token ? verifyJwt(token) : null
   if (!payload) {
     return (

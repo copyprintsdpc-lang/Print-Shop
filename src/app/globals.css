@@ -105,3 +105,27 @@ body { padding-top: 0 !important; }
   color: #e5e7eb !important;
   font-weight: 600 !important;
 }
+
+/* Force black text in order page for readability */
+.order-page * {
+  color: #000000 !important;
+}
+
+.order-page .text-gray-700 {
+  color: #374151 !important;
+}
+
+/* Specific overrides for order page elements */
+.order-page h3,
+.order-page h4,
+.order-page p,
+.order-page span,
+.order-page label,
+.order-page div {
+  color: #000000 !important;
+}
+
+/* Override any inherited text colors in the order page */
+.order-page [class*="text-"] {
+  color: #000000 !important;
+}

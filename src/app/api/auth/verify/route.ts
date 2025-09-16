@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
     await vt.deleteOne()
 
     const jwt = signJwt({ sub: String(user._id), email: user.email })
-    setAuthCookie(jwt)
+    await setAuthCookie(jwt)
 
     const appUrl = process.env.APP_URL || 'http://localhost:3000'
     return NextResponse.redirect(`${appUrl}/dashboard`)

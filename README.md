@@ -20,7 +20,7 @@ BREVO_SMTP_HOST=smtp-relay.brevo.com
 BREVO_SMTP_PORT=587
 BREVO_SMTP_USER=
 BREVO_SMTP_PASS=
-EMAIL_FROM=no-reply@sridattaprintcenter.com
+EMAIL_FROM=copyprintsdpc@gmail.com
 APP_URL=http://localhost:3000
 ```
 

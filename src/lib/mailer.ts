@@ -21,7 +21,7 @@ export async function sendVerificationEmail(to: string, link: string) {
       <p>If the button doesn’t work, paste this in your browser:<br>${link}</p>
     </div>`
   await transporter.sendMail({
-    from: process.env.EMAIL_FROM ?? 'no-reply@sridattaprintcenter.com',
+    from: process.env.EMAIL_FROM ?? 'copyprintsdpc@gmail.com',
     to,
     subject: 'Verify your account',
     html,

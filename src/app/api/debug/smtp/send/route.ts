@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
     const to = searchParams.get('to')
     if (!to) return NextResponse.json({ ok: false, error: 'Missing to param' }, { status: 400 })
 
-    const from = process.env.EMAIL_FROM ?? 'no-reply@sridattaprintcenter.com'
+    const from = process.env.EMAIL_FROM ?? 'copyprintsdpc@gmail.com'
     const info = await transporter.sendMail({
       from,
       to,
