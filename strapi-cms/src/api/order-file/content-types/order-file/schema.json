@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_files",
+  "info": {
+    "singularName": "order-file",
+    "pluralName": "order-files",
+    "displayName": "Order File",
+    "description": "Files uploaded for orders (artwork, designs, etc.)"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "files"
+    },
+    "orderItem": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "itemFiles"
+    },
+    "fileName": {
+      "type": "string",
+      "required": true
+    },
+    "originalName": {
+      "type": "string",
+      "required": true
+    },
+    "fileUrl": {
+      "type": "string",
+      "required": true
+    },
+    "fileSize": {
+      "type": "integer",
+      "required": true
+    },
+    "mimeType": {
+      "type": "string",
+      "required": true
+    },
+    "fileType": {
+      "type": "enumeration",
+      "enum": ["artwork", "design", "reference", "proof", "final"],
+      "default": "artwork"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["uploaded", "reviewing", "approved", "rejected", "processing"],
+      "default": "uploaded"
+    },
+    "metadata": {
+      "type": "json",
+      "required": false
+    },
+    "notes": {
+      "type": "text"
+    }
+  }
+}

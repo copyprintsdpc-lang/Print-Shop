@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_order_payments",
+  "info": {
+    "displayName": "Payment",
+    "description": "Payment information for orders"
+  },
+  "options": {},
+  "attributes": {
+    "method": {
+      "type": "enumeration",
+      "enum": ["razorpay", "cod"],
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["pending", "completed", "failed", "refunded"],
+      "default": "pending"
+    },
+    "razorpayOrderId": {
+      "type": "string"
+    },
+    "razorpayPaymentId": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    }
+  }
+}

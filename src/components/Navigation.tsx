@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { 
@@ -10,21 +10,129 @@ import {
   ShoppingCart, 
   Phone,
   MapPin,
-  Clock
+  Clock,
+  LogOut
 } from 'lucide-react'
+import { useCart } from '@/contexts/CartContext'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
+  { name: 'All Products', href: '/services', hasDropdown: true },
   { name: 'Quote', href: '/quote' },
   { name: 'Order', href: '/order' },
   { name: 'Contact', href: '/contact' },
 ]
 
+const productCategories = [
+  {
+    name: 'Stationery & Marketing',
+    items: [
+      { name: 'Business Cards', href: '/services/business-cards', subItems: [
+        { name: 'Standard Business Cards', href: '/services/business-cards' },
+        { name: 'Spot UV Business Cards', href: '/services/business-cards?finish=spot-uv' },
+        { name: 'Raised Foil Business Cards', href: '/services/business-cards?finish=foil' },
+        { name: 'Embossed Business Cards', href: '/services/business-cards?finish=embossed' },
+      ]},
+      { name: 'Brochures & Flyers', href: '/services/brochures', subItems: [
+        { name: 'Half Fold Brochures', href: '/services/brochures?fold=half' },
+        { name: 'Tri-Fold Brochures', href: '/services/brochures?fold=tri' },
+        { name: 'Z-Fold Brochures', href: '/services/brochures?fold=z' },
+        { name: 'Flat Flyers & Brochures', href: '/services/flyers' },
+      ]},
+      { name: 'Marketing', href: '/services/flyers', subItems: [
+        { name: 'Postcards', href: '/services/postcards' },
+        { name: 'Posters', href: '/services/banners-posters' },
+        { name: 'Greeting Cards', href: '/services/greeting-cards' },
+      ]},
+      { name: 'Stationery', href: '/services/stationery', subItems: [
+        { name: 'Letterheads', href: '/services/letterheads' },
+        { name: 'Envelopes', href: '/services/envelopes' },
+        { name: 'Bookmarks', href: '/services/bookmarks' },
+        { name: 'Magnets', href: '/services/magnets' },
+      ]},
+    ]
+  },
+  {
+    name: 'Signs & Banners',
+    items: [
+      { name: 'Banners & Flags', href: '/services/banners-posters', subItems: [
+        { name: 'Vinyl Banner', href: '/services/banners-posters?type=vinyl' },
+        { name: 'Pull Up Banners', href: '/services/banners-posters?type=pullup' },
+        { name: 'Feather Flags', href: '/services/banners-posters?type=feather' },
+      ]},
+      { name: 'Display Signs', href: '/services/signs', subItems: [
+        { name: 'Yard Signs', href: '/services/signs?type=yard' },
+        { name: 'A-Frame Signs', href: '/services/signs?type=aframe' },
+        { name: 'Acrylic Signs', href: '/services/signs?type=acrylic' },
+      ]},
+      { name: 'Decals', href: '/services/decals', subItems: [
+        { name: 'Window Decals', href: '/services/decals?type=window' },
+        { name: 'Wall Decals', href: '/services/decals?type=wall' },
+        { name: 'Car Decals', href: '/services/decals?type=car' },
+      ]},
+    ]
+  },
+  {
+    name: 'Labels & Packaging',
+    items: [
+      { name: 'Custom Labels', href: '/services/labels', subItems: [
+        { name: 'Roll Labels', href: '/services/labels?type=roll' },
+        { name: 'Mailing Labels', href: '/services/labels?type=mailing' },
+        { name: 'Product Labels', href: '/services/labels?type=product' },
+      ]},
+      { name: 'Custom Stickers', href: '/services/stickers', subItems: [
+        { name: 'Die-Cut Stickers', href: '/services/stickers?type=diecut' },
+        { name: 'Sheet Stickers', href: '/services/stickers?type=sheet' },
+        { name: 'Clear Stickers', href: '/services/stickers?type=clear' },
+      ]},
+    ]
+  },
+  {
+    name: 'Document Printing',
+    items: [
+      { name: 'Black & White Documents', href: '/services/document-printing?type=bw' },
+      { name: 'Color Documents', href: '/services/document-printing?type=color' },
+      { name: 'Photo Prints', href: '/services/photo-prints' },
+      { name: 'PrintMe', href: '/services/printme' },
+    ]
+  }
+]
+
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [openMenu, setOpenMenu] = useState<string | null>(null)
+  const [user, setUser] = useState<any>(null)
+  const [userLoading, setUserLoading] = useState(true)
   const pathname = usePathname()
+  const { state: cartState } = useCart()
+
+  useEffect(() => {
+    fetchUser()
+  }, [])
+
+  const fetchUser = async () => {
+    try {
+      const response = await fetch('/api/auth/strapi/me')
+      if (response.ok) {
+        const data = await response.json()
+        setUser(data.user)
+      }
+    } catch (error) {
+      console.error('Failed to fetch user:', error)
+    } finally {
+      setUserLoading(false)
+    }
+  }
+
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/auth/strapi/logout', { method: 'POST' })
+      setUser(null)
+      window.location.href = '/'
+    } catch (error) {
+      console.error('Logout failed:', error)
+    }
+  }
 
   const quickPrintItems = [
     { name: 'Document Printing', href: '/services/document-printing' },
@@ -89,11 +197,11 @@ export default function Navigation() {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
                 {navigation.map((item) => (
-                  item.name === 'Services' ? (
+                  item.hasDropdown ? (
                     <div
                       key={item.name}
                       className="relative"
-                      onMouseEnter={() => setOpenMenu('services')}
+                      onMouseEnter={() => setOpenMenu('products')}
                       onMouseLeave={() => setOpenMenu(null)}
                     >
                       <Link
@@ -107,49 +215,54 @@ export default function Navigation() {
                         {item.name}
                       </Link>
 
-                      {false && openMenu === 'services' && (
-                        <div className="absolute left-0 mt-2 w-[920px] bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl rounded-xl p-6 z-50">
-                          <div className="grid grid-cols-12 gap-6">
-                            {/* Left column: list */}
-                            <div className="col-span-6">
-                              <ul className="space-y-3">
-                                {quickPrintItems.map((q) => (
-                                  <li key={q.name}>
-                                    <Link
-                                      href={q.href}
-                                      className="block text-white hover:text-orange-300"
-                                    >
-                                      {q.name}
-                                    </Link>
-                                  </li>
-                                ))}
-                                <li>
-                                  <Link href="/services" className="block text-orange-300 font-medium">View All</Link>
-                                </li>
-                              </ul>
-                            </div>
-                            {/* Right column: feature cards */}
-                            <div className="col-span-6 grid grid-cols-2 gap-4">
-                              <Link href="/quote" className="group border border-white/30 rounded-lg overflow-hidden hover:bg-white/5 transition-all bg-white/5">
-                                <div className="h-32 bg-white/10 flex items-center justify-center">
-                                  <span className="text-white/70 text-sm">Quick Print</span>
-                                </div>
-                                <div className="p-4">
-                                  <p className="font-semibold text-white group-hover:text-orange-300">Quick and easy printing</p>
-                                  <p className="text-sm text-white/70 mt-1">Order by noon for same-day pickup by store closing.</p>
-                                  <span className="text-sm text-orange-300 font-medium">Print a document</span>
-                                </div>
+                      {openMenu === 'products' && (
+                        <div className="absolute left-0 mt-2 w-[1200px] bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl rounded-xl p-6 z-50">
+                          <div className="grid grid-cols-4 gap-8">
+                            {productCategories.map((category) => (
+                              <div key={category.name}>
+                                <h3 className="text-white font-semibold mb-4 text-lg">{category.name}</h3>
+                                <ul className="space-y-2">
+                                  {category.items.map((item) => (
+                                    <li key={item.name}>
+                                      <Link
+                                        href={item.href}
+                                        className="block text-white/80 hover:text-orange-300 transition-colors"
+                                      >
+                                        {item.name}
+                                      </Link>
+                                      {item.subItems && (
+                                        <ul className="ml-4 mt-1 space-y-1">
+                                          {item.subItems.slice(0, 3).map((subItem) => (
+                                            <li key={subItem.name}>
+                                              <Link
+                                                href={subItem.href}
+                                                className="block text-white/60 hover:text-orange-300 text-sm transition-colors"
+                                              >
+                                                {subItem.name}
+                                              </Link>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      )}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="mt-6 pt-6 border-t border-white/20">
+                            <div className="flex justify-between items-center">
+                              <Link href="/services" className="text-orange-300 font-medium hover:text-orange-200">
+                                View All Products
                               </Link>
-                              <Link href="/quote" className="group border border-white/30 rounded-lg overflow-hidden hover:bg-white/5 transition-all bg-white/5">
-                                <div className="h-32 bg-white/10 flex items-center justify-center">
-                                  <span className="text-white/70 text-sm">PrintMe</span>
-                                </div>
-                                <div className="p-4">
-                                  <p className="font-semibold text-white group-hover:text-orange-300">PrintMe</p>
-                                  <p className="text-sm text-white/70 mt-1">Simplified print options to print what you need when you need it.</p>
-                                  <span className="text-sm text-orange-300 font-medium">Learn More</span>
-                                </div>
-                              </Link>
+                              <div className="flex gap-4">
+                                <Link href="/quote" className="text-white/80 hover:text-orange-300 text-sm">
+                                  Get Quote
+                                </Link>
+                                <Link href="/design-studio" className="text-white/80 hover:text-orange-300 text-sm">
+                                  Design Studio
+                                </Link>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -174,26 +287,48 @@ export default function Navigation() {
 
             {/* Desktop actions */}
             <div className="hidden md:flex items-center space-x-4">
-              <Link
-                href="/signup"
-                className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Sign up
-              </Link>
-              <Link
-                href="/login"
-                className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                <User className="w-5 h-5" />
-              </Link>
+              {user ? (
+                <>
+                  <Link
+                    href="/dashboard"
+                    className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  >
+                    <User className="w-5 h-5" />
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  >
+                    <LogOut className="w-5 h-5" />
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/signup"
+                    className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  >
+                    Sign up
+                  </Link>
+                  <Link
+                    href="/login"
+                    className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  >
+                    <User className="w-5 h-5" />
+                  </Link>
+                </>
+              )}
+              
               <Link
                 href="/cart"
                 className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors relative"
               >
                 <ShoppingCart className="w-5 h-5" />
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                  0
-                </span>
+                {cartState.itemCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {cartState.itemCount}
+                  </span>
+                )}
               </Link>
               <Link
                 href="/quote"
@@ -259,7 +394,7 @@ export default function Navigation() {
                   className="block px-3 py-2 text-base font-medium text-white hover:text-orange-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Cart (0)
+                  Cart ({cartState.itemCount})
                 </Link>
                 <Link
                   href="/quote"

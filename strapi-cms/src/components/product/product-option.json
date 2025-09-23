@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_product_product_options",
+  "info": {
+    "displayName": "Product Option",
+    "description": "Configurable options for products"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["select", "boolean", "numeric", "dim2"],
+      "default": "select"
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
+    },
+    "values": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.option-value"
+    }
+  }
+}

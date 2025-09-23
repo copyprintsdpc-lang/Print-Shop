@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_order_gsts",
+  "info": {
+    "displayName": "GST",
+    "description": "GST information for orders"
+  },
+  "options": {},
+  "attributes": {
+    "gstin": {
+      "type": "string"
+    },
+    "cgst": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "sgst": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "igst": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "totalTax": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    }
+  }
+}

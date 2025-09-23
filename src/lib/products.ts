@@ -1,4 +1,7 @@
 // Product catalog and pricing configuration
+// This file now serves as a fallback for when Strapi is not available
+// In production, products will be fetched from Strapi API
+
 export interface ProductOption {
   name: string
   type: 'select' | 'boolean' | 'numeric' | 'dim2'
@@ -304,3 +307,7 @@ export function getProductsByCategory(category: string): Product[] {
 export function getAllProducts(): Product[] {
   return products.filter(product => product.active)
 }
+
+// NOTE: This is now a fallback implementation
+// In production, use the Strapi API integration in src/lib/strapi.ts
+// to fetch products dynamically from the CMS

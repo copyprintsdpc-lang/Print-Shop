@@ -9,8 +9,11 @@ import {
   ArrowRight
 } from 'lucide-react'
 import Link from 'next/link'
+import { productService } from '@/lib/productService'
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  // Fetch categories from Strapi API
+  const categories = await productService.getAllCategories()
   const services = [
     {
       id: 'documents',

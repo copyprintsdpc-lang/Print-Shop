@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_order_deliveries",
+  "info": {
+    "displayName": "Delivery",
+    "description": "Delivery information for orders"
+  },
+  "options": {},
+  "attributes": {
+    "method": {
+      "type": "enumeration",
+      "enum": ["pickup", "courier"],
+      "required": true
+    },
+    "address": {
+      "type": "component",
+      "component": "order.address"
+    },
+    "pickupSlot": {
+      "type": "component",
+      "component": "order.pickup-slot"
+    },
+    "courierDetails": {
+      "type": "component",
+      "component": "order.courier-details"
+    }
+  }
+}

@@ -1,193 +1,335 @@
-import { cookies } from 'next/headers'
-import { verifyJwt } from '@/lib/auth'
-import { Clock, FileText, Bookmark, User as UserIcon, ArrowRight, LogOut } from 'lucide-react'
+'use client'
 
-type JobItem = {
-  id: string
-  name: string
-  submittedAt: string
-  status: 'Queued' | 'Processing' | 'Ready' | 'Completed'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { 
+  User, 
+  Package, 
+  Clock, 
+  CheckCircle, 
+  XCircle, 
+  LogOut,
+  Settings,
+  FileText,
+  Download
+} from 'lucide-react'
+
+interface User {
+  id: number;
+  username: string;
+  email: string;
+  confirmed: boolean;
+  role: {
+    name: string;
+  };
+  created_at: string;
 }
 
-function mockJobs(): { current: JobItem[]; past: JobItem[] } {
-  return {
-    current: [
-      { id: 'J-2481', name: 'Project Proposal.pdf', submittedAt: 'Today, 10:12 AM', status: 'Processing' },
-      { id: 'J-2479', name: 'Invoice_Sept.xlsx', submittedAt: 'Yesterday, 5:41 PM', status: 'Queued' },
-    ],
-    past: [
-      { id: 'J-2440', name: 'Poster_A2_final.ai', submittedAt: 'Sep 02, 3:10 PM', status: 'Completed' },
-    ],
+interface Order {
+  id: number;
+  orderNumber: string;
+  status: string;
+  total: number;
+  createdAt: string;
+  items: Array<{
+    product: {
+      name: string;
+    };
+    quantity: number;
+    price: number;
+  }>;
+}
+
+export default function DashboardPage() {
+  const router = useRouter()
+  const [user, setUser] = useState<User | null>(null)
+  const [orders, setOrders] = useState<Order[]>([])
+  const [loading, setLoading] = useState(true)
+  const [activeTab, setActiveTab] = useState<'overview' | 'orders' | 'profile'>('overview')
+
+  useEffect(() => {
+    fetchUserData()
+  }, [])
+
+  const fetchUserData = async () => {
+    try {
+      const response = await fetch('/api/auth/strapi/me')
+      const data = await response.json()
+
+      if (response.ok) {
+        setUser(data.user)
+        // TODO: Fetch user orders from Strapi
+        setOrders([])
+      } else {
+        router.push('/login')
+      }
+    } catch (error) {
+      console.error('Failed to fetch user data:', error)
+      router.push('/login')
+    } finally {
+      setLoading(false)
+    }
   }
-}
 
-export default async function DashboardPage() {
-  const token = (await cookies()).get('sdp_session')?.value
-  const payload = token ? verifyJwt(token) : null
-  if (!payload) {
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/auth/strapi/logout', { method: 'POST' })
+      router.push('/')
+    } catch (error) {
+      console.error('Logout failed:', error)
+    }
+  }
+
+  const getStatusIcon = (status: string) => {
+    switch (status.toLowerCase()) {
+      case 'completed':
+        return <CheckCircle className="w-5 h-5 text-green-500" />
+      case 'processing':
+      case 'pending':
+        return <Clock className="w-5 h-5 text-yellow-500" />
+      case 'cancelled':
+        return <XCircle className="w-5 h-5 text-red-500" />
+      default:
+        return <Package className="w-5 h-5 text-blue-500" />
+    }
+  }
+
+  const getStatusColor = (status: string) => {
+    switch (status.toLowerCase()) {
+      case 'completed':
+        return 'bg-green-500/20 text-green-300 border-green-500/30'
+      case 'processing':
+      case 'pending':
+        return 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30'
+      case 'cancelled':
+        return 'bg-red-500/20 text-red-300 border-red-500/30'
+      default:
+        return 'bg-blue-500/20 text-blue-300 border-blue-500/30'
+    }
+  }
+
+  if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-6">
-        <div className="w-full max-w-md bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
-          <div className="text-lg" style={{ color: '#e5e7eb' }}>Please log in</div>
-        </div>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-white text-xl">Loading...</div>
       </div>
     )
   }
 
-  const jobs = mockJobs()
+  if (!user) {
+    return null
+  }
 
   return (
-    <div className="min-h-screen px-4 sm:px-6 lg:px-8 py-10">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-8">
           <div>
-            <h1 className="text-3xl font-bold" style={{ color: '#e5e7eb' }}>My Account</h1>
-            <p className="mt-1" style={{ color: '#e5e7eb' }}>Welcome, {payload.email}</p>
+            <h1 className="text-3xl font-bold text-white">My Account</h1>
+            <p className="text-white/70">Welcome back, {user.username}!</p>
           </div>
-          <form action="/api/auth/logout" method="post">
-            <button className="inline-flex items-center gap-2 rounded-md px-3 py-2 border border-white/20 bg-white/10 hover:bg-white/15 transition-colors" style={{ color:'#e5e7eb' }}>
-              <LogOut className="w-4 h-4" /> Logout
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 px-4 py-2 bg-red-500/20 text-red-300 border border-red-500/30 rounded-lg hover:bg-red-500/30 transition-colors"
+          >
+            <LogOut className="w-4 h-4" />
+            Logout
             </button>
-          </form>
         </div>
 
-        {/* Quick actions */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-          {/* Order History */}
-          <a href="#order-history" className="group block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-colors">
-            <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4">
-              <Clock className="w-6 h-6" style={{ color: '#e5e7eb' }} />
+        {/* Tabs */}
+        <div className="flex space-x-1 mb-8 bg-white/5 rounded-lg p-1">
+          <button
+            onClick={() => setActiveTab('overview')}
+            className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+              activeTab === 'overview'
+                ? 'bg-orange-500 text-white'
+                : 'text-white/70 hover:text-white'
+            }`}
+          >
+            Overview
+          </button>
+          <button
+            onClick={() => setActiveTab('orders')}
+            className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+              activeTab === 'orders'
+                ? 'bg-orange-500 text-white'
+                : 'text-white/70 hover:text-white'
+            }`}
+          >
+            Orders
+          </button>
+          <button
+            onClick={() => setActiveTab('profile')}
+            className={`flex-1 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+              activeTab === 'profile'
+                ? 'bg-orange-500 text-white'
+                : 'text-white/70 hover:text-white'
+            }`}
+          >
+            Profile
+          </button>
             </div>
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="font-semibold" style={{ color: '#e5e7eb' }}>Order History</div>
-                <div className="text-sm" style={{ color: '#e5e7eb' }}>Track, reorder, or rename files</div>
-              </div>
-              <ArrowRight className="w-5 h-5 opacity-70 group-hover:translate-x-0.5 transition-transform" style={{ color: '#e5e7eb' }} />
-            </div>
-          </a>
 
-          {/* My Documents */}
-          <a href="#documents" className="group block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-colors">
-            <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4">
-              <FileText className="w-6 h-6" style={{ color: '#e5e7eb' }} />
-            </div>
+        {/* Content */}
+        {activeTab === 'overview' && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
             <div className="flex items-center justify-between">
               <div>
-                <div className="font-semibold" style={{ color: '#e5e7eb' }}>My Documents</div>
-                <div className="text-sm" style={{ color: '#e5e7eb' }}>Manage uploads and saved files</div>
+                  <p className="text-white/70 text-sm">Total Orders</p>
+                  <p className="text-2xl font-bold text-white">{orders.length}</p>
+                </div>
+                <Package className="w-8 h-8 text-orange-400" />
               </div>
-              <ArrowRight className="w-5 h-5 opacity-70 group-hover:translate-x-0.5 transition-transform" style={{ color: '#e5e7eb' }} />
             </div>
-          </a>
 
-          {/* Saved Jobs */}
-          <a href="#saved" className="group block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-colors">
-            <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4">
-              <Bookmark className="w-6 h-6" style={{ color: '#e5e7eb' }} />
-            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
             <div className="flex items-center justify-between">
               <div>
-                <div className="font-semibold" style={{ color: '#e5e7eb' }}>Saved Jobs</div>
-                <div className="text-sm" style={{ color: '#e5e7eb' }}>Quickly reopen recent work</div>
+                  <p className="text-white/70 text-sm">Completed</p>
+                  <p className="text-2xl font-bold text-white">
+                    {orders.filter(o => o.status.toLowerCase() === 'completed').length}
+                  </p>
+                </div>
+                <CheckCircle className="w-8 h-8 text-green-400" />
               </div>
-              <ArrowRight className="w-5 h-5 opacity-70 group-hover:translate-x-0.5 transition-transform" style={{ color: '#e5e7eb' }} />
             </div>
-          </a>
 
-          {/* My Account */}
-          <a href="#account" className="group block bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-colors">
-            <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-4">
-              <UserIcon className="w-6 h-6" style={{ color: '#e5e7eb' }} />
-            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
             <div className="flex items-center justify-between">
               <div>
-                <div className="font-semibold" style={{ color: '#e5e7eb' }}>My Account</div>
-                <div className="text-sm" style={{ color: '#e5e7eb' }}>Profile and security</div>
+                  <p className="text-white/70 text-sm">Processing</p>
+                  <p className="text-2xl font-bold text-white">
+                    {orders.filter(o => ['processing', 'pending'].includes(o.status.toLowerCase())).length}
+                  </p>
+                </div>
+                <Clock className="w-8 h-8 text-yellow-400" />
               </div>
-              <ArrowRight className="w-5 h-5 opacity-70 group-hover:translate-x-0.5 transition-transform" style={{ color: '#e5e7eb' }} />
             </div>
-          </a>
+
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+            <div className="flex items-center justify-between">
+              <div>
+                  <p className="text-white/70 text-sm">Total Spent</p>
+                  <p className="text-2xl font-bold text-white">
+                    ₹{orders.reduce((sum, order) => sum + order.total, 0).toLocaleString()}
+                  </p>
+                </div>
+                <FileText className="w-8 h-8 text-blue-400" />
+              </div>
+            </div>
         </div>
+        )}
 
-        {/* Order history */}
-        <section id="order-history" className="mb-10 bg-white/8 backdrop-blur-sm border border-white/15 rounded-2xl overflow-hidden">
-          <div className="px-6 py-4 border-b border-white/10" style={{ color: '#e5e7eb' }}>Order History</div>
-          <div className="p-6">
-            <div className="space-y-6">
-              <div>
-                <div className="text-sm font-semibold mb-3" style={{ color: '#e5e7eb' }}>Current Jobs</div>
-                <div className="space-y-3">
-                  {jobs.current.map(job => (
-                    <div key={job.id} className="flex items-center justify-between bg-white/5 border border-white/10 rounded-lg px-4 py-3">
+        {activeTab === 'orders' && (
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+            <h2 className="text-xl font-semibold text-white mb-6">Order History</h2>
+            
+            {orders.length === 0 ? (
+              <div className="text-center py-12">
+                <Package className="w-16 h-16 text-white/30 mx-auto mb-4" />
+                <p className="text-white/70 mb-4">No orders yet</p>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+                >
+                  Start Shopping
+                </Link>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {orders.map((order) => (
+                  <div key={order.id} className="bg-white/5 border border-white/10 rounded-lg p-4">
+                    <div className="flex justify-between items-start mb-3">
                       <div>
-                        <div className="font-medium" style={{ color: '#e5e7eb' }}>{job.name}</div>
-                        <div className="text-xs opacity-80" style={{ color: '#e5e7eb' }}>{job.id} • {job.submittedAt} • {job.status}</div>
+                        <h3 className="font-semibold text-white">Order #{order.orderNumber}</h3>
+                        <p className="text-white/70 text-sm">
+                          {new Date(order.createdAt).toLocaleDateString()}
+                        </p>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <button className="px-3 py-1 rounded-md border border-white/20 text-sm" style={{ color:'#e5e7eb' }}>Re-order</button>
-                        <button className="px-3 py-1 rounded-md border border-white/20 text-sm" style={{ color:'#e5e7eb' }}>Cancel</button>
-                        <button className="px-3 py-1 rounded-md border border-white/20 text-sm" style={{ color:'#e5e7eb' }}>View</button>
-                        <button className="px-3 py-1 rounded-md border border-white/20 text-sm" style={{ color:'#e5e7eb' }}>Rename File</button>
+                      <div className="text-right">
+                        <p className="font-semibold text-white">₹{order.total.toLocaleString()}</p>
+                        <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs border ${getStatusColor(order.status)}`}>
+                          {getStatusIcon(order.status)}
+                          {order.status}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      {order.items.map((item, index) => (
+                        <div key={index} className="flex justify-between text-sm text-white/80">
+                          <span>{item.product.name} × {item.quantity}</span>
+                          <span>₹{item.price.toLocaleString()}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="mt-4 flex gap-2">
+                      <button className="flex items-center gap-1 px-3 py-1 text-sm bg-white/10 text-white/80 rounded hover:bg-white/20 transition-colors">
+                        <Download className="w-4 h-4" />
+                        Invoice
+                      </button>
+                      <button className="flex items-center gap-1 px-3 py-1 text-sm bg-white/10 text-white/80 rounded hover:bg-white/20 transition-colors">
+                        Track Order
+                      </button>
                       </div>
                     </div>
                   ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {activeTab === 'profile' && (
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+            <h2 className="text-xl font-semibold text-white mb-6">Profile Information</h2>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">Username</label>
+                <div className="bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white">
+                  {user.username}
                 </div>
               </div>
 
               <div>
-                <div className="text-sm font-semibold mb-3" style={{ color: '#e5e7eb' }}>Past Jobs</div>
-                <div className="space-y-3">
-                  {jobs.past.map(job => (
-                    <div key={job.id} className="flex items-center justify-between bg-white/5 border border-white/10 rounded-lg px-4 py-3">
+                <label className="block text-sm font-medium text-white/70 mb-2">Email</label>
+                <div className="bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white">
+                  {user.email}
+                </div>
+              </div>
+              
                       <div>
-                        <div className="font-medium" style={{ color: '#e5e7eb' }}>{job.name}</div>
-                        <div className="text-xs opacity-80" style={{ color: '#e5e7eb' }}>{job.id} • {job.submittedAt} • {job.status}</div>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <button className="px-3 py-1 rounded-md border border-white/20 text-sm" style={{ color:'#e5e7eb' }}>Re-order</button>
-                        <button className="px-3 py-1 rounded-md border border-white/20 text-sm" style={{ color:'#e5e7eb' }}>View</button>
-                        <button className="px-3 py-1 rounded-md border border-white/20 text-sm" style={{ color:'#e5e7eb' }}>Rename File</button>
+                <label className="block text-sm font-medium text-white/70 mb-2">Account Status</label>
+                <div className="bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white">
+                  {user.confirmed ? 'Verified' : 'Unverified'}
                       </div>
                     </div>
-                  ))}
+              
+              <div>
+                <label className="block text-sm font-medium text-white/70 mb-2">Member Since</label>
+                <div className="bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white">
+                  {new Date(user.created_at).toLocaleDateString()}
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Documents + Saved (placeholders) */}
-        <section id="documents" className="mb-10 bg-white/8 backdrop-blur-sm border border-white/15 rounded-2xl p-6">
-          <div className="font-semibold mb-2" style={{ color: '#e5e7eb' }}>My Documents</div>
-          <p style={{ color: '#e5e7eb' }}>Upload, manage and reuse your frequently printed files. (Coming soon)</p>
-        </section>
-
-        <section id="saved" className="mb-10 bg-white/8 backdrop-blur-sm border border-white/15 rounded-2xl p-6">
-          <div className="font-semibold mb-2" style={{ color: '#e5e7eb' }}>Saved Jobs</div>
-          <p style={{ color: '#e5e7eb' }}>Quick access to jobs you bookmarked for later. (Coming soon)</p>
-        </section>
-
-        {/* Account */}
-        <section id="account" className="mb-10 bg-white/8 backdrop-blur-sm border border-white/15 rounded-2xl p-6">
-          <div className="font-semibold mb-4" style={{ color: '#e5e7eb' }}>Account</div>
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-              <div className="text-sm opacity-80" style={{ color: '#e5e7eb' }}>Name</div>
-              <div className="font-medium" style={{ color: '#e5e7eb' }}>{payload.email.split('@')[0]}</div>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-lg p-4">
-              <div className="text-sm opacity-80" style={{ color: '#e5e7eb' }}>Email</div>
-              <div className="font-medium" style={{ color: '#e5e7eb' }}>{payload.email}</div>
+            
+            <div className="mt-6 flex gap-4">
+              <button className="flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors">
+                <Settings className="w-4 h-4" />
+                Edit Profile
+              </button>
+              <button className="flex items-center gap-2 px-4 py-2 bg-white/10 text-white/80 border border-white/20 rounded-lg hover:bg-white/20 transition-colors">
+                Change Password
+              </button>
             </div>
           </div>
-          <form action="/api/auth/logout" method="post" className="mt-6">
-            <button className="rounded-md px-4 py-2" style={{ background:'#F16E02', color:'#fff' }}>Logout</button>
-          </form>
-        </section>
+        )}
       </div>
     </div>
   )
 }
-
-

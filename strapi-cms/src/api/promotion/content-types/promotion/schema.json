@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promotions",
+  "info": {
+    "singularName": "promotion",
+    "pluralName": "promotions",
+    "displayName": "Promotion",
+    "description": "Seasonal offers, banners, and coupon codes"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "discountType": {
+      "type": "enumeration",
+      "enum": ["percentage", "fixed", "free_shipping"],
+      "required": true
+    },
+    "discountValue": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "minimumOrderValue": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "maximumDiscount": {
+      "type": "decimal",
+      "min": 0
+    },
+    "validFrom": {
+      "type": "datetime",
+      "required": true
+    },
+    "validUntil": {
+      "type": "datetime",
+      "required": true
+    },
+    "usageLimit": {
+      "type": "integer",
+      "default": -1
+    },
+    "usedCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "applicableProducts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product"
+    },
+    "applicableCategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category"
+    }
+  }
+}

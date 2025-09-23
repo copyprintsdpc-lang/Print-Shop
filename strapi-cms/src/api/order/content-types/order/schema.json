@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": "Customer orders for print services"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderNumber": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["placed", "preflight", "proof_ready", "approved", "in_production", "ready_for_pickup", "shipped", "completed", "cancelled"],
+      "default": "placed"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "order.order-item"
+    },
+    "pricing": {
+      "type": "component",
+      "component": "order.pricing"
+    },
+    "delivery": {
+      "type": "component",
+      "component": "order.delivery"
+    },
+    "payment": {
+      "type": "component",
+      "component": "order.payment"
+    },
+    "gst": {
+      "type": "component",
+      "component": "order.gst"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "estimatedCompletion": {
+      "type": "datetime"
+    },
+    "actualCompletion": {
+      "type": "datetime"
+    },
+    "files": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-file.order-file",
+      "mappedBy": "order"
+    },
+    "itemFiles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-file.order-file",
+      "mappedBy": "orderItem"
+    }
+  }
+}

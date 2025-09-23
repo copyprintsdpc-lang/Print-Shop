@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_order_addresses",
+  "info": {
+    "displayName": "Address",
+    "description": "Delivery address information"
+  },
+  "options": {},
+  "attributes": {
+    "line1": {
+      "type": "string",
+      "required": true
+    },
+    "line2": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "pincode": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "default": "IN"
+    }
+  }
+}

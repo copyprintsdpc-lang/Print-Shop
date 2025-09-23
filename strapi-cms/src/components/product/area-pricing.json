@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_product_area_pricings",
+  "info": {
+    "displayName": "Area Pricing",
+    "description": "Area-based pricing configuration"
+  },
+  "options": {},
+  "attributes": {
+    "pricePerSqFt": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "minCharge": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    }
+  }
+}

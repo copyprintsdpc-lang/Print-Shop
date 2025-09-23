@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_product_option_values",
+  "info": {
+    "displayName": "Option Value",
+    "description": "Values for product options"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "priceDelta": {
+      "type": "decimal",
+      "default": 0
+    },
+    "priceDeltaType": {
+      "type": "enumeration",
+      "enum": ["flat", "percent"],
+      "default": "flat"
+    }
+  }
+}
