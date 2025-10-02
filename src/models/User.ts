@@ -2,7 +2,7 @@ import { Schema, model, models } from 'mongoose'
 
 // Unified user schema to support both email/password and optional OTP/mobile flows
 const UserSchema = new Schema({
-  email: { type: String, unique: true, required: true, index: true, trim: true, lowercase: true },
+  email: { type: String, unique: true, required: false, index: true, trim: true, lowercase: true, sparse: true },
   passwordHash: { type: String, required: false },
   verified: { type: Boolean, default: false },
 

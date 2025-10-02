@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { connectToDatabase } from '@/lib/db'
-import Product from '@/models/Product'
-import Promotion from '@/models/Promotion'
 
 export const runtime = 'nodejs'
 
@@ -17,6 +15,10 @@ export async function GET(req: NextRequest) {
     const sort = searchParams.get('sort') || 'createdAt'
 
     await connectToDatabase()
+
+    // Use raw MongoDB driver
+    const mongoose = require('mongoose')
+    const db = mongoose.connection.db
 
     // Build query
     const query: any = { active: true }
@@ -52,28 +54,23 @@ export async function GET(req: NextRequest) {
     const skip = (page - 1) * limit
 
     const [products, total] = await Promise.all([
-      Product.find(query)
-        .select('-__v -updatedAt')
-        .sort(sortObj)
-        .skip(skip)
-        .limit(limit)
-        .lean(),
-      Product.countDocuments(query)
+      db.collection('products').find(query).sort(sortObj).skip(skip).limit(limit).toArray(),
+      db.collection('products').countDocuments(query)
     ])
 
     // Get active promotions
     const now = new Date()
-    const promotions = await Promotion.find({
+    const promotions = await db.collection('promotions').find({
       isActive: true,
       startDate: { $lte: now },
       endDate: { $gte: now }
-    }).lean()
+    }).toArray()
 
     // Apply promotions to products
     const productsWithPromotions = products.map(product => {
       const applicablePromotions = promotions.filter(promo => 
-        promo.applicableProducts.includes(product._id) ||
-        promo.applicableCategories.includes(product.category)
+        (promo.applicableProducts && promo.applicableProducts.some(id => id.toString() === product._id.toString())) ||
+        (promo.applicableCategories && promo.applicableCategories.includes(product.category))
       )
 
       if (applicablePromotions.length > 0) {
@@ -103,6 +100,13 @@ export async function GET(req: NextRequest) {
       return product
     })
 
+    // Get categories and price range
+    const categories = await db.collection('products').distinct('category', { active: true })
+    const priceRangeResult = await db.collection('products').aggregate([
+      { $match: { active: true } },
+      { $group: { _id: null, min: { $min: '$basePrice' }, max: { $max: '$basePrice' } } }
+    ]).toArray()
+
     return NextResponse.json({
       ok: true,
       products: productsWithPromotions,
@@ -113,11 +117,8 @@ export async function GET(req: NextRequest) {
         pages: Math.ceil(total / limit)
       },
       filters: {
-        categories: await Product.distinct('category', { active: true }),
-        priceRange: await Product.aggregate([
-          { $match: { active: true } },
-          { $group: { _id: null, min: { $min: '$basePrice' }, max: { $max: '$basePrice' } } }
-        ])
+        categories,
+        priceRange: priceRangeResult
       }
     })
   } catch (err) {

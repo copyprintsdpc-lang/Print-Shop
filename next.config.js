@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Remove deprecated experimental.appDir option
+  images: {
+    domains: ['res.cloudinary.com', 'cdn.sdpcprint.com'],
+  },
 }
 
 module.exports = nextConfig
