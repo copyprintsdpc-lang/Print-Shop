@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --background: transparent;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: transparent;
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: transparent;
+    --foreground: #ffffff;
+  }
+}
+
+html { 
+  height: 100%;
+  background: 
+    radial-gradient(1400px 900px at 50% 100%,
+      #FF6A2B 0%, #FF7A59 20%, #FF9FB1 35%, rgba(255,159,177,0.3) 50%, rgba(255,255,255,0) 75%),
+    linear-gradient(180deg, #0B1020 0%, #1E2735 25%, #37507B 45%, #1E2735 70%, #0B1020 100%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body { 
+  height: 100%; 
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  /* the only background on the page - extended coverage */
+  background:
+    radial-gradient(1400px 900px at 50% 100%,
+      #FF6A2B 0%, #FF7A59 20%, #FF9FB1 35%, rgba(255,159,177,0.3) 50%, rgba(255,255,255,0) 75%),
+    linear-gradient(180deg, #0B1020 0%, #1E2735 25%, #37507B 45%, #1E2735 70%, #0B1020 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+/* make content sections transparent */
+header, main, section, .hero, .cta, footer {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* remove any overlays that create a second band */
+.hero::before, .hero::after,
+.cta::before, .cta::after,
+footer::before, footer::after {
+  content: none !important;
+}
+
+/* if your builder injects utility classes that add gradients, neutralize them */
+[class*="bg-gradient"], [class*="from-"], [class*="via-"], [class*="to-"] {
+  background: transparent !important;
+}
+
+/* Header logo sits cleanly on the dark gradient */
+.header-logo {
+  height: 52px;                /* increased for larger logo */
+  display: inline-block;
+  background: transparent;
+}
+
+/* Optional: if your header has varying shades, this helps it "melt" in */
+.header-logo.blend { 
+  mix-blend-mode: screen; 
+}
+
+/* header should scroll away like normal content */
+header, .site-header, .navbar {
+  position: relative !important;  /* not sticky/fixed */
+  top: auto !important;
+  inset: auto !important;
+  z-index: 10;                    /* enough for menus, not pinned */
+  background: transparent;        /* keep the blend */
+  box-shadow: none;
+}
+
+/* if a fixed offset was added earlier, reset it */
+body { padding-top: 0 !important; }
+
+/* kill any helper classes that force stickiness */
+.sticky, .is-sticky, .fixed, .sticky-header { position: relative !important; }
+
+/* Force light gray text in service cards */
+.services-page .text-black,
+.services-page .text-gray-900,
+.services-page .text-blue-600,
+.services-page h3,
+.services-page h4,
+.services-page p,
+.services-page li {
+  color: #e5e7eb !important;
+  font-weight: 600 !important;
+}
+
+/* Force black text in order page for readability */
+.order-page * {
+  color: #000000 !important;
+}
+
+.order-page .text-gray-700 {
+  color: #374151 !important;
+}
+
+/* Specific overrides for order page elements */
+.order-page h3,
+.order-page h4,
+.order-page p,
+.order-page span,
+.order-page label,
+.order-page div {
+  color: #000000 !important;
+}
+
+/* Override any inherited text colors in the order page */
+.order-page [class*="text-"] {
+  color: #000000 !important;
+}
