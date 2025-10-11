@@ -1,0 +1,1822 @@
+<testsuites id="" name="" tests="440" failures="0" skipped="440" errors="0" time="0.27715199999999984">
+<testsuite name="admin-dashboard.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="chromium" tests="20" failures="0" skipped="20" time="0" errors="0">
+<testcase name="Admin Dashboard › should redirect to login page when not authenticated" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin login form" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have admin-specific branding" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin dashboard after successful login" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin navigation menu" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should navigate to products management page" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should navigate to orders management page" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display products list with management options" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display orders list with status management" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should allow adding new products" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should allow bulk price updates" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display promotions management" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have admin logout functionality" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin statistics dashboard" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle file uploads for products" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should be responsive on mobile devices" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have proper admin authentication protection" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle admin form validation" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have proper admin navigation breadcrumbs" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle admin search functionality" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="authentication.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="chromium" tests="19" failures="0" skipped="19" time="0" errors="0">
+<testcase name="Authentication › should display login and signup links" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should navigate to login page" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should navigate to signup page" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display login form with required fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display signup form with required fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should validate login form fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should validate signup form fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle invalid login credentials" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle password visibility toggle" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have forgot password link" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have remember me checkbox" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should redirect to dashboard after successful login" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display user menu after login" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle logout functionality" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should protect authenticated routes" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle OTP verification if enabled" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should be responsive on mobile devices" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle form validation errors" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have proper accessibility features" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="checkout-flow.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="chromium" tests="13" failures="0" skipped="13" time="0" errors="0">
+<testcase name="Checkout Flow › should load checkout page successfully" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display checkout steps progress" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete customer information step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete delivery information step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle artwork upload step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete payment method selection" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display order summary in review step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should allow going back to previous steps" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should validate required fields" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display order summary sidebar" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle payment integration" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should be responsive on mobile devices" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle form validation errors gracefully" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="homepage.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="chromium" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="Homepage › should load homepage successfully" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display hero section with call-to-action buttons" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display how we work section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display services preview section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display statistics section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have working navigation links" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should be responsive on mobile" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have smooth animations and hover effects" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should load all images without errors" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have proper accessibility features" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="navigation.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="chromium" tests="11" failures="0" skipped="11" time="0" errors="0">
+<testcase name="Navigation › should display navigation bar with all main links" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should navigate to services page" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should navigate to contact page" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should display logo and be clickable" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have mobile menu toggle on small screens" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have cart icon and functionality" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have user authentication links" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should maintain navigation state across page changes" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have proper focus management for keyboard navigation" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have proper ARIA labels and roles" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should handle navigation with browser back/forward buttons" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="services.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="chromium" tests="15" failures="0" skipped="15" time="0" errors="0">
+<testcase name="Services Page › should load services page successfully" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display all service categories" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service cards with proper information" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have working service category links" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display pricing information" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have service filtering options" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service descriptions and features" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have call-to-action buttons for each service" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should be responsive on different screen sizes" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have proper loading states" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should handle service search functionality" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service categories in grid layout" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have hover effects on service cards" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should load all service images without errors" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have proper accessibility for service cards" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="admin-dashboard.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="firefox" tests="20" failures="0" skipped="20" time="0" errors="0">
+<testcase name="Admin Dashboard › should redirect to login page when not authenticated" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin login form" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have admin-specific branding" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin dashboard after successful login" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin navigation menu" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should navigate to products management page" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should navigate to orders management page" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display products list with management options" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display orders list with status management" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should allow adding new products" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should allow bulk price updates" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display promotions management" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have admin logout functionality" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin statistics dashboard" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle file uploads for products" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should be responsive on mobile devices" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have proper admin authentication protection" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle admin form validation" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have proper admin navigation breadcrumbs" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle admin search functionality" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="authentication.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="firefox" tests="19" failures="0" skipped="19" time="0" errors="0">
+<testcase name="Authentication › should display login and signup links" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should navigate to login page" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should navigate to signup page" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display login form with required fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display signup form with required fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should validate login form fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should validate signup form fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle invalid login credentials" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle password visibility toggle" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have forgot password link" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have remember me checkbox" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should redirect to dashboard after successful login" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display user menu after login" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle logout functionality" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should protect authenticated routes" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle OTP verification if enabled" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should be responsive on mobile devices" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle form validation errors" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have proper accessibility features" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="checkout-flow.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="firefox" tests="13" failures="0" skipped="13" time="0" errors="0">
+<testcase name="Checkout Flow › should load checkout page successfully" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display checkout steps progress" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete customer information step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete delivery information step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle artwork upload step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete payment method selection" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display order summary in review step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should allow going back to previous steps" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should validate required fields" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display order summary sidebar" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle payment integration" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should be responsive on mobile devices" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle form validation errors gracefully" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="homepage.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="firefox" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="Homepage › should load homepage successfully" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display hero section with call-to-action buttons" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display how we work section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display services preview section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display statistics section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have working navigation links" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should be responsive on mobile" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have smooth animations and hover effects" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should load all images without errors" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have proper accessibility features" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="navigation.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="firefox" tests="11" failures="0" skipped="11" time="0" errors="0">
+<testcase name="Navigation › should display navigation bar with all main links" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should navigate to services page" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should navigate to contact page" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should display logo and be clickable" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have mobile menu toggle on small screens" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have cart icon and functionality" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have user authentication links" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should maintain navigation state across page changes" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have proper focus management for keyboard navigation" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have proper ARIA labels and roles" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should handle navigation with browser back/forward buttons" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="services.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="firefox" tests="15" failures="0" skipped="15" time="0" errors="0">
+<testcase name="Services Page › should load services page successfully" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display all service categories" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service cards with proper information" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have working service category links" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display pricing information" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have service filtering options" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service descriptions and features" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have call-to-action buttons for each service" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should be responsive on different screen sizes" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have proper loading states" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should handle service search functionality" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service categories in grid layout" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have hover effects on service cards" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should load all service images without errors" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have proper accessibility for service cards" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="admin-dashboard.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="webkit" tests="20" failures="0" skipped="20" time="0" errors="0">
+<testcase name="Admin Dashboard › should redirect to login page when not authenticated" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin login form" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have admin-specific branding" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin dashboard after successful login" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin navigation menu" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should navigate to products management page" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should navigate to orders management page" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display products list with management options" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display orders list with status management" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should allow adding new products" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should allow bulk price updates" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display promotions management" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have admin logout functionality" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin statistics dashboard" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle file uploads for products" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should be responsive on mobile devices" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have proper admin authentication protection" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle admin form validation" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have proper admin navigation breadcrumbs" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle admin search functionality" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="authentication.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="webkit" tests="19" failures="0" skipped="19" time="0" errors="0">
+<testcase name="Authentication › should display login and signup links" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should navigate to login page" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should navigate to signup page" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display login form with required fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display signup form with required fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should validate login form fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should validate signup form fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle invalid login credentials" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle password visibility toggle" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have forgot password link" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have remember me checkbox" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should redirect to dashboard after successful login" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display user menu after login" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle logout functionality" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should protect authenticated routes" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle OTP verification if enabled" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should be responsive on mobile devices" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle form validation errors" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have proper accessibility features" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="checkout-flow.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="webkit" tests="13" failures="0" skipped="13" time="0" errors="0">
+<testcase name="Checkout Flow › should load checkout page successfully" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display checkout steps progress" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete customer information step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete delivery information step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle artwork upload step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete payment method selection" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display order summary in review step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should allow going back to previous steps" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should validate required fields" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display order summary sidebar" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle payment integration" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should be responsive on mobile devices" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle form validation errors gracefully" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="homepage.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="webkit" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="Homepage › should load homepage successfully" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display hero section with call-to-action buttons" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display how we work section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display services preview section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display statistics section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have working navigation links" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should be responsive on mobile" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have smooth animations and hover effects" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should load all images without errors" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have proper accessibility features" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="navigation.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="webkit" tests="11" failures="0" skipped="11" time="0" errors="0">
+<testcase name="Navigation › should display navigation bar with all main links" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should navigate to services page" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should navigate to contact page" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should display logo and be clickable" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have mobile menu toggle on small screens" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have cart icon and functionality" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have user authentication links" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should maintain navigation state across page changes" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have proper focus management for keyboard navigation" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have proper ARIA labels and roles" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should handle navigation with browser back/forward buttons" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="services.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="webkit" tests="15" failures="0" skipped="15" time="0" errors="0">
+<testcase name="Services Page › should load services page successfully" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display all service categories" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service cards with proper information" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have working service category links" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display pricing information" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have service filtering options" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service descriptions and features" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have call-to-action buttons for each service" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should be responsive on different screen sizes" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have proper loading states" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should handle service search functionality" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service categories in grid layout" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have hover effects on service cards" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should load all service images without errors" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have proper accessibility for service cards" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="admin-dashboard.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Chrome" tests="20" failures="0" skipped="20" time="0" errors="0">
+<testcase name="Admin Dashboard › should redirect to login page when not authenticated" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin login form" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have admin-specific branding" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin dashboard after successful login" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin navigation menu" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should navigate to products management page" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should navigate to orders management page" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display products list with management options" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display orders list with status management" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should allow adding new products" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should allow bulk price updates" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display promotions management" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have admin logout functionality" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin statistics dashboard" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle file uploads for products" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should be responsive on mobile devices" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have proper admin authentication protection" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle admin form validation" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have proper admin navigation breadcrumbs" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle admin search functionality" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="authentication.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Chrome" tests="19" failures="0" skipped="19" time="0" errors="0">
+<testcase name="Authentication › should display login and signup links" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should navigate to login page" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should navigate to signup page" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display login form with required fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display signup form with required fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should validate login form fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should validate signup form fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle invalid login credentials" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle password visibility toggle" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have forgot password link" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have remember me checkbox" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should redirect to dashboard after successful login" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display user menu after login" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle logout functionality" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should protect authenticated routes" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle OTP verification if enabled" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should be responsive on mobile devices" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle form validation errors" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have proper accessibility features" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="checkout-flow.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Chrome" tests="13" failures="0" skipped="13" time="0" errors="0">
+<testcase name="Checkout Flow › should load checkout page successfully" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display checkout steps progress" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete customer information step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete delivery information step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle artwork upload step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete payment method selection" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display order summary in review step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should allow going back to previous steps" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should validate required fields" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display order summary sidebar" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle payment integration" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should be responsive on mobile devices" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle form validation errors gracefully" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="homepage.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Chrome" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="Homepage › should load homepage successfully" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display hero section with call-to-action buttons" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display how we work section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display services preview section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display statistics section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have working navigation links" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should be responsive on mobile" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have smooth animations and hover effects" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should load all images without errors" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have proper accessibility features" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="navigation.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Chrome" tests="11" failures="0" skipped="11" time="0" errors="0">
+<testcase name="Navigation › should display navigation bar with all main links" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should navigate to services page" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should navigate to contact page" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should display logo and be clickable" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have mobile menu toggle on small screens" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have cart icon and functionality" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have user authentication links" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should maintain navigation state across page changes" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have proper focus management for keyboard navigation" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have proper ARIA labels and roles" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should handle navigation with browser back/forward buttons" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="services.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Chrome" tests="15" failures="0" skipped="15" time="0" errors="0">
+<testcase name="Services Page › should load services page successfully" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display all service categories" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service cards with proper information" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have working service category links" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display pricing information" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have service filtering options" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service descriptions and features" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have call-to-action buttons for each service" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should be responsive on different screen sizes" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have proper loading states" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should handle service search functionality" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service categories in grid layout" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have hover effects on service cards" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should load all service images without errors" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have proper accessibility for service cards" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="admin-dashboard.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Safari" tests="20" failures="0" skipped="20" time="0" errors="0">
+<testcase name="Admin Dashboard › should redirect to login page when not authenticated" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin login form" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have admin-specific branding" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin dashboard after successful login" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin navigation menu" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should navigate to products management page" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should navigate to orders management page" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display products list with management options" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display orders list with status management" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should allow adding new products" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should allow bulk price updates" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display promotions management" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have admin logout functionality" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should display admin statistics dashboard" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle file uploads for products" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should be responsive on mobile devices" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have proper admin authentication protection" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle admin form validation" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should have proper admin navigation breadcrumbs" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Admin Dashboard › should handle admin search functionality" classname="admin-dashboard.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="authentication.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Safari" tests="19" failures="0" skipped="19" time="0" errors="0">
+<testcase name="Authentication › should display login and signup links" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should navigate to login page" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should navigate to signup page" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display login form with required fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display signup form with required fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should validate login form fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should validate signup form fields" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle invalid login credentials" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle password visibility toggle" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have forgot password link" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have remember me checkbox" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should redirect to dashboard after successful login" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should display user menu after login" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle logout functionality" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should protect authenticated routes" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle OTP verification if enabled" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should be responsive on mobile devices" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should handle form validation errors" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Authentication › should have proper accessibility features" classname="authentication.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="checkout-flow.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Safari" tests="13" failures="0" skipped="13" time="0" errors="0">
+<testcase name="Checkout Flow › should load checkout page successfully" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display checkout steps progress" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete customer information step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete delivery information step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle artwork upload step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should complete payment method selection" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display order summary in review step" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should allow going back to previous steps" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should validate required fields" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should display order summary sidebar" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle payment integration" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should be responsive on mobile devices" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Checkout Flow › should handle form validation errors gracefully" classname="checkout-flow.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="homepage.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Safari" tests="10" failures="0" skipped="10" time="0" errors="0">
+<testcase name="Homepage › should load homepage successfully" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display hero section with call-to-action buttons" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display how we work section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display services preview section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should display statistics section" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have working navigation links" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should be responsive on mobile" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have smooth animations and hover effects" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should load all images without errors" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Homepage › should have proper accessibility features" classname="homepage.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="navigation.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Safari" tests="11" failures="0" skipped="11" time="0" errors="0">
+<testcase name="Navigation › should display navigation bar with all main links" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should navigate to services page" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should navigate to contact page" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should display logo and be clickable" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have mobile menu toggle on small screens" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have cart icon and functionality" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have user authentication links" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should maintain navigation state across page changes" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have proper focus management for keyboard navigation" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should have proper ARIA labels and roles" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Navigation › should handle navigation with browser back/forward buttons" classname="navigation.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="services.spec.ts" timestamp="2025-10-04T04:25:35.115Z" hostname="Mobile Safari" tests="15" failures="0" skipped="15" time="0" errors="0">
+<testcase name="Services Page › should load services page successfully" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display all service categories" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service cards with proper information" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have working service category links" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display pricing information" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have service filtering options" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service descriptions and features" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have call-to-action buttons for each service" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should be responsive on different screen sizes" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have proper loading states" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should handle service search functionality" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should display service categories in grid layout" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have hover effects on service cards" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should load all service images without errors" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Services Page › should have proper accessibility for service cards" classname="services.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

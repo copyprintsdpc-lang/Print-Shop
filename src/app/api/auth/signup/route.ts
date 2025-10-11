@@ -74,7 +74,8 @@ export async function POST(req: NextRequest) {
         try {
           await sendVerificationEmail(user.email, link)
         } catch (emailError) {
-          console.error('Email sending failed:', emailError.message)
+          const message = (emailError as any)?.message || String(emailError)
+          console.error('Email sending failed:', message)
           // Don't fail the signup if email fails, just log it
         }
       } else {

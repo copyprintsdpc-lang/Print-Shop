@@ -33,6 +33,9 @@ export async function GET(
       )
     }
 
+    // Alias for typed access
+    const p = product as any
+
     // Get applicable promotions
     const now = new Date()
     const promotions = await Promotion.find({
@@ -40,8 +43,8 @@ export async function GET(
       startDate: { $lte: now },
       endDate: { $gte: now },
       $or: [
-        { applicableProducts: product._id },
-        { applicableCategories: product.category }
+        { applicableProducts: p._id },
+        { applicableCategories: p.category }
       ]
     }).lean()
 
@@ -54,27 +57,27 @@ export async function GET(
       
       let discountAmount = 0
       if (bestPromo.discountType === 'percentage') {
-        discountAmount = (product.basePrice * bestPromo.discount) / 100
+        discountAmount = (p.basePrice * bestPromo.discount) / 100
       } else {
         discountAmount = bestPromo.discount
       }
 
       productWithPromotion = {
-        ...product,
+        ...p,
         promotion: {
           title: bestPromo.title,
           discount: bestPromo.discount,
           discountType: bestPromo.discountType,
-          originalPrice: product.basePrice,
-          discountedPrice: Math.max(0, product.basePrice - discountAmount)
+          originalPrice: p.basePrice,
+          discountedPrice: Math.max(0, p.basePrice - discountAmount)
         }
       }
     }
 
     // Get related products
     const relatedProducts = await Product.find({
-      category: product.category,
-      _id: { $ne: product._id },
+      category: p.category,
+      _id: { $ne: p._id },
       active: true
     })
       .select('_id name slug images basePrice variants')

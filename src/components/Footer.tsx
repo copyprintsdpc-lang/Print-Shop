@@ -23,11 +23,9 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-4">
               <img 
-                src="/logo-dark.svg?v=5" 
+                src="/sdpclogo.png" 
                 alt="Sri Datta Print Centre" 
-                className="header-logo"
-                width="300" 
-                height="45"
+                className="header-logo h-32 w-auto"
               />
             </div>
             <p className="text-gray-300 mb-4">

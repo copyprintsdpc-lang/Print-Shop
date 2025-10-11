@@ -18,6 +18,8 @@ import {
 } from 'lucide-react'
 import FileUpload from '@/components/FileUpload'
 import { useCart } from '@/components/Cart'
+import AuthGuard from '@/components/AuthGuard'
+import { useAuth } from '@/contexts/AuthContext'
 
 interface CustomerInfo {
   name: string
@@ -45,13 +47,14 @@ interface PaymentInfo {
 export default function CheckoutPage() {
   const router = useRouter()
   const { items, getTotal } = useCart()
+  const { user } = useAuth()
   const [currentStep, setCurrentStep] = useState(1)
   const [loading, setLoading] = useState(false)
   
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
-    name: '',
-    email: '',
-    phone: '',
+    name: user?.name || '',
+    email: user?.email || '',
+    phone: user?.phone || '',
     company: ''
   })
   
@@ -87,6 +90,18 @@ export default function CheckoutPage() {
       router.push('/')
     }
   }, [items, router])
+
+  // Update customer info when user data is available
+  useEffect(() => {
+    if (user) {
+      setCustomerInfo(prev => ({
+        ...prev,
+        name: user.name || prev.name,
+        email: user.email || prev.email,
+        phone: user.phone || prev.phone
+      }))
+    }
+  }, [user])
 
   const handleNext = () => {
     if (currentStep < steps.length) {
@@ -628,9 +643,8 @@ export default function CheckoutPage() {
     }
   }
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  return <div className="min-h-screen bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-4">
@@ -799,6 +813,5 @@ export default function CheckoutPage() {
           </div>
         </div>
       </div>
-    </div>
-  )
+  </div>
 }

@@ -4,8 +4,9 @@ import { connectToDatabase } from '@/lib/db'
 import Order from '@/models/Order'
 import Product from '@/models/Product'
 import mongoose from 'mongoose'
+import { withAuth, AuthenticatedRequest } from '@/lib/middleware'
 
-export async function POST(req: NextRequest) {
+async function createOrderHandler(req: AuthenticatedRequest) {
   try {
     const body = await req.json()
     const { 
@@ -38,6 +39,15 @@ export async function POST(req: NextRequest) {
       )
     }
 
+    // Get user ID from authenticated request
+    const userId = req.user?.userId
+    if (!userId) {
+      return NextResponse.json(
+        { ok: false, code: 'unauthorized', message: 'User authentication required' },
+        { status: 401 }
+      )
+    }
+
     // Create order in database first
     const order = new Order({
       customer,
@@ -47,7 +57,7 @@ export async function POST(req: NextRequest) {
       artwork_files: artworkFiles || [],
       pricing,
       notes,
-      userId: new mongoose.Types.ObjectId(), // Guest user for now
+      userId: new mongoose.Types.ObjectId(userId),
       status: 'placed'
     })
 
@@ -65,7 +75,7 @@ export async function POST(req: NextRequest) {
       }
     })
 
-    if (result.success) {
+    if (result.success && result.order) {
       // Update order with Razorpay order ID
       order.payment.razorpayOrderId = result.order.id
       await order.save()
@@ -86,7 +96,7 @@ export async function POST(req: NextRequest) {
       await Order.findByIdAndDelete(order._id)
       
       return NextResponse.json(
-        { ok: false, code: 'payment_creation_failed', message: result.error },
+        { ok: false, code: 'payment_creation_failed', message: result.error || 'Unknown error creating payment order' },
         { status: 500 }
       )
     }
@@ -98,3 +108,6 @@ export async function POST(req: NextRequest) {
     )
   }
 }
+
+// Export the wrapped handler with authentication
+export const POST = withAuth(createOrderHandler)

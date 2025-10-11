@@ -10,10 +10,12 @@ import {
   ShoppingCart, 
   Phone,
   MapPin,
-  Clock
+  Clock,
+  LogOut
 } from 'lucide-react'
 import Cart from './Cart'
 import { useCart } from './Cart'
+import { useAuth } from '@/contexts/AuthContext'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -29,6 +31,7 @@ export default function Navigation() {
   const [cartOpen, setCartOpen] = useState(false)
   const pathname = usePathname()
   const { getItemCount } = useCart()
+  const { user, logout, isAuthenticated } = useAuth()
 
   const quickPrintItems = [
     { name: 'Document Printing', href: '/services/document-printing' },
@@ -51,13 +54,13 @@ export default function Navigation() {
   return (
     <>
       {/* Top bar with contact info */}
-      <div className="bg-transparent text-white">
+      <div className="bg-gray-100 text-gray-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-2 text-sm">
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 98765 43210</span>
+                <span>Hotline: 00 1900 8188</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
@@ -73,19 +76,17 @@ export default function Navigation() {
       </div>
 
       {/* Main navigation */}
-      <nav className="relative z-10 bg-transparent">
+      <nav className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                                 <img 
-                   src="/logo-dark.svg?v=5" 
-                   alt="Sri Datta Print Centre" 
-                   className="header-logo"
-                   width="350" 
-                   height="52"
-                 />
+                <img 
+                  src="/sdpclogo.png" 
+                  alt="Sri Datta Print Centre" 
+                  className="header-logo h-56 w-auto"
+                />
               </Link>
             </div>
 
@@ -104,8 +105,8 @@ export default function Navigation() {
                         href={item.href}
                         className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                           pathname === item.href
-                            ? 'text-orange-300 bg-white/20'
-                            : 'text-white hover:text-orange-300 hover:bg-white/10'
+                            ? 'text-black bg-gray-100'
+                            : 'text-gray-700 hover:text-black hover:bg-gray-50'
                         }`}
                       >
                         {item.name}
@@ -165,8 +166,8 @@ export default function Navigation() {
                       href={item.href}
                       className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                         pathname === item.href
-                          ? 'text-orange-300 bg-white/20'
-                          : 'text-white hover:text-orange-300 hover:bg-white/10'
+                          ? 'text-black bg-gray-100'
+                          : 'text-gray-700 hover:text-black hover:bg-gray-50'
                       }`}
                     >
                       {item.name}
@@ -178,33 +179,53 @@ export default function Navigation() {
 
             {/* Desktop actions */}
             <div className="hidden md:flex items-center space-x-4">
-              <Link
-                href="/signup"
-                className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Sign up
-              </Link>
-              <Link
-                href="/login"
-                className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                <User className="w-5 h-5" />
-              </Link>
+              {isAuthenticated ? (
+                <>
+                  <Link
+                    href="/dashboard"
+                    className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2"
+                  >
+                    <User className="w-4 h-4" />
+                    {user?.name || user?.email}
+                  </Link>
+                  <button
+                    onClick={logout}
+                    className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/signup"
+                    className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  >
+                    Sign up
+                  </Link>
+                  <Link
+                    href="/login"
+                    className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  >
+                    <User className="w-5 h-5" />
+                  </Link>
+                </>
+              )}
               <button
                 onClick={() => setCartOpen(true)}
-                className="text-white hover:text-orange-300 px-3 py-2 rounded-md text-sm font-medium transition-colors relative"
+                className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors relative"
               >
                 <ShoppingCart className="w-5 h-5" />
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {getItemCount()}
                 </span>
               </button>
               <Link
                 href="/quote"
-                className="border border-orange-300/30 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#F16518] transition-colors shadow-lg shadow-orange-500/25"
-                style={{ backgroundColor: '#F16E02' }}
+                className="btn-primary text-sm px-4 py-2"
               >
-                Get Quote
+                Start A Project
               </Link>
             </div>
 
@@ -212,7 +233,7 @@ export default function Navigation() {
             <div className="md:hidden">
               <button
                 type="button"
-                className="text-white hover:text-orange-300 p-2 rounded-md"
+                className="text-gray-700 hover:text-black p-2 rounded-md"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 {mobileMenuOpen ? (
@@ -228,15 +249,15 @@ export default function Navigation() {
         {/* Mobile menu */}
         {mobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/10 backdrop-blur-sm border-t border-white/20">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                     pathname === item.href
-                      ? 'text-orange-300 bg-white/20'
-                      : 'text-white hover:text-orange-300 hover:bg-white/10'
+                      ? 'text-black bg-gray-100'
+                      : 'text-gray-700 hover:text-black hover:bg-gray-50'
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
@@ -244,36 +265,60 @@ export default function Navigation() {
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
-                <Link
-                  href="/signup"
-                  className="block px-3 py-2 text-base font-medium text-white hover:text-orange-300"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Sign up
-                </Link>
-                <Link
-                  href="/login"
-                  className="block px-3 py-2 text-base font-medium text-white hover:text-orange-300"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Login
-                </Link>
+                {isAuthenticated ? (
+                  <>
+                    <Link
+                      href="/dashboard"
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black flex items-center gap-2"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <User className="w-4 h-4" />
+                      {user?.name || user?.email}
+                    </Link>
+                    <button
+                      onClick={() => {
+                        logout()
+                        setMobileMenuOpen(false)
+                      }}
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black w-full text-left flex items-center gap-2"
+                    >
+                      <LogOut className="w-4 h-4" />
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/signup"
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Sign up
+                    </Link>
+                    <Link
+                      href="/login"
+                      className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Login
+                    </Link>
+                  </>
+                )}
                 <button
                   onClick={() => {
                     setCartOpen(true)
                     setMobileMenuOpen(false)
                   }}
-                  className="block px-3 py-2 text-base font-medium text-white hover:text-orange-300 w-full text-left"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-black w-full text-left"
                 >
                   Cart ({getItemCount()})
                 </button>
                 <Link
                   href="/quote"
-                  className="block px-3 py-2 text-base font-medium text-white rounded-lg text-center hover:bg-[#F16518] transition-colors"
-                  style={{ backgroundColor: '#F16E02' }}
+                  className="block px-3 py-2 text-base font-medium text-white rounded-lg text-center bg-black hover:bg-gray-800 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Get Quote
+                  Start A Project
                 </Link>
               </div>
             </div>

@@ -3,8 +3,11 @@
 import { useState } from 'react'
 import { Upload, FileText, CheckCircle, Clock, Truck, CreditCard, MapPin, User, Phone, Mail } from 'lucide-react'
 import FileUpload from '@/components/FileUpload'
+import AuthGuard from '@/components/AuthGuard'
+import { useAuth } from '@/contexts/AuthContext'
 
 export default function OrderPage() {
+  const { user } = useAuth()
   const [currentStep, setCurrentStep] = useState(1)
   const [orderData, setOrderData] = useState({
     files: [] as any[],
@@ -12,9 +15,9 @@ export default function OrderPage() {
     quantity: 1,
     options: {} as Record<string, string>,
     customerInfo: {
-      name: '',
-      email: '',
-      phone: '',
+      name: user?.name || '',
+      email: user?.email || '',
+      phone: user?.phone || '',
       company: ''
     },
     deliveryInfo: {
@@ -426,8 +429,7 @@ export default function OrderPage() {
     }
   }
 
-  return (
-    <div className="min-h-screen order-page">
+  return <div className="min-h-screen order-page">
       {/* Hero Section */}
       <section className="bg-transparent text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -524,6 +526,5 @@ export default function OrderPage() {
           </div>
         </div>
       </section>
-    </div>
-  )
+  </div>
 }

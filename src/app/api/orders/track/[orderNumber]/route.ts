@@ -31,22 +31,23 @@ export async function GET(
     }
 
     // Return order details (excluding sensitive information)
+    const o = order as any
     return NextResponse.json({
       ok: true,
       order: {
-        _id: order._id,
-        orderNumber: order.orderNumber,
-        status: order.status,
-        customer: order.customer,
-        items: order.items,
-        pricing: order.pricing,
-        delivery: order.delivery,
-        artwork_files: order.artwork_files,
-        createdAt: order.createdAt,
-        updatedAt: order.updatedAt,
-        estimatedCompletion: order.estimatedCompletion,
-        actualCompletion: order.actualCompletion,
-        notes: order.notes
+        _id: String(o._id),
+        orderNumber: o.orderNumber,
+        status: o.status,
+        customer: o.customer,
+        items: o.items,
+        pricing: o.pricing,
+        delivery: o.delivery,
+        artwork_files: o.artwork_files,
+        createdAt: o.createdAt,
+        updatedAt: o.updatedAt,
+        estimatedCompletion: o.estimatedCompletion,
+        actualCompletion: o.actualCompletion,
+        notes: o.notes
       }
     })
   } catch (error) {

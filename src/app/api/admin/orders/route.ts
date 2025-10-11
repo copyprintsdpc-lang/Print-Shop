@@ -36,7 +36,7 @@ export async function GET(req: NextRequest) {
     }
 
     const skip = (page - 1) * limit
-    const sort = { createdAt: -1 }
+    const sort: Record<string, 1 | -1> = { createdAt: -1 }
 
     const [orders, total] = await Promise.all([
       Order.find(query).sort(sort).skip(skip).limit(limit).lean(),

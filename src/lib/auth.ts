@@ -3,6 +3,10 @@ import { cookies } from 'next/headers'
 type JwtPayload = {
   sub: string
   email: string
+  // Optional claims we include in some tokens
+  phone?: string
+  role?: string
+  permissions?: string[]
   iat: number
   exp: number
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { 
   Percent, 
   Plus, 
@@ -37,6 +38,7 @@ interface Promotion {
 }
 
 export default function AdminPromotionsPage() {
+  const router = useRouter()
   const [promotions, setPromotions] = useState<Promotion[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
@@ -337,14 +339,14 @@ export default function AdminPromotionsPage() {
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <div className="flex items-center justify-end gap-2">
                           <button
-                            onClick={() => setSelectedPromotion(promotion)}
+                            onClick={() => router.push(`/admin/promotions/${promotion._id}`)}
                             className="text-blue-600 hover:text-blue-900"
                             title="View Details"
                           >
                             <Eye className="w-4 h-4" />
                           </button>
                           <button
-                            onClick={() => window.location.href = `/admin/promotions/${promotion._id}/edit`}
+                            onClick={() => router.push(`/admin/promotions/${promotion._id}/edit`)}
                             className="text-indigo-600 hover:text-indigo-900"
                             title="Edit Promotion"
                           >
