@@ -3,11 +3,8 @@ import {
   Users, 
   Award, 
   Clock,
-  CheckCircle,
   ArrowRight,
-  MapPin,
-  Phone,
-  Mail
+  Phone
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -116,14 +113,14 @@ export default function StaticAboutPage() {
             <p className="text-gray-700 mb-6">
               Founded in 2014, Sri Datta Print Centre started as a small printing shop with a 
               simple mission: to provide high-quality printing services with exceptional customer 
-              care. Over the years, we've grown from a local print shop to a comprehensive 
+              care. Over the years, we&apos;ve grown from a local print shop to a comprehensive 
               printing solutions provider serving businesses and individuals across Bangalore.
             </p>
             
             <p className="text-gray-700 mb-6">
               Our commitment to quality, innovation, and customer satisfaction has helped us 
               build lasting relationships with our clients. We understand that every print job 
-              is important, whether it's a single business card or a large marketing campaign.
+              is important, whether it&apos;s a single business card or a large marketing campaign.
             </p>
 
             <p className="text-gray-700">

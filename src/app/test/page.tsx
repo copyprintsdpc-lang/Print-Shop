@@ -74,7 +74,7 @@ export default function TestPage() {
         { name: 'Promotions API', url: '/api/admin/promotions' }
       ]
       
-      let apiResults = []
+      const apiResults = []
       for (const test of apiTests) {
         try {
           const response = await fetch(test.url)

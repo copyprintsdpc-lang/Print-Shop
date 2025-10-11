@@ -4,7 +4,7 @@ import { requireAdminAuth } from '@/lib/adminAuth'
 
 // This is a simple in-memory settings store
 // In production, you'd want to store this in a database
-let settingsStore: any = {
+const settingsStore: any = {
   general: {
     siteName: 'Sri Datta Print Center',
     siteDescription: 'Professional Print Shop Services',
