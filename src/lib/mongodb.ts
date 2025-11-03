@@ -7,10 +7,6 @@ if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
 }
 
-// Log connection attempt (remove in production)
-console.log('Attempting to connect to MongoDB...');
-console.log('MongoDB URI:', MONGODB_URI.replace(/\/\/.*@/, '//***:***@')); // Hide credentials in logs
-
 /**
  * Global is used here to maintain a cached connection across hot reloads
  * in development. This prevents connections growing exponentially
@@ -37,11 +33,9 @@ async function dbConnect() {
     };
 
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseConn) => {
-      console.log('MongoDB connected successfully');
       return mongooseConn.connection;
     }).catch((error) => {
       console.error('MongoDB connection error:', error);
-      console.error('Connection string format check:', MONGODB_URI.includes('mongodb+srv://'));
       throw error;
     });
   }

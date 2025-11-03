@@ -17,20 +17,13 @@ export async function connectToDatabase(): Promise<typeof mongoose> {
       throw new Error('MONGODB_URI environment variable is not set')
     }
 
-    console.log('Connecting to MongoDB Atlas...')
     globalState.promise = mongoose.connect(uri, {
       bufferCommands: false,
       maxConnecting: 10,
     }).then(() => {
-      console.log('✅ Connected to MongoDB Atlas successfully')
       return mongoose
     }).catch((err) => {
-      console.error('❌ MongoDB Atlas connection failed:', err.message)
-      console.error('Please check:')
-      console.error('1. MongoDB Atlas cluster is running')
-      console.error('2. Your IP address is whitelisted in MongoDB Atlas')
-      console.error('3. Database credentials are correct')
-      console.error('4. Network connectivity to MongoDB Atlas')
+      console.error('MongoDB Atlas connection failed:', err.message)
       throw err
     })
   }

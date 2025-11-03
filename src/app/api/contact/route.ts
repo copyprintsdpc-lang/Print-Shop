@@ -147,7 +147,7 @@ export async function POST(req: NextRequest) {
     `
 
     // Send email to business
-    const businessEmail = process.env.CONTACT_EMAIL || process.env.EMAIL_FROM || 'copyprintsdpc@gmail.com'
+    const businessEmail = 'support@sridattaprintcentre.com'
     
     try {
       await sendEmail(businessEmail, emailSubject, emailHtml, {

@@ -95,7 +95,7 @@ export async function POST(req: NextRequest) {
     })
 
     // Prepare email content for notification
-    const adminEmail = process.env.CONTACT_EMAIL || process.env.EMAIL_FROM || 'copyprintsdpc@gmail.com'
+    const adminEmail = 'support@sridattaprintcentre.com'
     const emailSubject = `New Quote Request - ${phone}`
     const emailHtml = `
       <div style="font-family:sans-serif;padding:20px;max-width:600px;margin:0 auto">

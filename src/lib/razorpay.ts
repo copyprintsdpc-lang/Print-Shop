@@ -1,10 +1,25 @@
 import Razorpay from 'razorpay'
 
-// Initialize Razorpay instance
-export const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID || '',
-  key_secret: process.env.RAZORPAY_KEY_SECRET || '',
-})
+// Initialize Razorpay instance lazily
+let razorpayInstance: Razorpay | null = null
+
+function getRazorpayInstance(): Razorpay {
+  if (!razorpayInstance) {
+    const keyId = process.env.RAZORPAY_KEY_ID
+    const keySecret = process.env.RAZORPAY_KEY_SECRET
+    
+    if (!keyId || !keySecret) {
+      throw new Error('Razorpay credentials not configured. Please set RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET environment variables.')
+    }
+    
+    razorpayInstance = new Razorpay({
+      key_id: keyId,
+      key_secret: keySecret,
+    })
+  }
+  
+  return razorpayInstance
+}
 
 // Interface for order creation
 export interface CreateOrderData {
@@ -24,6 +39,7 @@ export interface PaymentVerificationData {
 // Create Razorpay order
 export async function createRazorpayOrder(data: CreateOrderData) {
   try {
+    const razorpay = getRazorpayInstance()
     const options = {
       amount: Math.round(data.amount * 100), // Convert to paise
       currency: data.currency || 'INR',
@@ -63,6 +79,7 @@ export function verifyPaymentSignature(data: PaymentVerificationData): boolean {
 // Fetch payment details
 export async function getPaymentDetails(paymentId: string) {
   try {
+    const razorpay = getRazorpayInstance()
     const payment = await razorpay.payments.fetch(paymentId)
     return {
       success: true,
@@ -80,6 +97,7 @@ export async function getPaymentDetails(paymentId: string) {
 // Refund payment
 export async function refundPayment(paymentId: string, amount?: number, notes?: string) {
   try {
+    const razorpay = getRazorpayInstance()
     const refundData: any = {
       payment_id: paymentId
     }
@@ -104,6 +122,7 @@ export async function refundPayment(paymentId: string, amount?: number, notes?: 
 // Get order details
 export async function getOrderDetails(orderId: string) {
   try {
+    const razorpay = getRazorpayInstance()
     const order = await razorpay.orders.fetch(orderId)
     return {
       success: true,
