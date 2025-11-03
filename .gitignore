@@ -1,43 +1,81 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# Next.js
+.next/
+out/
+build/
+dist/
 
-# testing
-/coverage
+# Dependencies
+node_modules/
 
-# next.js
-/.next/
-/out/
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
-# env files (keep secrets out of git)
-.env
-.env.*
-!.env.example
+# Misc
+.DS_Store
+*.pem
 
-# vercel
-.vercel
+# Testing
+coverage/
+*.test.ts.snap
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# User uploads
+public/uploads/*/
+!public/uploads/*/.gitkeep
+
+# Old documentation (cleanup)
+ADMIN_ACCOUNT_INFO.md
+AUTHENTICATION_*.md
+BUILD_SUCCESS.md
+COMPLETE_*.md
+CONTACT_FORM_*.md
+COST_COMPARISON.md
+DELETE_*.md
+DEPLOYMENT_STRATEGY.md
+E2E_*.md
+EMAIL_*.md
+GEMINI_IMAGE_PROMPTS.md
+HARDCODED_*.md
+HEADER_*.md
+HOMEPAGE_IMAGES_*.md
+IMAGE_*.md
+IMPLEMENTATION_*.md
+MIGRATION_*.md
+MVP_*.md
+NIGHT_SUMMARY.md
+ORDER_EMAILS_*.md
+PAPER_SIZE_GUIDE_*.md
+PHASE1_*.md
+PLAYWRIGHT_*.md
+PROFILE_VERIFICATION_*.md
+QUICK_*.md
+README_*.md
+S3_*.md
+SETUP_INSTRUCTIONS.md
+START_HERE_*.txt
+STRUCTURE_*.txt
+TEST_SUITE_*.md
+TODAY_PROGRESS_*.md
+TOMORROW_*.md
+UI_UX_*.md
+UPLOAD_PRESET_*.md
+USER_MANAGEMENT_*.md
+VERCEL_*.md
+VERIFICATION_*.md
+WHERE_TO_SAVE_*.txt
+*.ps1
+*.json.bak

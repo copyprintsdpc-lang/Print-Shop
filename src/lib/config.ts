@@ -28,12 +28,14 @@ export const config = {
     keyId: process.env.RAZORPAY_KEY_ID || '',
     keySecret: process.env.RAZORPAY_KEY_SECRET || '',
   },
-  // Email Configuration
+  // Email Configuration (Generic SMTP - supports any email provider)
   email: {
-    host: process.env.BREVO_SMTP_HOST || 'smtp-relay.brevo.com',
-    port: parseInt(process.env.BREVO_SMTP_PORT || '587'),
-    user: process.env.BREVO_SMTP_USER || '',
-    pass: process.env.BREVO_SMTP_PASS || '',
+    host: process.env.SMTP_HOST || process.env.BREVO_SMTP_HOST || 'smtp-relay.brevo.com',
+    port: parseInt(process.env.SMTP_PORT || process.env.BREVO_SMTP_PORT || '587'),
+    secure: process.env.SMTP_SECURE === 'true' || process.env.SMTP_PORT === '465',
+    user: process.env.SMTP_USER || process.env.BREVO_SMTP_USER || '',
+    pass: process.env.SMTP_PASS || process.env.BREVO_SMTP_PASS || '',
     from: process.env.EMAIL_FROM || 'copyprintsdpc@gmail.com',
+    fromName: process.env.EMAIL_FROM_NAME || 'Sri Datta Print Center',
   },
 }

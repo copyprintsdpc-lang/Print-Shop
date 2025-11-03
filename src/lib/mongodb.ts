@@ -16,7 +16,7 @@ console.log('MongoDB URI:', MONGODB_URI.replace(/\/\/.*@/, '//***:***@')); // Hi
  * in development. This prevents connections growing exponentially
  * during API Route usage.
  */
-let cached = global.mongoose;
+let cached: any = global.mongoose;
 
 if (!cached) {
   cached = global.mongoose = { conn: null, promise: null };
@@ -36,9 +36,9 @@ async function dbConnect() {
       family: 4, // Use IPv4, skip trying IPv6
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseConn) => {
       console.log('MongoDB connected successfully');
-      return mongoose;
+      return mongooseConn.connection;
     }).catch((error) => {
       console.error('MongoDB connection error:', error);
       console.error('Connection string format check:', MONGODB_URI.includes('mongodb+srv://'));

@@ -1,0 +1,35 @@
+==================================================================
+ADMIN ACCOUNT CREDENTIALS
+==================================================================
+
+✅ Admin account created successfully!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📧 Email:    admin@sdpc.com
+🔑 Password: Admin@123
+👤 Role:     Super Admin
+📍 Login:    http://localhost:3000/admin/login
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+QUICK START:
+1. Run: npm run dev
+2. Visit: http://localhost:3000/admin/login
+3. Login with credentials above
+4. Access full admin dashboard
+
+PERMISSIONS:
+✅ Full access to all features
+✅ Products management (create/read/update/delete)
+✅ Orders management (read/update)
+✅ Promotions management (full access)
+✅ Users viewing and analytics
+✅ Settings management
+
+SECURITY:
+⚠️ Change password before production!
+
+RE-CREATE ADMIN:
+node scripts/create-admin.js
+
+==================================================================
+

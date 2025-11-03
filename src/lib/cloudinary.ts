@@ -62,7 +62,7 @@ export async function uploadToCloudinary(
       uploadOptions.public_id = publicId
     }
 
-    let result
+    let result: any
     if (typeof file === 'string') {
       // Upload from URL
       result = await cloudinary.uploader.upload(file, uploadOptions)

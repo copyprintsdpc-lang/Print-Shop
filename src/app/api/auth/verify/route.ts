@@ -28,8 +28,16 @@ export async function GET(req: NextRequest) {
     }
 
     user.verified = true
+    user.emailVerifiedAt = new Date()
+    
+    // Check if profile is complete
+    user.profileComplete = user.verified && user.mobileVerified && user.addresses.length > 0
+    user.canOrder = user.verified && user.mobileVerified && user.addresses.some((addr: any) => addr.isVerified)
+    
     await user.save()
     await vt.deleteOne()
+
+    console.log(`✅ Email verified for ${user.email}`)
 
     const jwt = signJwt({ sub: String(user._id), email: user.email })
     await setAuthCookie(jwt)

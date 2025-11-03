@@ -67,14 +67,14 @@ export async function GET(req: NextRequest) {
     }).toArray()
 
     // Apply promotions to products
-    const productsWithPromotions = products.map(product => {
-      const applicablePromotions = promotions.filter(promo => 
-        (promo.applicableProducts && promo.applicableProducts.some(id => id.toString() === product._id.toString())) ||
+    const productsWithPromotions = products.map((product: any) => {
+      const applicablePromotions = promotions.filter((promo: any) => 
+        (promo.applicableProducts && promo.applicableProducts.some((id: any) => id.toString() === product._id.toString())) ||
         (promo.applicableCategories && promo.applicableCategories.includes(product.category))
       )
 
       if (applicablePromotions.length > 0) {
-        const bestPromo = applicablePromotions.reduce((best, current) => 
+        const bestPromo = applicablePromotions.reduce((best: any, current: any) => 
           current.discount > best.discount ? current : best
         )
         

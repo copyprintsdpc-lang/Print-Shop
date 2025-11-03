@@ -206,6 +206,7 @@ export const products: Product[] = [
       pricePerSqFt: 45,
       minCharge: 200
     },
+    pricingTiers: [],
     active: true
   },
   {

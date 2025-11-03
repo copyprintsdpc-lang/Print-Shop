@@ -34,8 +34,18 @@ export async function POST(req: NextRequest) {
 
     const appUrl = process.env.APP_URL || 'http://localhost:3000'
     const link = `${appUrl}/verify?token=${encodeURIComponent(raw)}&email=${encodeURIComponent(user.email)}`
-    if (process.env.BREVO_SMTP_USER && process.env.BREVO_SMTP_PASS) {
-      await sendVerificationEmail(user.email, link)
+    
+    // Check if SMTP is properly configured (generic SMTP or Brevo)
+    const smtpUser = process.env.SMTP_USER || process.env.BREVO_SMTP_USER
+    const smtpPass = process.env.SMTP_PASS || process.env.BREVO_SMTP_PASS
+    
+    if (smtpUser && smtpPass) {
+      try {
+        await sendVerificationEmail(user.email, link)
+        console.info('✅ Verification email resent to:', user.email)
+      } catch (emailError) {
+        console.error('❌ Email sending failed:', emailError)
+      }
     } else {
       console.info('[DEV] Verification link (no SMTP configured):', link)
     }

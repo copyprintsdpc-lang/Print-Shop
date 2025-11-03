@@ -60,16 +60,18 @@ export default function Navigation() {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>Hotline: 00 1900 8188</span>
+                <span className="hidden sm:inline">Hotline: +91 8897379737</span>
+                <span className="sm:hidden">+91 8897379737</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="hidden sm:flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
-                <span>Bangalore, Karnataka</span>
+                <span>Kukatpally, Hyderabad</span>
               </div>
             </div>
             <div className="flex items-center space-x-2">
               <Clock className="w-4 h-4" />
-              <span>Mon-Sat: 9AM-7PM</span>
+              <span className="hidden sm:inline">Mon-Sat: 9AM-9PM</span>
+              <span className="sm:hidden">9AM-9PM</span>
             </div>
           </div>
         </div>
@@ -85,7 +87,7 @@ export default function Navigation() {
                 <img 
                   src="/sdpclogo.png" 
                   alt="Sri Datta Print Centre" 
-                  className="header-logo h-56 w-auto"
+                  className="header-logo h-10 md:h-12 w-auto"
                 />
               </Link>
             </div>
@@ -112,8 +114,8 @@ export default function Navigation() {
                         {item.name}
                       </Link>
 
-                      {false && openMenu === 'services' && (
-                        <div className="absolute left-0 mt-2 w-[920px] bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl rounded-xl p-6 z-50">
+                      {openMenu === 'services' && (
+                        <div className="absolute left-0 mt-2 w-[920px] bg-white border border-gray-200 shadow-xl rounded-xl p-6 z-50">
                           <div className="grid grid-cols-12 gap-6">
                             {/* Left column: list */}
                             <div className="col-span-6">
@@ -122,37 +124,37 @@ export default function Navigation() {
                                   <li key={q.name}>
                                     <Link
                                       href={q.href}
-                                      className="block text-white hover:text-orange-300"
+                                      className="block text-gray-700 hover:text-blue-600 transition-colors"
                                     >
                                       {q.name}
                                     </Link>
                                   </li>
                                 ))}
                                 <li>
-                                  <Link href="/services" className="block text-orange-300 font-medium">View All</Link>
+                                  <Link href="/services" className="block text-blue-600 font-medium hover:text-blue-700">View All</Link>
                                 </li>
                               </ul>
                             </div>
                             {/* Right column: feature cards */}
                             <div className="col-span-6 grid grid-cols-2 gap-4">
-                              <Link href="/quote" className="group border border-white/30 rounded-lg overflow-hidden hover:bg-white/5 transition-all bg-white/5">
-                                <div className="h-32 bg-white/10 flex items-center justify-center">
-                                  <span className="text-white/70 text-sm">Quick Print</span>
+                              <Link href="/quote" className="group border border-gray-200 rounded-lg overflow-hidden hover:bg-gray-50 transition-all bg-white">
+                                <div className="h-32 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
+                                  <span className="text-gray-700 text-sm font-medium">Quick Print</span>
                                 </div>
                                 <div className="p-4">
-                                  <p className="font-semibold text-white group-hover:text-orange-300">Quick and easy printing</p>
-                                  <p className="text-sm text-white/70 mt-1">Order by noon for same-day pickup by store closing.</p>
-                                  <span className="text-sm text-orange-300 font-medium">Print a document</span>
+                                  <p className="font-semibold text-gray-900 group-hover:text-blue-600">Quick and easy printing</p>
+                                  <p className="text-sm text-gray-600 mt-1">Order by noon for same-day pickup by store closing.</p>
+                                  <span className="text-sm text-blue-600 font-medium">Print a document</span>
                                 </div>
                               </Link>
-                              <Link href="/quote" className="group border border-white/30 rounded-lg overflow-hidden hover:bg-white/5 transition-all bg-white/5">
-                                <div className="h-32 bg-white/10 flex items-center justify-center">
-                                  <span className="text-white/70 text-sm">PrintMe</span>
+                              <Link href="/quote" className="group border border-gray-200 rounded-lg overflow-hidden hover:bg-gray-50 transition-all bg-white">
+                                <div className="h-32 bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center">
+                                  <span className="text-gray-700 text-sm font-medium">PrintMe</span>
                                 </div>
                                 <div className="p-4">
-                                  <p className="font-semibold text-white group-hover:text-orange-300">PrintMe</p>
-                                  <p className="text-sm text-white/70 mt-1">Simplified print options to print what you need when you need it.</p>
-                                  <span className="text-sm text-orange-300 font-medium">Learn More</span>
+                                  <p className="font-semibold text-gray-900 group-hover:text-blue-600">PrintMe</p>
+                                  <p className="text-sm text-gray-600 mt-1">Simplified print options to print what you need when you need it.</p>
+                                  <span className="text-sm text-blue-600 font-medium">Learn More</span>
                                 </div>
                               </Link>
                             </div>
@@ -214,6 +216,8 @@ export default function Navigation() {
               )}
               <button
                 onClick={() => setCartOpen(true)}
+                aria-label={`Shopping cart with ${getItemCount()} items`}
+                aria-expanded={cartOpen}
                 className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors relative"
               >
                 <ShoppingCart className="w-5 h-5" />
@@ -233,6 +237,8 @@ export default function Navigation() {
             <div className="md:hidden">
               <button
                 type="button"
+                aria-label="Toggle mobile menu"
+                aria-expanded={mobileMenuOpen}
                 className="text-gray-700 hover:text-black p-2 rounded-md"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >

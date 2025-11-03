@@ -169,7 +169,7 @@ export default function Cart({ isOpen, onClose, onCheckout }: CartProps) {
                       </span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        disabled={item.maxQuantity && item.quantity >= item.maxQuantity}
+                        disabled={!!(item.maxQuantity && item.quantity >= item.maxQuantity)}
                         className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <Plus className="w-4 h-4" />

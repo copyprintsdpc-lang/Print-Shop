@@ -30,12 +30,12 @@ export default function WebsiteNavigation() {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>Hotline: 00 1900 8188</span>
+                <span>Hotline: +91 8897379737</span>
               </div>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="w-4 h-4" />
-              <span>Bangalore, Karnataka</span>
+              <span>Kukatpally, Hyderabad</span>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function WebsiteNavigation() {
                 <img 
                   src="/sdpclogo.png" 
                   alt="Sri Datta Print Centre" 
-                  className="header-logo h-14 w-auto"
+                  className="header-logo h-10 md:h-12 w-auto"
                 />
               </Link>
             </div>

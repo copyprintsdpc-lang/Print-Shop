@@ -64,18 +64,23 @@ export async function POST(req: NextRequest) {
       const appUrl = process.env.APP_URL || 'http://localhost:3000'
       const link = `${appUrl}/verify?token=${encodeURIComponent(raw)}&email=${encodeURIComponent(user.email)}`
       
-      // Check if SMTP is properly configured (not placeholder values)
-      const smtpConfigured = process.env.BREVO_SMTP_USER && 
-                            process.env.BREVO_SMTP_PASS && 
-                            process.env.BREVO_SMTP_USER !== 'your-brevo-username' &&
-                            process.env.BREVO_SMTP_PASS !== 'your-brevo-password'
+      // Check if SMTP is properly configured (generic SMTP or Brevo)
+      const smtpUser = process.env.SMTP_USER || process.env.BREVO_SMTP_USER
+      const smtpPass = process.env.SMTP_PASS || process.env.BREVO_SMTP_PASS
+      const smtpConfigured = smtpUser && 
+                            smtpPass && 
+                            smtpUser !== 'your-smtp-username' &&
+                            smtpPass !== 'your-smtp-password' &&
+                            smtpUser !== 'your-brevo-username' &&
+                            smtpPass !== 'your-brevo-password'
       
       if (smtpConfigured) {
         try {
           await sendVerificationEmail(user.email, link)
+          console.info('✅ Verification email sent to:', user.email)
         } catch (emailError) {
           const message = (emailError as any)?.message || String(emailError)
-          console.error('Email sending failed:', message)
+          console.error('❌ Email sending failed:', message)
           // Don't fail the signup if email fails, just log it
         }
       } else {

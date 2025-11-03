@@ -16,7 +16,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-transparent text-white">
+    <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -25,7 +25,7 @@ export default function Footer() {
               <img 
                 src="/sdpclogo.png" 
                 alt="Sri Datta Print Centre" 
-                className="header-logo h-32 w-auto"
+                className="header-logo h-12 w-auto"
               />
             </div>
             <p className="text-gray-300 mb-4">
@@ -112,19 +112,24 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-blue-400" />
-                <span className="text-gray-300">+91 98765 43210</span>
+                <span className="text-gray-300">+91 8897379737</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-blue-400" />
-                <span className="text-gray-300">info@copyprintshop.com</span>
+                <span className="text-gray-300">info@sridattaprintcentre.com</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-4 h-4 text-blue-400" />
-                <span className="text-gray-300">Bangalore, Karnataka</span>
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-4 h-4 text-blue-400 mt-1" />
+                <span className="text-gray-300 text-sm">
+                  Shop No. 2, Cellar Floor,<br />
+                  Siri Plaza, KPHB Main,<br />
+                  Kukatpally, Hyderabad,<br />
+                  Telangana 500072
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="w-4 h-4 text-blue-400" />
-                <span className="text-gray-300">Mon-Sat: 9AM-7PM</span>
+                <span className="text-gray-300">Mon-Sat: 9AM-9PM<br />Sun: 10:30AM-7PM</span>
               </div>
             </div>
           </div>
