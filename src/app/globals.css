@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #000000;
+  --secondary: #f8f9fa;
+  --accent: #007bff;
+  --text-muted: #6c757d;
+}
+
+html { 
+  height: 100%;
+  background: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+body { 
+  height: 100%; 
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--foreground);
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+/* Clean, minimal styling like Pricom */
+.header-logo {
+  height: auto;
+  max-height: 52px;
+  display: inline-block;
+}
+
+/* Header styling */
+header, .site-header, .navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Clean card styling */
+.card {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  border-color: #d1d5db;
+}
+
+.card img {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Enhanced button animations */
+.btn-primary, .btn-secondary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-primary::before, .btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before, .btn-secondary:hover::before {
+  left: 100%;
+}
+
+/* Image hover effects */
+.group:hover img {
+  transform: scale(1.1);
+}
+
+/* Fade in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Gradient overlays */
+.gradient-overlay {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+}
+
+/* Enhanced shadows */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.shadow-glow:hover {
+  box-shadow: 0 0 30px rgba(0,0,0,0.15);
+}
+
+/* Button styling */
+.btn-primary {
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #333333;
+  border-color: #333333;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Force light gray text in service cards */
+.services-page .text-black,
+.services-page .text-gray-900,
+.services-page .text-blue-600,
+.services-page h3,
+.services-page h4,
+.services-page p,
+.services-page li {
+  color: #e5e7eb !important;
+  font-weight: 600 !important;
+}
+
+/* Force black text in order page for readability */
+.order-page * {
+  color: #000000 !important;
+}
+
+.order-page .text-gray-700 {
+  color: #374151 !important;
+}
+
+/* Specific overrides for order page elements */
+.order-page h3,
+.order-page h4,
+.order-page p,
+.order-page span,
+.order-page label,
+.order-page div {
+  color: #000000 !important;
+}
+
+/* Override any inherited text colors in the order page */
+.order-page [class*="text-"] {
+  color: #000000 !important;
+}

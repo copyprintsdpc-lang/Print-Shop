@@ -1,0 +1,42 @@
+==================================================================
+ADMIN ACCOUNT CREDENTIALS
+==================================================================
+
+✅ Admin accounts provisioned
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📧 Email:    owner@sdpc.com
+🔑 Password: Owner#543!@
+👤 Role:     Owner / Super Admin
+📍 Login:    http://localhost:3000/admin/login
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📧 Email:    staff@sdpc.com
+🔑 Password: Staff#543!@
+👤 Role:     Operations Staff
+📍 Login:    http://localhost:3000/admin/login
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+QUICK START:
+1. Run: npm run dev
+2. Visit: http://localhost:3000/admin/login
+3. Login with the owner account for full control
+
+PERMISSIONS:
+✅ Full access to all features
+✅ Products management (create/read/update/delete)
+✅ Orders management (read/update)
+✅ Promotions management (full access)
+✅ Users viewing and analytics
+✅ Settings management
+
+SECURITY:
+⚠️ Change password before production!
+
+RE-CREATE ADMINS:
+- `node scripts/create-admin.js` (adds owner + staff if missing)
+- `node scripts/reset-admin.js` (danger: wipes admins/users, seeds owner only)
+
+==================================================================
+

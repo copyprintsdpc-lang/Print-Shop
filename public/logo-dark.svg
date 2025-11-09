@@ -1,0 +1,32 @@
+<svg width="350" height="52" viewBox="0 0 350 52" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Soft pink gradient for "SRI DATTA" -->
+    <linearGradient id="sriDattaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFC0D6"/>
+      <stop offset="100%" style="stop-color:#FF86B3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Main text group - clean and simple -->
+  <g>
+    <!-- "SRI DATTA" in soft pink gradient -->
+    <text x="5" y="22" 
+          font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" 
+          font-size="22" 
+          font-weight="700" 
+          letter-spacing="0.22px" 
+          fill="url(#sriDattaGradient)">
+      SRI DATTA
+    </text>
+    
+    <!-- "Printcentre" in cool blue -->
+    <text x="5" y="42" 
+          font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" 
+          font-size="20" 
+          font-weight="700" 
+          letter-spacing="0.20px" 
+          fill="#B6C9FF">
+      Printcentre
+    </text>
+  </g>
+</svg>
