@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.450.0",
+    "@aws-sdk/cloudfront-signer": "^3.454.0",
+    "@aws-sdk/s3-request-presigner": "^3.901.0",
     "@react-google-maps/api": "^2.20.7",
     "bcryptjs": "^2.4.3",
     "dotenv": "^17.2.3",
@@ -28,8 +30,6 @@
     "sharp": "^0.32.6"
   },
   "devDependencies": {
-    "@aws-sdk/cloudfront-signer": "^3.454.0",
-    "@aws-sdk/s3-request-presigner": "^3.901.0",
     "@types/bcryptjs": "^2.4.4",
     "@types/jsonwebtoken": "^9.0.3",
     "@types/node": "20.19.19",
