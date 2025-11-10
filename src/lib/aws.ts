@@ -25,18 +25,45 @@ const inferredCredentials =
     ? { accessKeyId: ACCESS_KEY_ID, secretAccessKey: SECRET_ACCESS_KEY }
     : undefined
 
+export const S3_BUCKET =
+  process.env.S3_BUCKET_NAME ||
+  process.env.SDPC_S3_BUCKET_NAME ||
+  'sdpcbucket'
+
+export const S3_BUCKET_REGION =
+  process.env.S3_BUCKET_REGION ||
+  process.env.SDPC_S3_BUCKET_REGION ||
+  REGION
+
+export const CLOUDFRONT_DOMAIN =
+  process.env.CLOUDFRONT_DOMAIN ||
+  process.env.SDPC_CLOUDFRONT_DOMAIN ||
+  ''
+
+export const CLOUDFRONT_DISTRIBUTION_ID =
+  process.env.CLOUDFRONT_DISTRIBUTION_ID ||
+  process.env.SDPC_CLOUDFRONT_DISTRIBUTION_ID ||
+  ''
+
+const CLOUDFRONT_KEY_PAIR_ID =
+  process.env.CLOUDFRONT_KEY_PAIR_ID ||
+  process.env.SDPC_CLOUDFRONT_KEY_PAIR_ID ||
+  ''
+
+const CLOUDFRONT_PRIVATE_KEY_ENV =
+  process.env.CLOUDFRONT_PRIVATE_KEY ||
+  process.env.SDPC_CLOUDFRONT_PRIVATE_KEY ||
+  ''
+
+const CLOUDFRONT_PRIVATE_KEY_PATH =
+  process.env.CLOUDFRONT_PRIVATE_KEY_PATH ||
+  process.env.SDPC_CLOUDFRONT_PRIVATE_KEY_PATH ||
+  ''
+
 export const s3Client = new S3Client({
   region: REGION,
   ...(inferredCredentials ? { credentials: inferredCredentials } : {}),
 })
-
-export const S3_BUCKET = process.env.S3_BUCKET_NAME || 'sdpcbucket'
-export const S3_BUCKET_REGION = process.env.S3_BUCKET_REGION || 'us-east-1'
-export const CLOUDFRONT_DOMAIN = process.env.CLOUDFRONT_DOMAIN || ''
-export const CLOUDFRONT_DISTRIBUTION_ID = process.env.CLOUDFRONT_DISTRIBUTION_ID || ''
-const CLOUDFRONT_KEY_PAIR_ID = process.env.CLOUDFRONT_KEY_PAIR_ID || ''
-const CLOUDFRONT_PRIVATE_KEY_ENV = process.env.CLOUDFRONT_PRIVATE_KEY || ''
-const CLOUDFRONT_PRIVATE_KEY_PATH = process.env.CLOUDFRONT_PRIVATE_KEY_PATH || ''
 
 // File upload configuration
 export const MAX_FILE_SIZE = parseInt(process.env.MAX_FILE_SIZE || '209715200') // 200MB
