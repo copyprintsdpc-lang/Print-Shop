@@ -21,7 +21,9 @@ function base64urlJson(obj: unknown): string {
 }
 
 function getSecret(): Buffer {
-  const secret = process.env.JWT_SECRET
+  const secret =
+    process.env.JWT_SECRET ||
+    process.env.SDPC_JWT_SECRET
   if (!secret) throw new Error('JWT_SECRET not set')
   return Buffer.from(secret)
 }
