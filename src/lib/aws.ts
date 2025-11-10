@@ -5,12 +5,29 @@ import { getSignedUrl as getSignedCloudFrontUrl } from '@aws-sdk/cloudfront-sign
 import { createHash } from 'crypto'
 
 // AWS S3 Configuration
+const REGION =
+  process.env.SDPC_AWS_REGION ||
+  process.env.AWS_REGION ||
+  'us-east-1'
+
+const ACCESS_KEY_ID =
+  process.env.SDPC_AWS_ACCESS_KEY_ID ||
+  process.env.AWS_ACCESS_KEY_ID ||
+  ''
+
+const SECRET_ACCESS_KEY =
+  process.env.SDPC_AWS_SECRET_ACCESS_KEY ||
+  process.env.AWS_SECRET_ACCESS_KEY ||
+  ''
+
+const inferredCredentials =
+  ACCESS_KEY_ID && SECRET_ACCESS_KEY
+    ? { accessKeyId: ACCESS_KEY_ID, secretAccessKey: SECRET_ACCESS_KEY }
+    : undefined
+
 export const s3Client = new S3Client({
-  region: process.env.AWS_REGION || 'us-east-1',
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID || '',
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || '',
-  },
+  region: REGION,
+  ...(inferredCredentials ? { credentials: inferredCredentials } : {}),
 })
 
 export const S3_BUCKET = process.env.S3_BUCKET_NAME || 'sdpcbucket'
