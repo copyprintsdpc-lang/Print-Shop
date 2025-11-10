@@ -283,38 +283,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-50 py-10 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            <div className="group">
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-white">
-                <div className="text-3xl font-bold mb-2">$2M</div>
-                <p className="text-blue-100 text-sm">invested in printing equipment</p>
-              </div>
-            </div>
-            <div className="group">
-              <div className="bg-gradient-to-br from-green-500 to-emerald-600 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-white">
-                <div className="text-3xl font-bold mb-2">$5M+</div>
-                <p className="text-green-100 text-sm">sold by customers through Sri Datta</p>
-              </div>
-            </div>
-            <div className="group">
-              <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-white">
-                <div className="text-3xl font-bold mb-2">50+</div>
-                <p className="text-purple-100 text-sm">person team across India</p>
-              </div>
-            </div>
-            <div className="group">
-              <div className="bg-gradient-to-br from-orange-500 to-red-600 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 text-white">
-                <div className="text-3xl font-bold mb-2">1M+</div>
-                <p className="text-orange-100 text-sm">items trusted to deliver</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="bg-gradient-to-br from-purple-600 via-pink-600 to-red-600 py-10 relative overflow-hidden">
         {/* Colorful background elements */}
