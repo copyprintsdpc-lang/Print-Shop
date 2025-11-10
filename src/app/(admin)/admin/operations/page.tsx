@@ -352,7 +352,7 @@ export default function AdminOperationsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Operations Console</h1>
+            <h1 data-testid="operations-title" className="text-3xl font-bold text-gray-900">Operations Console</h1>
             <p className="text-gray-600 mt-2">
               Manage services, respond to quote requests, and process customer file uploads from one place.
             </p>
@@ -497,7 +497,7 @@ export default function AdminOperationsPage() {
               </div>
 
               <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
+                <table data-testid="services-table" className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -594,7 +594,7 @@ export default function AdminOperationsPage() {
               </div>
 
               <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
+                <table data-testid="quotes-table" className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -873,7 +873,7 @@ export default function AdminOperationsPage() {
               </div>
 
               <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
+                <table data-testid="uploads-table" className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">

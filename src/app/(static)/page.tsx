@@ -18,7 +18,10 @@ export default function Home() {
     <div className="min-h-screen bg-white text-black">
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-10 relative overflow-hidden">
+      <section
+        data-testid="home-hero"
+        className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-10 relative overflow-hidden"
+      >
         {/* Colorful background elements */}
         <div className="absolute top-10 left-10 w-24 h-24 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-20 animate-bounce"></div>
         <div className="absolute top-20 right-20 w-16 h-16 bg-gradient-to-r from-pink-400 to-red-500 rounded-full opacity-20 animate-pulse"></div>
