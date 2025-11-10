@@ -32,21 +32,34 @@ async function verifyJwtEdge(token: string): Promise<{ email: string; sub: strin
     return null
   }
 }
+'use server'
+
+const ADMIN_ROUTE_PREFIXES = ['/admin', '/api/admin']
+const PUBLIC_ADMIN_ROUTES = ['/admin/login', '/admin/reset', '/api/admin/auth/login', '/api/admin/auth/logout']
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl
-  if (pathname.startsWith('/dashboard')) {
-    const token = req.cookies.get('sdp_session')?.value
-    const valid = token ? await verifyJwtEdge(token) : null
-    if (!valid) {
-      const url = req.nextUrl.clone()
-      url.pathname = '/login'
-      return NextResponse.redirect(url)
-    }
+
+  const isAdminRoute = ADMIN_ROUTE_PREFIXES.some(prefix => pathname.startsWith(prefix))
+  const isPublicAdminRoute = PUBLIC_ADMIN_ROUTES.some(route => pathname.startsWith(route))
+
+  if (!isAdminRoute || isPublicAdminRoute) {
+    return NextResponse.next()
   }
+
+  const token = req.cookies.get('sdp_session')?.value
+  const valid = token ? await verifyJwtEdge(token) : null
+
+  if (!valid) {
+    const redirectUrl = req.nextUrl.clone()
+    redirectUrl.pathname = '/admin/login'
+    redirectUrl.searchParams.set('from', pathname)
+    return NextResponse.redirect(redirectUrl)
+  }
+
   return NextResponse.next()
 }
 
-export const config = { matcher: ['/dashboard'] }
-
-
+export const config = {
+  matcher: ['/admin/:path*', '/api/admin/:path*'],
+}
