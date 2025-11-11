@@ -9,14 +9,16 @@ function b64urlToUint8Array(b64url: string): Uint8Array {
   return bytes
 }
 
+const ADMIN_JWT_SECRET = process.env.SDPC_JWT_SECRET || process.env.JWT_SECRET || ''
+
 async function verifyJwtEdge(token: string): Promise<{ email: string; sub: string } | null> {
   try {
     const [headerB64, payloadB64, sigB64] = token.split('.')
     if (!headerB64 || !payloadB64 || !sigB64) return null
     const unsigned = `${headerB64}.${payloadB64}`
     const enc = new TextEncoder()
-    const keyData = enc.encode(process.env.JWT_SECRET || '')
-    if (!keyData.byteLength) return null
+    if (!ADMIN_JWT_SECRET) return null
+    const keyData = enc.encode(ADMIN_JWT_SECRET)
     const key = await crypto.subtle.importKey('raw', keyData, { name: 'HMAC', hash: 'SHA-256' }, false, ['verify'])
     const signatureBytes = b64urlToUint8Array(sigB64)
     const signatureBuffer = signatureBytes.buffer.slice(signatureBytes.byteOffset, signatureBytes.byteOffset + signatureBytes.byteLength) as ArrayBuffer
