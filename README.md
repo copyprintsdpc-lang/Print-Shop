@@ -14,6 +14,9 @@ Create `.env.local` with:
 ```env
 # Points to dev database; prod uses sdpc_print_prod
 MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/sdpc_print_shop?retryWrites=true&w=majority
+SDPC_JWT_SECRET=replace-me-for-dev
+# Optional duplicate for local tooling
+JWT_SECRET=replace-me-for-dev
 EMAIL_FROM=your_email@domain.com
 SMTP_HOST=smtp.domain.com
 SMTP_PORT=587
@@ -23,16 +26,27 @@ CONTACT_EMAIL=your_contact_email
 AWS_REGION=us-east-1
 AWS_ACCESS_KEY_ID=your_access_key
 AWS_SECRET_ACCESS_KEY=your_secret_key
+# Amplify blocks AWS_ vars; duplicate them with SDPC_ when deploying
+SDPC_AWS_REGION=us-east-1
+SDPC_AWS_ACCESS_KEY_ID=your_access_key
+SDPC_AWS_SECRET_ACCESS_KEY=your_secret_key
 S3_BUCKET_NAME=sdpcbucket
+SDPC_S3_BUCKET_NAME=sdpcbucket
 S3_BUCKET_REGION=us-east-1
+SDPC_S3_BUCKET_REGION=us-east-1
 CLOUDFRONT_DOMAIN=your_cloudfront_domain
+SDPC_CLOUDFRONT_DOMAIN=your_cloudfront_domain
 CLOUDFRONT_KEY_PAIR_ID=your_key_pair_id
+# Amplify requires inline PEM (escape newlines as \n)
+SDPC_CLOUDFRONT_KEY_PAIR_ID=your_key_pair_id
 # Paste PEM with literal \n newlines or point to file path below
 CLOUDFRONT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----"
+SDPC_CLOUDFRONT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----"
+# Paste PEM with literal \n newlines or point to file path below
 # Optional: use path instead of inline key
 # CLOUDFRONT_PRIVATE_KEY_PATH=./certs/cloudfront-private-key.pem
 ```
-For production, copy the same URI but swap the database name to `sdpc_print_prod`.
+For production, copy the same URI but swap the database name to `sdpc_print_prod`. When configuring **AWS Amplify**, always use the `SDPC_`-prefixed variables because Amplify rejects values beginning with `AWS_` or `JWT_`.
 
 ### Run Development Server
 ```bash
