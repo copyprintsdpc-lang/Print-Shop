@@ -33,6 +33,15 @@ const SECRET_ACCESS_KEY =
   process.env.AWS_SECRET_ACCESS_KEY ||
   ''
 
+if (!ACCESS_KEY_ID || !SECRET_ACCESS_KEY) {
+  console.error('AWS credentials missing in environment', {
+    hasSdpcAccessKey: Boolean(process.env.SDPC_AWS_ACCESS_KEY_ID),
+    hasSdpcSecretKey: Boolean(process.env.SDPC_AWS_SECRET_ACCESS_KEY),
+    hasAwsAccessKey: Boolean(process.env.AWS_ACCESS_KEY_ID),
+    hasAwsSecretKey: Boolean(process.env.AWS_SECRET_ACCESS_KEY),
+  })
+}
+
 const inferredCredentials =
   ACCESS_KEY_ID && SECRET_ACCESS_KEY
     ? { accessKeyId: ACCESS_KEY_ID, secretAccessKey: SECRET_ACCESS_KEY }
