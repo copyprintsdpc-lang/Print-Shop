@@ -10,6 +10,19 @@ const REGION =
   process.env.AWS_REGION ||
   'us-east-1'
 
+// Ensure standard AWS_* variables exist for SDK default provider chain
+if (!process.env.AWS_ACCESS_KEY_ID && process.env.SDPC_AWS_ACCESS_KEY_ID) {
+  process.env.AWS_ACCESS_KEY_ID = process.env.SDPC_AWS_ACCESS_KEY_ID
+}
+
+if (!process.env.AWS_SECRET_ACCESS_KEY && process.env.SDPC_AWS_SECRET_ACCESS_KEY) {
+  process.env.AWS_SECRET_ACCESS_KEY = process.env.SDPC_AWS_SECRET_ACCESS_KEY
+}
+
+if (!process.env.AWS_REGION && process.env.SDPC_AWS_REGION) {
+  process.env.AWS_REGION = process.env.SDPC_AWS_REGION
+}
+
 const ACCESS_KEY_ID =
   process.env.SDPC_AWS_ACCESS_KEY_ID ||
   process.env.AWS_ACCESS_KEY_ID ||
