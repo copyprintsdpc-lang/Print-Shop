@@ -23,15 +23,8 @@ if (!process.env.AWS_REGION && process.env.SDPC_AWS_REGION) {
   process.env.AWS_REGION = process.env.SDPC_AWS_REGION
 }
 
-const ACCESS_KEY_ID =
-  process.env.SDPC_AWS_ACCESS_KEY_ID ||
-  process.env.AWS_ACCESS_KEY_ID ||
-  ''
-
-const SECRET_ACCESS_KEY =
-  process.env.SDPC_AWS_SECRET_ACCESS_KEY ||
-  process.env.AWS_SECRET_ACCESS_KEY ||
-  ''
+const ACCESS_KEY_ID = (process.env.SDPC_AWS_ACCESS_KEY_ID || process.env.AWS_ACCESS_KEY_ID || '').trim()
+const SECRET_ACCESS_KEY = (process.env.SDPC_AWS_SECRET_ACCESS_KEY || process.env.AWS_SECRET_ACCESS_KEY || '').trim()
 
 if (!ACCESS_KEY_ID || !SECRET_ACCESS_KEY) {
   console.error('AWS credentials missing in environment', {
@@ -39,6 +32,8 @@ if (!ACCESS_KEY_ID || !SECRET_ACCESS_KEY) {
     hasSdpcSecretKey: Boolean(process.env.SDPC_AWS_SECRET_ACCESS_KEY),
     hasAwsAccessKey: Boolean(process.env.AWS_ACCESS_KEY_ID),
     hasAwsSecretKey: Boolean(process.env.AWS_SECRET_ACCESS_KEY),
+    accessKeyLength: ACCESS_KEY_ID.length,
+    secretKeyLength: SECRET_ACCESS_KEY.length,
   })
 }
 
