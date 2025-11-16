@@ -7,7 +7,10 @@ frontend:
     build:
       commands:
         # Expose Amplify environment variables to Next.js (including server runtime)
+        # S3 / CloudFront / AWS creds
         - env | grep -E "SDPC_AWS_|SDPC_S3_BUCKET_|SDPC_CLOUDFRONT_|S3_BUCKET_|CLOUDFRONT_" >> .env.production || true
+        # Core app/server config (database, auth, mail, app URLs)
+        - env | grep -E "MONGODB_URI|SDPC_JWT_SECRET|JWT_SECRET|NEXTAUTH_SECRET|NEXTAUTH_URL|APP_URL|NODE_ENV|SMTP_|EMAIL_FROM" >> .env.production || true
         - npm run build
   artifacts:
     baseDirectory: .next
