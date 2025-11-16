@@ -1,0 +1,21 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        # Expose Amplify environment variables to Next.js (including server runtime)
+        - env | grep -E "SDPC_AWS_|SDPC_S3_BUCKET_|SDPC_CLOUDFRONT_|S3_BUCKET_|CLOUDFRONT_" >> .env.production || true
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
+
+
