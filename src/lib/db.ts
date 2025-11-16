@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { config } from './config'
 
 declare global {
   // eslint-disable-next-line no-var
@@ -11,10 +12,10 @@ export async function connectToDatabase(): Promise<typeof mongoose> {
   if (globalState.conn) return globalState.conn
   
   if (!globalState.promise) {
-    const uri = process.env.MONGODB_URI
+    const uri = config.mongodb.uri
     
     if (!uri) {
-      throw new Error('MONGODB_URI environment variable is not set')
+      throw new Error('Database connection string is not configured')
     }
 
     globalState.promise = mongoose.connect(uri, {
